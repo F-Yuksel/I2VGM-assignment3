@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp3m57nw2v7ih"]
+
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_gpilc"]
+[ext_resource type="PackedScene" uid="uid://mrjdsa0eh06j" path="res://Scenes/inventory_slot.tscn" id="2_1r3l8"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpilc")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Items" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Items"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -392.0
+offset_right = 392.0
+offset_bottom = 390.0
+grow_horizontal = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TabContainer/Items/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="SlotContainer" type="GridContainer" parent="TabContainer/Items/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="InventorySlot" parent="TabContainer/Items/HBoxContainer/MarginContainer2/SlotContainer" instance=ExtResource("2_1r3l8")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Items/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Items/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+text = "Info text voor item"
+
+[node name="Logs" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 1
