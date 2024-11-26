@@ -35,3 +35,5 @@ expand_mode = 1
 layout_mode = 2
 text = "Spacesuit"
 label_settings = SubResource("LabelSettings_x0osb")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
