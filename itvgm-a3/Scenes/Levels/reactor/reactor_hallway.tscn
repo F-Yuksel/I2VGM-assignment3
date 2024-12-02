@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dy48isccya80f"]
+[gd_scene load_steps=12 format=4 uid="uid://dy48isccya80f"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
-[ext_resource type="Texture2D" uid="uid://cxixc4scd4b3e" path="res://Imports/doortiles/door.png" id="3_o5ala"]
+[ext_resource type="PackedScene" uid="uid://baf40q0dccvxc" path="res://Scenes/Levels/test_scene.tscn" id="3_3wvdw"]
+[ext_resource type="Texture2D" uid="uid://cxixc4scd4b3e" path="res://Imports/doortiles/door.png" id="3_5f0ud"]
+[ext_resource type="Script" path="res://Scripts/door/doorShell.gd" id="4_op2op"]
+[ext_resource type="Script" path="res://Scripts/door/door.gd" id="5_a38tg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oriai"]
 texture = ExtResource("1_8v6ov")
@@ -95,6 +98,9 @@ size = Vector2(2041, 224)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv5jo"]
 size = Vector2(187, 432)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uffjx"]
+size = Vector2(360.945, 394.032)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -116,12 +122,23 @@ position = Vector2(1949, -71)
 shape = SubResource("RectangleShape2D_fv5jo")
 
 [node name="Door" type="Sprite2D" parent="."]
-position = Vector2(131.013, -81)
-scale = Vector2(0.256544, 0.256544)
-texture = ExtResource("3_o5ala")
+position = Vector2(177.529, -79.25)
+scale = Vector2(0.244764, 0.244764)
+texture = ExtResource("3_5f0ud")
+script = ExtResource("4_op2op")
+scene = ExtResource("3_3wvdw")
+
+[node name="door" type="Area2D" parent="Door"]
+script = ExtResource("5_a38tg")
+
+[node name="doorCollision" type="CollisionShape2D" parent="Door/door"]
+shape = SubResource("RectangleShape2D_uffjx")
 
 [node name="Player" parent="." instance=ExtResource("2_dniw1")]
 position = Vector2(-1, -69)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
+
+[connection signal="body_entered" from="Door/door" to="Door/door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door/door" to="Door/door" method="_on_body_exited"]
