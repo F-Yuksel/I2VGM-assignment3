@@ -10,7 +10,10 @@ var max_jumps : int = 2
 var gravity_multiplier : float = 1.0
 
 func _ready() -> void:
-	pass
+	if Global.doorPosition != Vector2.ZERO:
+		print("Moving player to last door position:", Global.doorPosition)
+		global_position = Global.doorPosition
+		Global.doorPosition = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
