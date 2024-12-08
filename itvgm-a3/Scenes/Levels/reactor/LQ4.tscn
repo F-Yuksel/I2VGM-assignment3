@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://c0ues45esb4a8"]
+[gd_scene load_steps=16 format=4 uid="uid://c0ues45esb4a8"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_xjb3v"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_bmtg3"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="3_ep54k"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_sl505"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_kniag"]
+[ext_resource type="Texture2D" uid="uid://cbqmcp63rk03t" path="res://Imports/papers/file.png" id="6_kocqg"]
+[ext_resource type="Script" path="res://Scripts/paperCode/fileController.gd" id="7_moi3h"]
+[ext_resource type="PackedScene" uid="uid://q02imkrsumlr" path="res://Scenes/Levels/reactor/codePaper.tscn" id="8_ln2aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_halw5"]
 texture = ExtResource("1_xjb3v")
@@ -133,6 +136,9 @@ texture = ExtResource("2_bmtg3")
 [sub_resource type="TileSet" id="TileSet_c8em3"]
 sources/0 = SubResource("TileSetAtlasSource_81com")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wf1i"]
+size = Vector2(1066.67, 933.333)
+
 [node name="lq4" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -161,6 +167,18 @@ tile_set = SubResource("TileSet_c8em3")
 [node name="DoorToHallwayLQ4" parent="." instance=ExtResource("3_sl505")]
 position = Vector2(29.805, -46.37)
 
+[node name="File" type="Sprite2D" parent="."]
+position = Vector2(285, -8)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_kocqg")
+
+[node name="Area2D" type="Area2D" parent="File"]
+script = ExtResource("7_moi3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3wf1i")
+
 [node name="Player" parent="." instance=ExtResource("3_ep54k")]
 position = Vector2(31, -45)
 
@@ -170,3 +188,7 @@ zoom = Vector2(1.5, 1.5)
 [node name="Interact" parent="Player" instance=ExtResource("5_kniag")]
 visible = false
 position = Vector2(0, 74.04)
+
+[node name="CodePaper" parent="Player" instance=ExtResource("8_ln2aj")]
+visible = false
+position = Vector2(0, -2)

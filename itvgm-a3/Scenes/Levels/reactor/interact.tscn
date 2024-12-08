@@ -2,7 +2,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_rcoa0"]
 font_size = 14
-font_color = Color(0, 0.65, 0.6175, 1)
+font_color = Color(0, 0.870909, 0.828225, 1)
+outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Interact" type="Node2D"]
