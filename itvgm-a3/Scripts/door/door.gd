@@ -23,10 +23,23 @@ func _on_body_entered(body):
 		elif name == "DoorToHallwayLQ4":
 			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 			Global.doorPosition = Vector2(420, -75)
+		elif name == "DoorToKK":
+			nextScenePath = "res://Scenes/Levels/reactor/kluiskamer.tscn"
+			Global.doorPosition = Vector2(0,-45)
+		elif name == "DoorToHallwayKK":
+			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
+			Global.doorPosition = Vector2(650,-75)
+		elif name == "DoorToHallwayLQ1":
+			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
+			Global.doorPosition = Vector2(850,-75)
+		elif name == "DoorToLQ1":
+			nextScenePath = "res://Scenes/Levels/reactor/LQ1.tscn"
+			Global.doorPosition = Vector2(0,-75)
+		
 		else:
 			print("Warning: Unknown door name. nextScenePath is not set.")
 		playerInside = true
-		
+		 
 		$"../Player/Interact".visible = true;
 		print("Player entered the door area.")
 
