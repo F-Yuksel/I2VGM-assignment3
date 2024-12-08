@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dute4v511dbtp"]
+
+[ext_resource type="Texture2D" uid="uid://cxixc4scd4b3e" path="res://Imports/doortiles/door.png" id="1_vnwog"]
+[ext_resource type="Script" path="res://Scripts/door/door.gd" id="2_ub38f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gss0w"]
+size = Vector2(88, 90)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("2_ub38f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.244764, 0.244764)
+texture = ExtResource("1_vnwog")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gss0w")
