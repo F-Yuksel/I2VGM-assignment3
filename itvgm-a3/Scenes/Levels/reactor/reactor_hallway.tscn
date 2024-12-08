@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dy48isccya80f"]
+[gd_scene load_steps=9 format=4 uid="uid://dy48isccya80f"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_agopb"]
+[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="4_s3qhy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oriai"]
 texture = ExtResource("1_8v6ov")
@@ -126,3 +127,7 @@ position = Vector2(-1, -69)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="Interact" parent="Player" instance=ExtResource("4_s3qhy")]
+visible = false
+position = Vector2(0, 74.04)
