@@ -122,6 +122,9 @@ position = Vector2(153.88, -77.53)
 [node name="DoorToLQ1" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(850, -77.53)
 
+[node name="DoorToLQ2" parent="." instance=ExtResource("3_agopb")]
+position = Vector2(1050, -77.53)
+
 [node name="DoorToKK" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(650, -77.53)
 
