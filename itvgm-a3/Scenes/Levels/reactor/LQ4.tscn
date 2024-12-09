@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c0ues45esb4a8"]
+[gd_scene load_steps=17 format=4 uid="uid://c0ues45esb4a8"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_xjb3v"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_bmtg3"]
@@ -139,6 +139,11 @@ sources/0 = SubResource("TileSetAtlasSource_yuy1e")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wf1i"]
 size = Vector2(1066.67, 933.333)
 
+[sub_resource type="LabelSettings" id="LabelSettings_4rudq"]
+font_color = Color(0, 0.870588, 0.827451, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
 [node name="lq4" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -191,3 +196,11 @@ position = Vector2(0, 74.04)
 [node name="CodePaper" parent="Player" instance=ExtResource("8_ln2aj")]
 visible = false
 position = Vector2(0, -2)
+
+[node name="Label" type="Label" parent="Player/CodePaper"]
+offset_left = -76.0
+offset_top = -203.0
+offset_right = 98.0
+offset_bottom = -180.0
+text = "Press [esc] to continue"
+label_settings = SubResource("LabelSettings_4rudq")
