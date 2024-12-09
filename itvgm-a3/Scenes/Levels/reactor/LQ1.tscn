@@ -100,7 +100,7 @@ size = Vector2(831, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eolui"]
 size = Vector2(32, 284.5)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofegi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksq71"]
 texture = ExtResource("4_7r4k4")
 2:0/0 = 0
 3:0/0 = 0
@@ -134,7 +134,7 @@ texture = ExtResource("4_7r4k4")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_rpqal"]
-sources/0 = SubResource("TileSetAtlasSource_ofegi")
+sources/0 = SubResource("TileSetAtlasSource_ksq71")
 
 [node name="LQ1" type="Node2D"]
 
