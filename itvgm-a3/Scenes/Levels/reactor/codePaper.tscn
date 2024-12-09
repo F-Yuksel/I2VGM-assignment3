@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://q02imkrsumlr"]
+
+[ext_resource type="Texture2D" uid="uid://dqlb8m2oyhwkp" path="res://Imports/papers/paper.png" id="1_4r0jw"]
+
+[node name="CodePaper" type="Node2D"]
+
+[node name="Paper" type="Sprite2D" parent="."]
+texture = ExtResource("1_4r0jw")

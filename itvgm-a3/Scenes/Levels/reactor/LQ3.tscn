@@ -168,5 +168,4 @@ position = Vector2(31, -45)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Interact" parent="Player" instance=ExtResource("5_573nf")]
-visible = false
 position = Vector2(0, 74.04)
