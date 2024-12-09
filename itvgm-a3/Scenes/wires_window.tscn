@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://vj8f673ddrlf"]
+
+[ext_resource type="Texture2D" uid="uid://4ehnuemblned" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile038.png" id="1_cj5ra"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_c0g6p"]
+
+[node name="PuzzleWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(30.25, 16.25)
+texture = ExtResource("1_cj5ra")
+
+[node name="WireEnds" type="Node" parent="."]
+
+[node name="Red" type="Node" parent="WireEnds"]
+
+[node name="RedLeft" type="Sprite2D" parent="WireEnds/Red"]
+position = Vector2(154, 147)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="RedRight" type="Sprite2D" parent="WireEnds/Red"]
+position = Vector2(997, 147)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Green" type="Node" parent="WireEnds"]
+
+[node name="GreenLeft" type="Sprite2D" parent="WireEnds/Green"]
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(154, 263)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="GreenRight" type="Sprite2D" parent="WireEnds/Green"]
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(997, 263)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Blue" type="Node" parent="WireEnds"]
+
+[node name="BlueLeft" type="Sprite2D" parent="WireEnds/Blue"]
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(154, 389)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="BlueRight" type="Sprite2D" parent="WireEnds/Blue"]
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(997, 389)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Purple" type="Node" parent="WireEnds"]
+
+[node name="PurpleLeft" type="Sprite2D" parent="WireEnds/Purple"]
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(154, 501)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="PurpleRight" type="Sprite2D" parent="WireEnds/Purple"]
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(997, 501)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_c0g6p")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
