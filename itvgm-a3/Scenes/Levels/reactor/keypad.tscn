@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7qxdfv21wywa"]
+
+[ext_resource type="Texture2D" uid="uid://cu6cj2hqpxi20" path="res://Imports/vault/keypadNumber.png" id="1_yua2i"]
+[ext_resource type="Script" path="res://Scripts/vault/keypadController.gd" id="2_eitkg"]
+
+[sub_resource type="FontFile" id="FontFile_m1xw3"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="Keypad" type="Node2D"]
+
+[node name="Keypad" type="Sprite2D" parent="."]
+position = Vector2(194, 192)
+texture = ExtResource("1_yua2i")
+script = ExtResource("2_eitkg")
+
+[node name="1" type="Button" parent="Keypad"]
+offset_left = -97.0
+offset_top = -93.0
+offset_right = -43.0
+offset_bottom = -54.0
+theme_override_fonts/font = SubResource("FontFile_m1xw3")
+flat = true
+
+[node name="2" type="Button" parent="Keypad"]
+offset_left = -31.0
+offset_top = -94.0
+offset_right = 27.0
+offset_bottom = -54.0
+flat = true
+
+[node name="3" type="Button" parent="Keypad"]
+offset_left = 39.0
+offset_top = -93.0
+offset_right = 95.0
+offset_bottom = -55.0
+flat = true
+
+[node name="4" type="Button" parent="Keypad"]
+offset_left = -97.0
+offset_top = -42.0
+offset_right = -43.0
+offset_bottom = -3.0
+theme_override_fonts/font = SubResource("FontFile_m1xw3")
+flat = true
+
+[node name="5" type="Button" parent="Keypad"]
+offset_left = -31.0
+offset_top = -43.0
+offset_right = 27.0
+offset_bottom = -3.0
+flat = true
+
+[node name="6" type="Button" parent="Keypad"]
+offset_left = 39.0
+offset_top = -42.0
+offset_right = 95.0
+offset_bottom = -4.0
+flat = true
+
+[node name="7" type="Button" parent="Keypad"]
+offset_left = -97.0
+offset_top = 8.0
+offset_right = -43.0
+offset_bottom = 47.0
+theme_override_fonts/font = SubResource("FontFile_m1xw3")
+flat = true
+
+[node name="8" type="Button" parent="Keypad"]
+offset_left = -31.0
+offset_top = 7.0
+offset_right = 27.0
+offset_bottom = 47.0
+flat = true
+
+[node name="9" type="Button" parent="Keypad"]
+offset_left = 39.0
+offset_top = 8.0
+offset_right = 95.0
+offset_bottom = 46.0
+flat = true
+
+[node name="0" type="Button" parent="Keypad"]
+offset_left = -31.0
+offset_top = 57.0
+offset_right = 27.0
+offset_bottom = 97.0
+flat = true
+
+[node name="x" type="Button" parent="Keypad"]
+offset_left = -99.0
+offset_top = 57.0
+offset_right = -41.0
+offset_bottom = 97.0
+flat = true
+
+[node name="v" type="Button" parent="Keypad"]
+offset_left = 36.0
+offset_top = 57.0
+offset_right = 94.0
+offset_bottom = 97.0
+flat = true
