@@ -176,7 +176,6 @@ texture = ExtResource("6_kocqg")
 script = ExtResource("7_moi3h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3wf1i")
 
 [node name="Player" parent="." instance=ExtResource("3_ep54k")]
