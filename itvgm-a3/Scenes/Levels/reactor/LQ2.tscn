@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://trcvk3cufrno"]
+[gd_scene load_steps=14 format=4 uid="uid://trcvk3cufrno"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_hv0vs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_s4q1w"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="4_hnbf4"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="5_wiufw"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="6_ovjcj"]
+[ext_resource type="Texture2D" uid="uid://dwwa7tj72kydr" path="res://Imports/tafel/tafel.png" id="6_ybd8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc3wq"]
 texture = ExtResource("1_hv0vs")
@@ -163,6 +164,11 @@ position = Vector2(1, -79)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAJAP3/AAADAAQAAAAEAP3/AAACAAQAAAAEAP7/AAACAAUAAAAFAP3/AAADAAQAAAAFAP7/AAADAAUAAAAMAP7/AAAEAAMAAAAOAP3/AAAEAAIAAAAOAP7/AAAEAAMAAAAPAP3/AAAFAAIAAAAPAP7/AAAFAAMAAAAMAP3/AAAEAAIAAAANAP3/AAAFAAIAAAANAP7/AAAFAAMAAAAQAP3/AAAEAAIAAAAQAP7/AAAEAAMAAAARAP3/AAAFAAIAAAARAP7/AAAFAAMAAAAIAP3/AAACAAQAAAAIAP7/AAACAAUAAAAJAP7/AAADAAUAAAA=")
 tile_set = SubResource("TileSet_rpqal")
+
+[node name="Tafel" type="Sprite2D" parent="."]
+position = Vector2(637, -63)
+scale = Vector2(-0.161562, 0.161562)
+texture = ExtResource("6_ybd8m")
 
 [node name="Player" parent="." instance=ExtResource("5_wiufw")]
 position = Vector2(-1, -69)
