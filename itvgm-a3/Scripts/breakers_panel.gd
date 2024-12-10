@@ -10,14 +10,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("Interact"):
-		pass
-
-
+		$"../Player/Camera2D/HUD_breakers".set_visibility_recursive($"../Player/Camera2D/HUD_breakers/BreakersWindow", true)
+		$"../Player/Camera2D/HUD_breakers".show_closebutton()
+		$"../Player".in_menu = true
+		
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
+		$"../Player/Interact".visible = true;
 		interactable = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if "Player" in body.name:
+		$"../Player/Interact".visible = false;
 		interactable = false

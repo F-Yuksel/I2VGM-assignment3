@@ -1,17 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://cteki12r31nso"]
+[gd_scene load_steps=10 format=3 uid="uid://r6cpniq0tblf"]
 
-[ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="1_38mqu"]
-[ext_resource type="Script" path="res://Scripts/breakerlogic.gd" id="1_co37h"]
-[ext_resource type="Texture2D" uid="uid://biypbigxv0d68" path="res://Imports/breaker_off.png" id="2_vgqt2"]
-[ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="4_kp3do"]
-[ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_q4024"]
+[ext_resource type="Script" path="res://Scripts/breakerlogic.gd" id="1_weh0l"]
+[ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="2_6nggn"]
+[ext_resource type="Texture2D" uid="uid://biypbigxv0d68" path="res://Imports/breaker_off.png" id="3_fvtrb"]
+[ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_bmrrw"]
+[ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="5_3qb53"]
+
+[sub_resource type="GDScript" id="GDScript_h4lce"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdtvj"]
-atlas = ExtResource("2_vgqt2")
+atlas = ExtResource("3_fvtrb")
 region = Rect2(0, 0, 6, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrvn3"]
-atlas = ExtResource("4_q4024")
+atlas = ExtResource("4_bmrrw")
 region = Rect2(0, 0, 6, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_be8tw"]
@@ -36,21 +50,27 @@ animations = [{
 [node name="BreakersWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 574.0
+offset_top = 328.0
+offset_right = 574.0
+offset_bottom = 328.0
+scale = Vector2(0.75, 0.75)
+script = SubResource("GDScript_h4lce")
 
 [node name="breakerlogic" type="Node" parent="."]
-script = ExtResource("1_co37h")
+script = ExtResource("1_weh0l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(575, 324)
-scale = Vector2(15, 15)
-texture = ExtResource("1_38mqu")
+position = Vector2(8, 33.3333)
+scale = Vector2(22, 22)
+texture = ExtResource("2_6nggn")
 
 [node name="Animations" type="Node" parent="."]
 
 [node name="button1_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-position = Vector2(262, 250)
+position = Vector2(272, 287)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_be8tw")
 animation = &"off"
@@ -58,7 +78,7 @@ autoplay = "off"
 
 [node name="button2_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-position = Vector2(416, 386)
+position = Vector2(426, 423)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_be8tw")
 animation = &"off"
@@ -66,7 +86,7 @@ autoplay = "off"
 
 [node name="button3_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-position = Vector2(563, 250)
+position = Vector2(573, 287)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_be8tw")
 animation = &"off"
@@ -74,7 +94,7 @@ autoplay = "off"
 
 [node name="button4_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-position = Vector2(723, 386)
+position = Vector2(733, 423)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_be8tw")
 animation = &"off"
@@ -82,7 +102,7 @@ autoplay = "off"
 
 [node name="button5_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-position = Vector2(873, 250)
+position = Vector2(883, 287)
 scale = Vector2(15, 15)
 sprite_frames = SubResource("SpriteFrames_be8tw")
 animation = &"off"
@@ -92,50 +112,50 @@ autoplay = "off"
 
 [node name="Button1" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 204.0
-offset_top = 114.0
-offset_right = 212.0
-offset_bottom = 132.0
+offset_left = 214.0
+offset_top = 151.0
+offset_right = 222.0
+offset_bottom = 169.0
 scale = Vector2(15, 15)
 toggle_mode = true
 flat = true
 
 [node name="Button2" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 357.0
-offset_top = 248.0
-offset_right = 365.0
-offset_bottom = 266.0
+offset_left = 367.0
+offset_top = 285.0
+offset_right = 375.0
+offset_bottom = 303.0
 scale = Vector2(15, 15)
 toggle_mode = true
 flat = true
 
 [node name="Button3" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 504.0
-offset_top = 114.0
-offset_right = 512.0
-offset_bottom = 132.0
+offset_left = 514.0
+offset_top = 151.0
+offset_right = 522.0
+offset_bottom = 169.0
 scale = Vector2(15, 15)
 toggle_mode = true
 flat = true
 
 [node name="Button4" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 661.0
-offset_top = 248.0
-offset_right = 669.0
-offset_bottom = 266.0
+offset_left = 671.0
+offset_top = 285.0
+offset_right = 679.0
+offset_bottom = 303.0
 scale = Vector2(15, 15)
 toggle_mode = true
 flat = true
 
 [node name="Button5" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 812.0
-offset_top = 114.0
-offset_right = 820.0
-offset_bottom = 132.0
+offset_left = 822.0
+offset_top = 151.0
+offset_right = 830.0
+offset_bottom = 169.0
 scale = Vector2(15, 15)
 toggle_mode = true
 flat = true
@@ -143,52 +163,52 @@ flat = true
 [node name="Numbering" type="Node" parent="."]
 
 [node name="1" type="Label" parent="Numbering"]
-offset_left = 240.0
-offset_top = 396.0
-offset_right = 288.0
-offset_bottom = 460.0
+offset_left = 250.0
+offset_top = 433.0
+offset_right = 298.0
+offset_bottom = 497.0
 theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
-theme_override_fonts/font = ExtResource("4_kp3do")
+theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "I"
 
 [node name="2" type="Label" parent="Numbering"]
-offset_left = 369.0
-offset_top = 178.0
-offset_right = 465.0
-offset_bottom = 242.0
+offset_left = 379.0
+offset_top = 215.0
+offset_right = 475.0
+offset_bottom = 279.0
 theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
-theme_override_fonts/font = ExtResource("4_kp3do")
+theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "II"
 
 [node name="3" type="Label" parent="Numbering"]
-offset_left = 490.0
-offset_top = 396.0
-offset_right = 634.0
-offset_bottom = 460.0
+offset_left = 500.0
+offset_top = 433.0
+offset_right = 644.0
+offset_bottom = 497.0
 theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
-theme_override_fonts/font = ExtResource("4_kp3do")
+theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "III"
 
 [node name="4" type="Label" parent="Numbering"]
-offset_left = 666.0
-offset_top = 178.0
-offset_right = 778.0
-offset_bottom = 242.0
+offset_left = 676.0
+offset_top = 215.0
+offset_right = 788.0
+offset_bottom = 279.0
 theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
-theme_override_fonts/font = ExtResource("4_kp3do")
+theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "IV"
 
 [node name="5" type="Label" parent="Numbering"]
-offset_left = 836.0
-offset_top = 396.0
-offset_right = 900.0
-offset_bottom = 460.0
+offset_left = 846.0
+offset_top = 433.0
+offset_right = 910.0
+offset_bottom = 497.0
 theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
-theme_override_fonts/font = ExtResource("4_kp3do")
+theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "V"
 

@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -50,7 +50,7 @@ func reset_buttons():
 	# Reset the sequence tracker
 	seq_tracker = 0
 
-func _on_button_1_toggled(toggled_on: bool) -> void:
+func _on_button_1_toggled(_toggled_on: bool) -> void:
 	# On correct sequence
 	if seq_tracker == 3:
 		# Disable button
@@ -61,7 +61,7 @@ func _on_button_1_toggled(toggled_on: bool) -> void:
 		reset_buttons()
 
 
-func _on_button_2_toggled(toggled_on: bool) -> void:
+func _on_button_2_toggled(_toggled_on: bool) -> void:
 	# On correct sequence
 	if seq_tracker == 4:
 		# Disable button
@@ -72,7 +72,7 @@ func _on_button_2_toggled(toggled_on: bool) -> void:
 		reset_buttons()
 
 
-func _on_button_3_toggled(toggled_on: bool) -> void:
+func _on_button_3_toggled(_toggled_on: bool) -> void:
 	# On correct sequence
 	if seq_tracker == 1:
 		# Disable button
@@ -83,7 +83,7 @@ func _on_button_3_toggled(toggled_on: bool) -> void:
 		reset_buttons()
 
 
-func _on_button_4_toggled(toggled_on: bool) -> void:
+func _on_button_4_toggled(_toggled_on: bool) -> void:
 	# On correct sequence
 	if seq_tracker == 0:
 		# Disable button
@@ -94,7 +94,7 @@ func _on_button_4_toggled(toggled_on: bool) -> void:
 		reset_buttons()
 
 
-func _on_button_5_toggled(toggled_on: bool) -> void:
+func _on_button_5_toggled(_toggled_on: bool) -> void:
 	# On correct sequence
 	if seq_tracker == 2:
 		# Disable button

@@ -20,38 +20,36 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Disable movement while in a menu
-	if in_menu:
-		pass
-		
-	# Add the gravity.
-	if not is_on_floor() and not on_ladder:
-		velocity += gravity_multiplier * get_gravity() * delta
-	else:
-		jumps = max_jumps
-		
-	# Handle Ladder Movement
-	if on_ladder:
-		if Input.is_action_pressed("Down"):
-			velocity.y = speed*delta*25
-		elif Input.is_action_pressed("Up"):
-			velocity.y = -speed*delta*25
+	if not in_menu:	
+		# Add the gravity.
+		if not is_on_floor() and not on_ladder:
+			velocity += gravity_multiplier * get_gravity() * delta
 		else:
-			velocity.y = 0
-		
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and jumps > 0 and not on_ladder:
-		velocity.y = jump_velocity
-		jumps -= 1
+			jumps = max_jumps
+			
+		# Handle Ladder Movement
+		if on_ladder:
+			if Input.is_action_pressed("Down"):
+				velocity.y = speed*delta*25
+			elif Input.is_action_pressed("Up"):
+				velocity.y = -speed*delta*25
+			else:
+				velocity.y = 0
+			
+		# Handle jump.
+		if Input.is_action_just_pressed("Jump") and jumps > 0 and not on_ladder:
+			velocity.y = jump_velocity
+			jumps -= 1
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("Left", "Right")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var direction := Input.get_axis("Left", "Right")
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
 
-	move_and_slide()
+		move_and_slide()
 	
 func change_gravity():
 	gravity_multiplier = low_gravity_multiplier
