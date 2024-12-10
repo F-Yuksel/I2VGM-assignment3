@@ -10,6 +10,8 @@ var jumps : int = 1
 var max_jumps : int = 2
 var gravity_multiplier : float = 1.0
 
+var on_ladder = false
+
 func _ready() -> void:
 	if Global.doorPosition != Vector2.ZERO:
 		print("Moving player to last door position:", Global.doorPosition)
@@ -17,15 +19,25 @@ func _ready() -> void:
 		Global.doorPosition = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	if ableToMove:
+	# Disable movement while in a menu
+	if ableToMove:	
 		# Add the gravity.
-		if not is_on_floor():
+		if not is_on_floor() and not on_ladder:
 			velocity += gravity_multiplier * get_gravity() * delta
 		else:
 			jumps = max_jumps
-
+			
+		# Handle Ladder Movement
+		if on_ladder:
+			if Input.is_action_pressed("Down"):
+				velocity.y = speed*delta*25
+			elif Input.is_action_pressed("Up"):
+				velocity.y = -speed*delta*25
+			else:
+				velocity.y = 0
+			
 		# Handle jump.
-		if Input.is_action_just_pressed("Jump") and jumps > 0:
+		if Input.is_action_just_pressed("Jump") and jumps > 0 and not on_ladder:
 			velocity.y = jump_velocity
 			jumps -= 1
 
