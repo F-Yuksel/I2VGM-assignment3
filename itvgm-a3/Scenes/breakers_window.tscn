@@ -1,10 +1,37 @@
-[gd_scene load_steps=6 format=3 uid="uid://cteki12r31nso"]
+[gd_scene load_steps=9 format=3 uid="uid://cteki12r31nso"]
 
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="1_38mqu"]
 [ext_resource type="Script" path="res://Scripts/breakerlogic.gd" id="1_co37h"]
 [ext_resource type="Texture2D" uid="uid://biypbigxv0d68" path="res://Imports/breaker_off.png" id="2_vgqt2"]
 [ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="4_kp3do"]
 [ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_q4024"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdtvj"]
+atlas = ExtResource("2_vgqt2")
+region = Rect2(0, 0, 6, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrvn3"]
+atlas = ExtResource("4_q4024")
+region = Rect2(0, 0, 6, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_be8tw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdtvj")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrvn3")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
 
 [node name="BreakersWindow" type="Control"]
 layout_mode = 3
@@ -19,61 +46,99 @@ position = Vector2(575, 324)
 scale = Vector2(15, 15)
 texture = ExtResource("1_38mqu")
 
-[node name="Button1" type="TextureButton" parent="."]
+[node name="Animations" type="Node" parent="."]
+
+[node name="button1_anim" type="AnimatedSprite2D" parent="Animations"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 222.0
+position = Vector2(262, 250)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_be8tw")
+animation = &"off"
+autoplay = "off"
+
+[node name="button2_anim" type="AnimatedSprite2D" parent="Animations"]
+texture_filter = 1
+position = Vector2(416, 386)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_be8tw")
+animation = &"off"
+autoplay = "off"
+
+[node name="button3_anim" type="AnimatedSprite2D" parent="Animations"]
+texture_filter = 1
+position = Vector2(563, 250)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_be8tw")
+animation = &"off"
+autoplay = "off"
+
+[node name="button4_anim" type="AnimatedSprite2D" parent="Animations"]
+texture_filter = 1
+position = Vector2(723, 386)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_be8tw")
+animation = &"off"
+autoplay = "off"
+
+[node name="button5_anim" type="AnimatedSprite2D" parent="Animations"]
+texture_filter = 1
+position = Vector2(873, 250)
+scale = Vector2(15, 15)
+sprite_frames = SubResource("SpriteFrames_be8tw")
+animation = &"off"
+autoplay = "off"
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button1" type="Button" parent="Buttons"]
+texture_filter = 1
+offset_left = 204.0
 offset_top = 114.0
-offset_right = 228.0
+offset_right = 212.0
 offset_bottom = 132.0
 scale = Vector2(15, 15)
 toggle_mode = true
-texture_normal = ExtResource("2_vgqt2")
-texture_pressed = ExtResource("4_q4024")
+flat = true
 
-[node name="Button2" type="TextureButton" parent="."]
+[node name="Button2" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 515.0
-offset_top = 114.0
-offset_right = 521.0
-offset_bottom = 132.0
-scale = Vector2(15, 15)
-toggle_mode = true
-texture_normal = ExtResource("2_vgqt2")
-texture_pressed = ExtResource("4_q4024")
-
-[node name="Button3" type="TextureButton" parent="."]
-texture_filter = 1
-offset_left = 826.0
-offset_top = 114.0
-offset_right = 832.0
-offset_bottom = 132.0
-scale = Vector2(15, 15)
-toggle_mode = true
-texture_normal = ExtResource("2_vgqt2")
-texture_pressed = ExtResource("4_q4024")
-
-[node name="Button4" type="TextureButton" parent="."]
-texture_filter = 1
-offset_left = 373.0
+offset_left = 357.0
 offset_top = 248.0
-offset_right = 379.0
+offset_right = 365.0
 offset_bottom = 266.0
 scale = Vector2(15, 15)
 toggle_mode = true
-texture_normal = ExtResource("2_vgqt2")
-texture_pressed = ExtResource("4_q4024")
+flat = true
 
-[node name="Button5" type="TextureButton" parent="."]
+[node name="Button3" type="Button" parent="Buttons"]
 texture_filter = 1
-offset_left = 677.0
+offset_left = 504.0
+offset_top = 114.0
+offset_right = 512.0
+offset_bottom = 132.0
+scale = Vector2(15, 15)
+toggle_mode = true
+flat = true
+
+[node name="Button4" type="Button" parent="Buttons"]
+texture_filter = 1
+offset_left = 661.0
 offset_top = 248.0
-offset_right = 683.0
+offset_right = 669.0
 offset_bottom = 266.0
 scale = Vector2(15, 15)
 toggle_mode = true
-texture_normal = ExtResource("2_vgqt2")
-texture_pressed = ExtResource("4_q4024")
+flat = true
+
+[node name="Button5" type="Button" parent="Buttons"]
+texture_filter = 1
+offset_left = 812.0
+offset_top = 114.0
+offset_right = 820.0
+offset_bottom = 132.0
+scale = Vector2(15, 15)
+toggle_mode = true
+flat = true
 
 [node name="Numbering" type="Node" parent="."]
 
@@ -127,4 +192,8 @@ theme_override_fonts/font = ExtResource("4_kp3do")
 theme_override_font_sizes/font_size = 64
 text = "V"
 
-[connection signal="toggled" from="Button1" to="breakerlogic" method="_on_button_1_toggled"]
+[connection signal="toggled" from="Buttons/Button1" to="breakerlogic" method="_on_button_1_toggled"]
+[connection signal="toggled" from="Buttons/Button2" to="breakerlogic" method="_on_button_2_toggled"]
+[connection signal="toggled" from="Buttons/Button3" to="breakerlogic" method="_on_button_3_toggled"]
+[connection signal="toggled" from="Buttons/Button4" to="breakerlogic" method="_on_button_4_toggled"]
+[connection signal="toggled" from="Buttons/Button5" to="breakerlogic" method="_on_button_5_toggled"]
