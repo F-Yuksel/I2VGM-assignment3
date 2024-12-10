@@ -41,7 +41,7 @@ func _on_body_entered(body):
 		elif name == "DoorToHallwayLQ2":
 			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 			Global.doorPosition = Vector2(1050,-75)
-	
+
 		else:
 			print("Warning: Unknown door name. nextScenePath is not set.")
 		playerInside = true

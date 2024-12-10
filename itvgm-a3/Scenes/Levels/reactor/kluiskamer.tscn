@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="4_kom1x"]
 [ext_resource type="Script" path="res://Scripts/vault/vaultController.gd" id="4_smaqi"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="6_x4lwp"]
-[ext_resource type="PackedScene" uid="uid://b7qxdfv21wywa" path="res://Scenes/Levels/reactor/keypad.tscn" id="7_qo2v3"]
+[ext_resource type="PackedScene" path="res://Scenes/Levels/reactor/keypad.tscn" id="7_qo2v3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc3wq"]
 texture = ExtResource("1_31jns")
@@ -174,7 +174,6 @@ texture = ExtResource("3_kt17c")
 script = ExtResource("4_smaqi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vault/Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8jmp7")
 
 [node name="decor" type="TileMapLayer" parent="."]
