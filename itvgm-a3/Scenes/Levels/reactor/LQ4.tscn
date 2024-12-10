@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=4 uid="uid://c0ues45esb4a8"]
+[gd_scene load_steps=17 format=4 uid="uid://c0ues45esb4a8"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_xjb3v"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_bmtg3"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="3_ep54k"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_sl505"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_kniag"]
+[ext_resource type="Texture2D" uid="uid://cbqmcp63rk03t" path="res://Imports/papers/file.png" id="6_kocqg"]
+[ext_resource type="Script" path="res://Scripts/paperCode/fileController.gd" id="7_moi3h"]
+[ext_resource type="PackedScene" uid="uid://q02imkrsumlr" path="res://Scenes/Levels/reactor/codePaper.tscn" id="8_ln2aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_halw5"]
 texture = ExtResource("1_xjb3v")
@@ -97,7 +100,7 @@ size = Vector2(529, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vugi5"]
 size = Vector2(47, 427)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81com"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuy1e"]
 texture = ExtResource("2_bmtg3")
 2:0/0 = 0
 3:0/0 = 0
@@ -131,7 +134,15 @@ texture = ExtResource("2_bmtg3")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_c8em3"]
-sources/0 = SubResource("TileSetAtlasSource_81com")
+sources/0 = SubResource("TileSetAtlasSource_yuy1e")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wf1i"]
+size = Vector2(1066.67, 933.333)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rudq"]
+font_color = Color(0, 0.870588, 0.827451, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="lq4" type="Node2D"]
 
@@ -161,6 +172,17 @@ tile_set = SubResource("TileSet_c8em3")
 [node name="DoorToHallwayLQ4" parent="." instance=ExtResource("3_sl505")]
 position = Vector2(29.805, -46.37)
 
+[node name="File" type="Sprite2D" parent="."]
+position = Vector2(285, -8)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_kocqg")
+
+[node name="Area2D" type="Area2D" parent="File"]
+script = ExtResource("7_moi3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
+shape = SubResource("RectangleShape2D_3wf1i")
+
 [node name="Player" parent="." instance=ExtResource("3_ep54k")]
 position = Vector2(31, -45)
 
@@ -170,3 +192,15 @@ zoom = Vector2(1.5, 1.5)
 [node name="Interact" parent="Player" instance=ExtResource("5_kniag")]
 visible = false
 position = Vector2(0, 74.04)
+
+[node name="CodePaper" parent="Player" instance=ExtResource("8_ln2aj")]
+visible = false
+position = Vector2(0, -2)
+
+[node name="Label" type="Label" parent="Player/CodePaper"]
+offset_left = -76.0
+offset_top = -203.0
+offset_right = 98.0
+offset_bottom = -180.0
+text = "Press [esc] to continue"
+label_settings = SubResource("LabelSettings_4rudq")
