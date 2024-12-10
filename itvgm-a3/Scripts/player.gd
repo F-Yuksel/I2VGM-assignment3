@@ -4,13 +4,13 @@ extends CharacterBody2D
 @export var speed : float = 300.0
 @export var jump_velocity : float = -400.0
 @export var low_gravity_multiplier : float = 0.50
+var ableToMove: bool = true
 
 var jumps : int = 1
 var max_jumps : int = 2
 var gravity_multiplier : float = 1.0
 
 var on_ladder = false
-var in_menu = false
 
 func _ready() -> void:
 	if Global.doorPosition != Vector2.ZERO:
@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Disable movement while in a menu
-	if not in_menu:	
+	if ableToMove:	
 		# Add the gravity.
 		if not is_on_floor() and not on_ladder:
 			velocity += gravity_multiplier * get_gravity() * delta

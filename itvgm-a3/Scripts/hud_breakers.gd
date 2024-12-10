@@ -21,4 +21,4 @@ func _on_close_pressed() -> void:
 	set_visibility_recursive($BreakersWindow, false)
 	set_visibility_recursive($NoteElectrical, false)
 	$Close.visible = false
-	$"../..".in_menu = false
+	$"../..".ableToMove = true

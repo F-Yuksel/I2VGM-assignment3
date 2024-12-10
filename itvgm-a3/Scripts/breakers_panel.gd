@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("Interact"):
 		$"../Player/Camera2D/HUD_breakers".set_visibility_recursive($"../Player/Camera2D/HUD_breakers/BreakersWindow", true)
 		$"../Player/Camera2D/HUD_breakers".show_closebutton()
-		$"../Player".in_menu = true
+		$"../Player".ableToMove = false
 		
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
