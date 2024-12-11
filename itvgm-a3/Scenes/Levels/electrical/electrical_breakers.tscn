@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bvccj8xcs0niv"]
+[gd_scene load_steps=25 format=4 uid="uid://bvccj8xcs0niv"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_hgnvn"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_rvlkk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ljsn1f2vo1hm" path="res://Imports/cancelbutton.png" id="6_k5r5q"]
 [ext_resource type="PackedScene" uid="uid://b7u75dbeu24st" path="res://Scenes/Levels/electrical/note_item.tscn" id="9_2abau"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="10_ob6ci"]
+[ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="11_ck65h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c82si"]
 texture = ExtResource("1_hgnvn")
@@ -232,6 +233,7 @@ shape = SubResource("RectangleShape2D_xf0an")
 debug_color = Color(0, 0.635294, 0.415686, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("2_rvlkk")]
+z_index = 1
 position = Vector2(15, -19)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -274,6 +276,9 @@ position = Vector2(3, 75)
 
 [node name="breakers_panel" parent="." instance=ExtResource("3_n5rkd")]
 position = Vector2(1154, -33)
+
+[node name="DoorToHub" parent="." instance=ExtResource("11_ck65h")]
+position = Vector2(172, -47)
 
 [connection signal="pressed" from="Player/Camera2D/HUD_breakers/Close" to="Player/Camera2D/HUD_breakers" method="_on_close_pressed"]
 

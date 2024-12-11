@@ -129,6 +129,9 @@ position = Vector2(650, -77.53)
 [node name="DoorToLQ4" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(420.68, -77.53)
 
+[node name="DoorToHub2" parent="." instance=ExtResource("3_agopb")]
+position = Vector2(1264, -80)
+
 [node name="5Ea6f5b8-a6d0-4565-b1a4-500Fed3f60d2-removebg-preview(1)" type="Sprite2D" parent="."]
 position = Vector2(1656, -119)
 scale = Vector2(0.275862, 0.275862)
