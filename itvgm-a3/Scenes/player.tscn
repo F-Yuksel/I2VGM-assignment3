@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://xsors4k2rgg7"]
+[gd_scene load_steps=7 format=3 uid="uid://xsors4k2rgg7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_epgbd"]
+[ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="2_ap76o"]
+[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_hw1go"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xewqd"]
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf0wy"]
 size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0y3q"]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -17,3 +21,21 @@ texture = SubResource("PlaceholderTexture2D_xewqd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xf0wy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_y0y3q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_ap76o")]
+
+[node name="Interact" parent="." instance=ExtResource("3_hw1go")]
+visible = false
+position = Vector2(0, 74.04)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_roomdetect_area_entered"]

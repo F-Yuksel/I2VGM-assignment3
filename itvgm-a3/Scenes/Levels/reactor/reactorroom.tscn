@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://ddhbujk5src8h"]
+[gd_scene load_steps=14 format=4 uid="uid://ddhbujk5src8h"]
 
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_w0fer"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="Texture2D" uid="uid://c2s6pt5t3sjdj" path="res://Imports/transitiondoor.png" id="6_nqclj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
@@ -133,6 +133,12 @@ texture = ExtResource("1_6ws62")
 [sub_resource type="TileSet" id="TileSet_g74j4"]
 sources/0 = SubResource("TileSetAtlasSource_2ts3v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g31yo"]
+size = Vector2(111.75, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvcfq"]
+size = Vector2(1267, 326)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -157,16 +163,21 @@ tile_set = SubResource("TileSet_g74j4")
 [node name="Player" parent="." instance=ExtResource("2_d4bd4")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-
-[node name="Interact" parent="Player" instance=ExtResource("3_w0fer")]
-visible = false
-position = Vector2(0, 74.04)
-
 [node name="DoorToHallway" type="Area2D" parent="."]
 script = ExtResource("4_tx1fb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DoorToHallway"]
-position = Vector2(-221.5, -73)
-shape = SubResource("RectangleShape2D_fv5jo")
+position = Vector2(-182.875, -73)
+shape = SubResource("RectangleShape2D_g31yo")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorToHallway"]
+position = Vector2(-190, -135)
+rotation = 3.14159
+scale = Vector2(0.245985, 1)
+texture = ExtResource("6_nqclj")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(491.5, -173)
+shape = SubResource("RectangleShape2D_cvcfq")

@@ -55,11 +55,20 @@ func _on_button_pressed_x():
 	codeEntered = "";
 	$"..".visible = false;
 	$"../..".ableToMove = true;
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+func _on_button_pressed_esc():
+	print("Ga weg")
+	codeEntered = "";
+	$"..".visible = false;
+	$"../..".ableToMove = true;
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _on_button_pressed_v():
 	if codeCorrect == codeEntered:
 		$"..".visible = false;
 		Global.hasSuit = true;
 		$"../..".ableToMove = true;
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else :
 		codeEntered = "";

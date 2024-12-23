@@ -6,6 +6,7 @@ var info_text : String
 var inventory
 var is_log : bool
 var item_name : String
+var info_img : Resource
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +25,8 @@ func set_item(item):
 	info_text = item.info_text
 	icon_.texture = item.icon
 	label.text = item.item_name
+	info_img = item.image
+	print("Item complete")
 
 func _on_pressed() -> void:
-	inventory._set_info(is_log, info_text)
+	inventory._set_info(is_log, info_text, info_img)

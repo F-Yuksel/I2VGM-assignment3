@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c0ues45esb4a8"]
+[gd_scene load_steps=21 format=4 uid="uid://c0ues45esb4a8"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_xjb3v"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_bmtg3"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cbqmcp63rk03t" path="res://Imports/papers/file.png" id="6_kocqg"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="6_otq5o"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="7_dio1s"]
-[ext_resource type="Texture2D" uid="uid://dqlb8m2oyhwkp" path="res://Imports/papers/paper.png" id="7_p435w"]
-[ext_resource type="Script" path="res://Scripts/paperCode/fileController.gd" id="8_63m3u"]
+[ext_resource type="Script" path="res://Scripts/paperCode/fileController.gd" id="7_moi3h"]
+[ext_resource type="Texture2D" uid="uid://bcyu5yq4ethn" path="res://icon.svg" id="8_l6fp6"]
+[ext_resource type="PackedScene" uid="uid://q02imkrsumlr" path="res://Scenes/Levels/reactor/codePaper.tscn" id="8_ln2aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_halw5"]
 texture = ExtResource("1_xjb3v")
@@ -137,11 +138,16 @@ texture = ExtResource("2_bmtg3")
 [sub_resource type="TileSet" id="TileSet_c8em3"]
 sources/0 = SubResource("TileSetAtlasSource_yuy1e")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wf1i"]
+size = Vector2(1066.67, 933.333)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tffwp"]
 size = Vector2(1066.66, 766.667)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnabi"]
-size = Vector2(1066.67, 766.667)
+[sub_resource type="LabelSettings" id="LabelSettings_0nia8"]
+font_color = Color(0, 0.870588, 0.827451, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_leeao"]
 size = Vector2(629, 321)
@@ -179,34 +185,45 @@ position = Vector2(285, -8)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("6_kocqg")
 
+[node name="Area2D" type="Area2D" parent="File"]
+script = ExtResource("7_moi3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
+shape = SubResource("RectangleShape2D_3wf1i")
+
 [node name="ItemPickup" type="Area2D" parent="File" node_paths=PackedStringArray("item")]
 script = ExtResource("6_otq5o")
-item = NodePath("VaultNote")
+item = NodePath("Item")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="File/ItemPickup"]
 position = Vector2(-0.00195313, -83.3333)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tffwp")
 
-[node name="VaultNote" type="Node" parent="File/ItemPickup"]
+[node name="Item" type="Node" parent="File/ItemPickup"]
 script = ExtResource("7_dio1s")
-item_name = "Vault Note"
-icon = ExtResource("7_p435w")
+item_name = "Note"
+is_log = true
+icon = ExtResource("8_l6fp6")
 info_text = "test info text"
-image = ExtResource("7_p435w")
 
-[node name="Area2D" type="Area2D" parent="File"]
-script = ExtResource("8_63m3u")
+[node name="Player" parent="." instance=ExtResource("3_ep54k")]
+position = Vector2(31, -45)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
-position = Vector2(-0.000976563, -83.3333)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_xnabi")
+[node name="CodePaper" parent="Player" instance=ExtResource("8_ln2aj")]
+visible = false
+position = Vector2(-187, -74)
+
+[node name="Label" type="Label" parent="Player/CodePaper"]
+offset_left = -76.0
+offset_top = -203.0
+offset_right = 98.0
+offset_bottom = -180.0
+text = "Press [esc] to continue"
+label_settings = SubResource("LabelSettings_0nia8")
 
 [node name="camera_zone_1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
 position = Vector2(187.5, -150.5)
 shape = SubResource("RectangleShape2D_leeao")
-
-[node name="Player" parent="." instance=ExtResource("3_ep54k")]
-position = Vector2(29, -17)

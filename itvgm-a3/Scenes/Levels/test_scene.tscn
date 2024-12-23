@@ -141,10 +141,10 @@ tile_set = SubResource("TileSet_r7alv")
 z_index = 1
 position = Vector2(0, -110)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
 
-[node name="Interact" parent="Player" instance=ExtResource("4_lw2w8")]
+[node name="Interact2" parent="Player" instance=ExtResource("4_lw2w8")]
 visible = false
 position = Vector2(0, 72)
 

@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="4_hnbf4"]
 [ext_resource type="Script" path="res://Scripts/paperCode/UvController.gd" id="5_uctp1"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="5_wiufw"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="6_ovjcj"]
 [ext_resource type="Texture2D" uid="uid://dwwa7tj72kydr" path="res://Imports/papers/tafel/tafel.png" id="6_ybd8m"]
 [ext_resource type="Texture2D" uid="uid://bij12nrfej2to" path="res://Imports/papers/paperCode.png" id="8_vthx7"]
 
@@ -142,10 +141,13 @@ sources/0 = SubResource("TileSetAtlasSource_ofegi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adii"]
 size = Vector2(495.167, 427.081)
 
-[sub_resource type="LabelSettings" id="LabelSettings_bf1dh"]
+[sub_resource type="LabelSettings" id="LabelSettings_y1vig"]
 font_color = Color(0, 0.870588, 0.827451, 1)
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kv6r"]
+size = Vector2(887, 321)
 
 [node name="LQ2" type="Node2D"]
 
@@ -191,16 +193,10 @@ shape = SubResource("RectangleShape2D_2adii")
 [node name="Player" parent="." instance=ExtResource("5_wiufw")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-
-[node name="Interact" parent="Player" instance=ExtResource("6_ovjcj")]
-visible = false
-position = Vector2(0, 74.04)
-
 [node name="PaperCode" type="Sprite2D" parent="Player"]
 visible = false
-position = Vector2(1, 1)
+position = Vector2(-234, -48)
+scale = Vector2(0.865333, 0.865333)
 texture = ExtResource("8_vthx7")
 
 [node name="Label" type="Label" parent="Player/PaperCode"]
@@ -209,4 +205,10 @@ offset_top = -213.0
 offset_right = 98.0
 offset_bottom = -190.0
 text = "Press [esc] to continue"
-label_settings = SubResource("LabelSettings_bf1dh")
+label_settings = SubResource("LabelSettings_y1vig")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(289.5, -150.5)
+shape = SubResource("RectangleShape2D_6kv6r")

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_boron"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="4_7r4k4"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="5_x5xbb"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="6_ol8vb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc3wq"]
 texture = ExtResource("1_ege1p")
@@ -136,6 +135,9 @@ texture = ExtResource("4_7r4k4")
 [sub_resource type="TileSet" id="TileSet_rpqal"]
 sources/0 = SubResource("TileSetAtlasSource_ksq71")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xm0w6"]
+size = Vector2(830, 321)
+
 [node name="LQ1" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -167,9 +169,8 @@ tile_set = SubResource("TileSet_rpqal")
 [node name="Player" parent="." instance=ExtResource("5_x5xbb")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
+[node name="camera_zone_1" type="Area2D" parent="."]
 
-[node name="Interact" parent="Player" instance=ExtResource("6_ol8vb")]
-visible = false
-position = Vector2(0, 74.04)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(288, -150.5)
+shape = SubResource("RectangleShape2D_xm0w6")

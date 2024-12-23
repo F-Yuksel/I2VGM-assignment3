@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	if ableToInterract and Input.is_action_just_pressed("Interact"):
 		$"../../Player/Keypad".visible = true;
 		$"../../Player".ableToMove = false;
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func _on_body_entered(body):
 	if body.name == playerName:

@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_agopb"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="4_s3qhy"]
 [ext_resource type="Texture2D" uid="uid://bnsa21v78yu60" path="res://Imports/5ea6f5b8-a6d0-4565-b1a4-500fed3f60d2-removebg-preview (1).png" id="5_f467r"]
 [ext_resource type="Script" path="res://Scripts/door/door_to_reactor.gd" id="6_ajbvr"]
 
@@ -98,6 +97,9 @@ size = Vector2(2041, 224)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv5jo"]
 size = Vector2(187, 432)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4l4u"]
+size = Vector2(2043, 317)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -140,16 +142,15 @@ texture = ExtResource("5_f467r")
 [node name="Player" parent="." instance=ExtResource("2_dniw1")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-
-[node name="Interact" parent="Player" instance=ExtResource("4_s3qhy")]
-visible = false
-position = Vector2(0, 74.04)
-
 [node name="DoorToReactor" type="Area2D" parent="."]
 script = ExtResource("6_ajbvr")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="DoorToReactor"]
 position = Vector2(1949, -71)
 shape = SubResource("RectangleShape2D_fv5jo")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(888.5, -148.5)
+shape = SubResource("RectangleShape2D_s4l4u")

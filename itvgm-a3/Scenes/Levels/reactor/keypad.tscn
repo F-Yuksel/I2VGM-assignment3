@@ -4,6 +4,9 @@
 [ext_resource type="Script" path="res://Scripts/vault/keypadController.gd" id="2_eitkg"]
 
 [sub_resource type="FontFile" id="FontFile_m1xw3"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -103,3 +106,5 @@ offset_top = 57.0
 offset_right = 94.0
 offset_bottom = 97.0
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

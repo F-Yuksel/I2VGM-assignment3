@@ -12,6 +12,8 @@ var gravity_multiplier : float = 1.0
 
 var on_ladder = false
 
+@onready var inventory = $CanvasLayer/Inventory  # Direct reference to the Inventory
+
 func _ready() -> void:
 	if Global.doorPosition != Vector2.ZERO:
 		print("Moving player to last door position:", Global.doorPosition)
@@ -53,3 +55,17 @@ func _physics_process(delta: float) -> void:
 	
 func change_gravity():
 	gravity_multiplier = low_gravity_multiplier
+
+func _on_roomdetect_area_entered(area: Area2D) -> void:
+	if not area.name.begins_with("camera_zone_"):
+		return
+	
+	var collision_shape = area.get_node("CollisionShape2D")
+	var size = collision_shape.shape.extents*2
+	
+	var cam = $Camera2D
+	cam.limit_top = collision_shape.global_position.y - size.y/2
+	cam.limit_left = collision_shape.global_position.x - size.x/2
+	
+	cam.limit_bottom = cam.limit_top + size.y
+	cam.limit_right = cam.limit_left + size.x
