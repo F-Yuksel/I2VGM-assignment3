@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-
+# this should reach the actual value after the signals in from ready of the levers
+# door 4 has to be 1 because the second off line does not use the lever script
 @export var power_lines = 0
 
 
@@ -9,6 +10,8 @@ func _on_lever_power(is_on : bool) -> void:
 		power_lines += 1
 	else:
 		power_lines -= 1
+	print(is_on)
+	print(power_lines)
 	if power_lines > 0:
 		$CollisionShape2D.disabled = true
 		$On1.visible = false
