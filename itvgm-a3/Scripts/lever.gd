@@ -21,7 +21,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if in_body and Input.is_action_just_pressed("Interact"):
-		print("interact")
 		$Sprite2D.flip_h = not $Sprite2D.flip_h
 		$A_on.visible = not $A_on.visible
 		$A_off.visible = not $A_off.visible

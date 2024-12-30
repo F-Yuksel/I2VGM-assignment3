@@ -10,8 +10,6 @@ func _on_lever_power(is_on : bool) -> void:
 		power_lines += 1
 	else:
 		power_lines -= 1
-	print(is_on)
-	print(power_lines)
 	if power_lines > 0:
 		$CollisionShape2D.disabled = true
 		$On1.visible = false
