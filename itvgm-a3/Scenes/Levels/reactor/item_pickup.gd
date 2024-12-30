@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 			# Add the item to the global inventory
 			global_inventory.add_child(new_item)
 			inventory.add_item(item)  # Add the item to the player's inventory
-			#queue_free()  # Remove the item from the world
+			queue_free()  # Remove the item from the world
 	
 func _on_body_entered(body):
 	if body.name == playerName:

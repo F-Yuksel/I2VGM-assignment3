@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://ddhbujk5src8h"]
+[gd_scene load_steps=13 format=4 uid="uid://ddhbujk5src8h"]
 
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
-[ext_resource type="Texture2D" uid="uid://c2s6pt5t3sjdj" path="res://Imports/transitiondoor.png" id="6_nqclj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
@@ -174,7 +173,6 @@ shape = SubResource("RectangleShape2D_g31yo")
 position = Vector2(-190, -135)
 rotation = 3.14159
 scale = Vector2(0.245985, 1)
-texture = ExtResource("6_nqclj")
 
 [node name="camera_zone_1" type="Area2D" parent="."]
 

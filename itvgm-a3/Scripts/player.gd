@@ -8,7 +8,7 @@ var ableToMove: bool = true
 
 var jumps : int = 1
 var max_jumps : int = 2
-var gravity_multiplier : float = 1.0
+var gravity_multiplier : float = 2.0
 
 var on_ladder = false
 

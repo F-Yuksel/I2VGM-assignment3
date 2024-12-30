@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 		$"../../Player/Keypad".visible = true;
 		$"../../Player".ableToMove = false;
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.inventoryLock = true
+		print("Yo wassup, name is keith")
 	
 func _on_body_entered(body):
 	if body.name == playerName:

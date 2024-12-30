@@ -137,7 +137,7 @@ texture = ExtResource("2_bmtg3")
 [sub_resource type="TileSet" id="TileSet_c8em3"]
 sources/0 = SubResource("TileSetAtlasSource_yuy1e")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tffwp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lin2f"]
 size = Vector2(1066.66, 766.667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnabi"]
@@ -185,13 +185,12 @@ item = NodePath("VaultNote")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="File/ItemPickup"]
 position = Vector2(-0.00195313, -83.3333)
-shape = SubResource("RectangleShape2D_tffwp")
+shape = SubResource("RectangleShape2D_lin2f")
 
 [node name="VaultNote" type="Node" parent="File/ItemPickup"]
 script = ExtResource("7_dio1s")
 item_name = "Vault Note"
 icon = ExtResource("7_p435w")
-info_text = "test info text"
 image = ExtResource("7_p435w")
 
 [node name="Area2D" type="Area2D" parent="File"]
@@ -199,7 +198,6 @@ script = ExtResource("8_63m3u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
 position = Vector2(-0.000976563, -83.3333)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xnabi")
 
 [node name="camera_zone_1" type="Area2D" parent="."]

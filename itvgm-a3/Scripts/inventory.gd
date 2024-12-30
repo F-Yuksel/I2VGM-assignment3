@@ -19,12 +19,12 @@ func _ready() -> void:
 	#for child in starter_items.get_children():
 	#	add_item(child)
 	for x in GlobalInventory.get_children():
-		print("item is", x)
+		print("item is", x.name)
 		add_item(x)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Inventory"):
+	if Input.is_action_just_pressed("Inventory") and !Global.inventoryLock:
 		_toggle_window(!window.visible)
 	
 func _toggle_window(open: bool):
