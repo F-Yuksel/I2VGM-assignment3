@@ -4,15 +4,17 @@ extends CharacterBody2D
 @export var speed : float = 300.0
 @export var jump_velocity : float = -400.0
 @export var low_gravity_multiplier : float = 0.50
+
 var ableToMove: bool = true
 
 var jumps : int = 1
 var max_jumps : int = 2
-var gravity_multiplier : float = 2.0
+var gravity_multiplier : float = 1.0
 
 var on_ladder = false
 
 @onready var inventory = $CanvasLayer/Inventory  # Direct reference to the Inventory
+@onready var sprite = $AnimatedSprite2D
 
 func _ready() -> void:
 	if Global.doorPosition != Vector2.ZERO:
@@ -25,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	if ableToMove:	
 		# Add the gravity.
 		if not is_on_floor() and not on_ladder:
+			sprite.play("fall")
 			velocity += gravity_multiplier * get_gravity() * delta
 		else:
 			jumps = max_jumps
@@ -40,6 +43,7 @@ func _physics_process(delta: float) -> void:
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and jumps > 0 and not on_ladder:
+			sprite.play("jump")
 			velocity.y = jump_velocity
 			jumps -= 1
 
@@ -47,8 +51,14 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("Left", "Right")
 		if direction:
+			if direction == 1:
+				sprite.flip_h = false
+			elif direction == -1:	
+				sprite.flip_h = true
+			sprite.play("walk")
 			velocity.x = direction * speed
 		else:
+			sprite.play("idle")
 			velocity.x = move_toward(velocity.x, 0, speed)
 
 		move_and_slide()

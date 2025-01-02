@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://c6roqnmy2ubnx"]
+[gd_scene load_steps=40 format=4 uid="uid://c6roqnmy2ubnx"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_q2eao"]
@@ -11,8 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="7_pcerb"]
 [ext_resource type="Script" path="res://Scripts/lever.gd" id="8_hij3f"]
 [ext_resource type="Texture2D" uid="uid://b6wjkuj6qoa77" path="res://textures/cables.png" id="9_c365p"]
-[ext_resource type="TileSet" uid="uid://c743na18mgflc" path="res://textures/cables.tres" id="9_j5eu0"]
-[ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="12_3bt73"]
+[ext_resource type="TileSet" path="res://textures/cables.tres" id="9_j5eu0"]
 [ext_resource type="Script" path="res://Scripts/double_lever.gd" id="13_331qs"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="13_aqrxq"]
 [ext_resource type="Texture2D" uid="uid://bim3neh5cnsax" path="res://textures/L_shape_wire_off.png" id="14_brrx8"]
@@ -22,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bc4aarhaclxpk" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile054.png" id="17_5gg0p"]
 [ext_resource type="Script" path="res://Scripts/laser_door.gd" id="17_kdi4q"]
 [ext_resource type="Texture2D" uid="uid://cywvo5tb50t52" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile064.png" id="18_w3dgv"]
+[ext_resource type="Script" path="res://Scripts/battery.gd" id="22_mdq6u"]
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="23_7iraw"]
-[ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="24_tt14a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1tg10"]
 texture = ExtResource("1_ypifs")
@@ -249,11 +248,11 @@ sources/0 = SubResource("TileSetAtlasSource_mpk3x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e0at"]
 size = Vector2(32, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fybgg"]
+size = Vector2(121, 65)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3b2u"]
 size = Vector2(118, 89)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_scstk"]
-size = Vector2(70.3303, 67.3336)
 
 [node name="Communication" type="Node2D"]
 
@@ -450,16 +449,10 @@ tile_map_data = PackedByteArray("AAAAAAIAAAACAAAAAAAAAAEAAAACAAAAADD//wEAAAAAAAA
 tile_set = ExtResource("9_j5eu0")
 
 [node name="Player" parent="." instance=ExtResource("7_pcerb")]
-position = Vector2(2681, -498)
+position = Vector2(-1, -40)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
-
-[node name="Inventory" parent="Player" instance=ExtResource("12_3bt73")]
-offset_left = -2681.0
-offset_top = 498.0
-offset_right = -2681.0
-offset_bottom = 498.0
 
 [node name="Radio" type="Sprite2D" parent="."]
 position = Vector2(3231, -32)
@@ -586,6 +579,25 @@ metadata/_edit_lock_ = true
 texture = ExtResource("18_w3dgv")
 metadata/_edit_lock_ = true
 
+[node name="Battery" type="Area2D" parent="."]
+position = Vector2(3203, 61)
+script = ExtResource("22_mdq6u")
+
+[node name="BatteryItem" type="Node" parent="Battery"]
+script = ExtResource("13_aqrxq")
+item_name = "Battery"
+icon = ExtResource("6_uu0k8")
+info_text = "Battery which might be useful later on"
+
+[node name="Sprite2D" type="Sprite2D" parent="Battery"]
+position = Vector2(0, 29)
+scale = Vector2(1.685, 1.685)
+texture = ExtResource("6_uu0k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battery"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_fybgg")
+
 [node name="Panel" type="Area2D" parent="."]
 position = Vector2(2640, -496)
 script = ExtResource("23_7iraw")
@@ -628,27 +640,6 @@ position = Vector2(-2640, 496)
 tile_map_data = PackedByteArray("AABSAPH/AAAFAAAAAABSAPL/AAAFAAAAAABSAPP/AAAFAAAAAABSAPT/AAADAAAAAABTAPT/AAABAAAAAABUAPT/AAABAAAAAABVAPT/AAABAAAAAABWAPT/AAABAAAAAABXAPT/AAADAAAAADBXAPX/AAAFAAAAAABXAPb/AAAFAAAAAABXAPf/AAAFAAAAAABXAPj/AAADAAAAAABYAPj/AAABAAAAAABZAPj/AAABAAAAAABaAPj/AAADAAAAADBaAPn/AAAFAAAAAABaAPr/AAADAAAAAGBZAPr/AAABAAAAAABYAPr/AAABAAAAAABXAPr/AAABAAAAAABWAPr/AAABAAAAAABVAPr/AAABAAAAAABUAPr/AAABAAAAAABTAPr/AAABAAAAAABSAPr/AAADAAAAAABSAPn/AAAFAAAAAABSAPj/AAAFAAAAAABSAPf/AAAFAAAAAABSAPb/AAADAAAAADBRAPb/AAABAAAAAABQAPb/AAABAAAAAABPAPb/AAABAAAAAABOAPb/AAADAAAAAFBOAPf/AAAFAAAAAABOAPj/AAAFAAAAAABOAPn/AAAFAAAAAABOAPr/AAAFAAAAAABOAPv/AAADAAAAAGBNAPv/AAABAAAAAABMAPv/AAABAAAAAABLAPv/AAABAAAAAABKAPv/AAABAAAAAABJAPv/AAADAAAAAFBJAPz/AAAFAAAAAABJAP3/AAAFAAAAAAA=")
 tile_set = ExtResource("9_j5eu0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2853, -463)
-scale = Vector2(1.685, 1.685)
-texture = ExtResource("6_uu0k8")
-
-[node name="ItemPickup" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("item")]
-position = Vector2(-1900.89, -53.4125)
-scale = Vector2(0.593472, 0.593472)
-script = ExtResource("24_tt14a")
-item = NodePath("BatteryItem")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/ItemPickup"]
-position = Vector2(3204, 63.0001)
-shape = SubResource("RectangleShape2D_scstk")
-
-[node name="BatteryItem" type="Node" parent="Sprite2D/ItemPickup"]
-script = ExtResource("13_aqrxq")
-item_name = "Battery"
-icon = ExtResource("6_uu0k8")
-info_text = "Battery which might be useful later on"
-
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]
 [connection signal="power_b" from="Lever" to="Door1" method="_on_lever_power"]
@@ -664,6 +655,8 @@ info_text = "Battery which might be useful later on"
 [connection signal="body_exited" from="Lever4" to="Lever4" method="_on_body_exited"]
 [connection signal="power_a" from="Lever4" to="Door4" method="_on_lever_power"]
 [connection signal="power_b" from="Lever4" to="Door1" method="_on_lever_power"]
+[connection signal="body_entered" from="Battery" to="Battery" method="_on_body_entered"]
+[connection signal="body_exited" from="Battery" to="Battery" method="_on_body_exited"]
 [connection signal="body_entered" from="Panel" to="Panel" method="_on_body_entered"]
 [connection signal="body_exited" from="Panel" to="Panel" method="_on_body_exited"]
 [connection signal="power" from="Panel" to="Door4" method="_on_lever_power"]

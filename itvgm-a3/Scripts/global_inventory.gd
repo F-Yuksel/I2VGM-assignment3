@@ -11,6 +11,14 @@ func add_item(item_node: Node) -> void:
 		print("Children I now have is: ", get_child(0))
 
 # Optionally, you can implement a function to remove items if needed
-func remove_item(item_node: Node) -> void:
-	items.erase(item_node)
-	item_node.queue_free()  # Remove from the scene and free memory
+func remove_item(item_node: Node):
+	print(get_children())
+	print(item_node.name, " and ", find_child(item_node.name))
+	for child in get_children():
+		print(child.name)
+		if child.name.begins_with(item_node.name):
+			print(find_child(item_node.name))
+			items.erase(item_node)
+			item_node.queue_free()  # Remove from the scene and free memory
+			return true
+	return false
