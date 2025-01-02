@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8hov08g7ovbe"
-valid=false
+uid="uid://b2aohajxq5b7c"
+path="res://.godot/imported/L_shape_wire_on.png-0fff6a2ba218ac3d5c775f501d73204e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://textures/L_shape_wire_on.png"
+dest_files=["res://.godot/imported/L_shape_wire_on.png-0fff6a2ba218ac3d5c775f501d73204e.ctex"]
 
 [params]
 

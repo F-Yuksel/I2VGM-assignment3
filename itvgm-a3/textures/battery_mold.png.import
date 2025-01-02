@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://th7gjxsxd04y"
-valid=false
+uid="uid://g4k2vndll6q7"
+path="res://.godot/imported/battery_mold.png-202f8c2c750617fa9410058b072a8ee8.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://textures/battery_mold.png"
+dest_files=["res://.godot/imported/battery_mold.png-202f8c2c750617fa9410058b072a8ee8.ctex"]
 
 [params]
 

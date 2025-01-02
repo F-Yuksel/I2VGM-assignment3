@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlxmxyrbjpnv"
-valid=false
+uid="uid://b5nptm0gundj3"
+path="res://.godot/imported/lever.png-1d0915a032299c0ef03b80e9ba433644.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://textures/lever.png"
+dest_files=["res://.godot/imported/lever.png-1d0915a032299c0ef03b80e9ba433644.ctex"]
 
 [params]
 

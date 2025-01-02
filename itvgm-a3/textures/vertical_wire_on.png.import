@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlv6bu2drx5fr"
-valid=false
+uid="uid://bbamvjigop6cu"
+path="res://.godot/imported/vertical_wire_on.png-8448becdeae010cb64fd1479fbdf84b1.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://textures/vertical_wire_on.png"
+dest_files=["res://.godot/imported/vertical_wire_on.png-8448becdeae010cb64fd1479fbdf84b1.ctex"]
 
 [params]
 
