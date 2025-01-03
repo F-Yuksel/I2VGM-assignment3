@@ -2,7 +2,7 @@ extends Area2D
 
 signal button_pressed(color: String)
 
-@export var button_color: String = "red"
+@export var button_color: String = "blue"
 
 var interactable = false
 var is_on = false
