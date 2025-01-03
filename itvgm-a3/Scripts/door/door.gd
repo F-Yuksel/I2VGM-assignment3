@@ -51,14 +51,17 @@ func _on_body_entered(body):
 			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 			Global.doorPosition = Vector2(25, -100)
 		elif name == "DoorMain4":
-			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-			Global.doorPosition = Vector2(25, -100)
+			nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
+			Global.doorPosition = Vector2(-1, -20)
 		elif name == "DoorToHub":
 			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 			Global.doorPosition = Vector2(-1230, -200)
 		elif name == "DoorToHub2":
 			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 			Global.doorPosition = Vector2(-1450, -200)
+		elif name == "DoorToHub3":
+			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
+			Global.doorPosition = Vector2(1000, -200)
 
 		else:
 			print("Warning: Unknown door name. nextScenePath is not set.")
