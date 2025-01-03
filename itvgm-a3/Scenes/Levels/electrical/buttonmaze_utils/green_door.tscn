@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8r5c4dvf3ipb"]
 
-[ext_resource type="Texture2D" uid="uid://ce0lnk2ao7bjm" path="res://Imports/buttonmaze_doors/green_closed.png" id="1_qqdbm"]
-[ext_resource type="Texture2D" uid="uid://cw6x8ajaqppev" path="res://Imports/buttonmaze_doors/green_open.png" id="2_ckg8t"]
+[ext_resource type="Texture2D" uid="uid://ce0lnk2ao7bjm" path="res://Imports/buttonmaze_utils/green_closed.png" id="1_qqdbm"]
+[ext_resource type="Texture2D" uid="uid://cw6x8ajaqppev" path="res://Imports/buttonmaze_utils/green_open.png" id="2_ckg8t"]
 
 [sub_resource type="Animation" id="Animation_w3pcd"]
 length = 0.001
