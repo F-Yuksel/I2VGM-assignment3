@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xggq2g2g4nt5"]
 
 [ext_resource type="Texture2D" uid="uid://bhjfk88y6ww4t" path="res://Imports/panel_sprite.png" id="1_7xkrj"]
-[ext_resource type="Script" path="res://Scripts/breakers_panel.gd" id="1_fpg1i"]
+[ext_resource type="Script" path="res://Scripts/electrical/breakers_panel.gd" id="1_fpg1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij33d"]
 size = Vector2(32, 32)

@@ -1,17 +1,17 @@
-[gd_scene load_steps=24 format=4 uid="uid://bvccj8xcs0niv"]
+[gd_scene load_steps=24 format=4 uid="uid://cbkwvwseevtg0"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_hgnvn"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_rvlkk"]
 [ext_resource type="PackedScene" uid="uid://ds04ffn75ja4f" path="res://Scenes/Levels/electrical/note_elec_overlay.tscn" id="3_4oxck"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_0800o"]
 [ext_resource type="PackedScene" uid="uid://xggq2g2g4nt5" path="res://Scenes/Levels/electrical/breakers_panel.tscn" id="3_n5rkd"]
-[ext_resource type="Script" path="res://Scripts/hud_breakers.gd" id="3_rkaai"]
+[ext_resource type="Script" path="res://Scripts/electrical/hud_breakers.gd" id="3_rkaai"]
 [ext_resource type="PackedScene" uid="uid://r6cpniq0tblf" path="res://Scenes/Levels/electrical/breakers_window.tscn" id="4_xefu0"]
 [ext_resource type="Texture2D" uid="uid://ljsn1f2vo1hm" path="res://Imports/cancelbutton.png" id="6_k5r5q"]
 [ext_resource type="PackedScene" uid="uid://b7u75dbeu24st" path="res://Scenes/Levels/electrical/note_item.tscn" id="9_2abau"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="10_ob6ci"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c82si"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxe80"]
 texture = ExtResource("1_hgnvn")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -94,7 +94,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_i418u"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_c82si")
+sources/0 = SubResource("TileSetAtlasSource_nxe80")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsht"]
 size = Vector2(2428, 382)
