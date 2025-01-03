@@ -11,6 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var global_inventory = GlobalInventory
+	var global = Global
 	if in_body and Input.is_action_just_pressed("Interact"):
 		#if $"../Player/Inventory".remove_item($BatteryItem):
 		if global_inventory.remove_item($BatteryItem):

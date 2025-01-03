@@ -32,11 +32,14 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == playerName:
 		player = body
-		if !Global.hasCodePaper:
-			ableToPickUp = true
-			$"../../Player/Interact".visible = true;
+		var interact_screen = body.get_node("Interact")
+		print(interact_screen)
+		ableToPickUp = true
+		interact_screen.visible = true
 	
 func _on_body_exited(body):
 	if body.name == playerName:
+		var interact_screen = body.get_node("Interact")
+		print(interact_screen)
 		ableToPickUp = false
-		$"../../Player/Interact".visible = false;
+		interact_screen.visible = false

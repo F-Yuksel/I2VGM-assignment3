@@ -6,7 +6,7 @@ var in_body = false
 func _process(delta: float) -> void:
 	if in_body and Input.is_action_just_pressed("Interact"):
 		#
-		$"../Player/Inventory".add_item($BatteryItem)
+		$"../Player/Inventory".add_item($Item)
 		$CollisionShape2D.disabled = true
 		$"../Player/Interact".visible = false
 		queue_free()

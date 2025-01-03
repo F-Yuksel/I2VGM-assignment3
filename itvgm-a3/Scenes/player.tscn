@@ -153,6 +153,7 @@ shape = SubResource("RectangleShape2D_y0y3q")
 zoom = Vector2(1.6, 1.6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_ap76o")]
 
@@ -164,6 +165,6 @@ position = Vector2(0, 74.04)
 position = Vector2(0, -8)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_2nrsa")
-animation = &"jump"
+animation = &"idle"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_roomdetect_area_entered"]
