@@ -629,7 +629,7 @@ tile_map_data = PackedByteArray("AABSAPH/AAAFAAAAAABSAPL/AAAFAAAAAABSAPP/AAAFAAA
 tile_set = ExtResource("9_j5eu0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2853, -463)
+position = Vector2(3207, 88)
 scale = Vector2(1.685, 1.685)
 texture = ExtResource("6_uu0k8")
 
