@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds04ffn75ja4f"]
 
-[ext_resource type="Script" path="res://Scripts/note_electrical.gd" id="1_q4rnj"]
+[ext_resource type="Script" path="res://Scripts/electrical/note_electrical.gd" id="1_q4rnj"]
 [ext_resource type="Texture2D" uid="uid://j7snd276ytem" path="res://Imports/note.png" id="2_a5b0w"]
 [ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="3_4on0b"]
 

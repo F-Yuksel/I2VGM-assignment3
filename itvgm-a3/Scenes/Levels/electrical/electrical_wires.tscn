@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://d01iwhqic776s"]
 
-[ext_resource type="Script" path="res://Scripts/elecwires_manager.gd" id="1_km8jy"]
+[ext_resource type="Script" path="res://Scripts/electrical/elecwires_manager.gd" id="1_km8jy"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_261i8"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="4_2d0qi"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="4_etb6b"]

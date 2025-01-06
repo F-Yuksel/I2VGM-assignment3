@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7u75dbeu24st"]
 
-[ext_resource type="Script" path="res://Scripts/note_item.gd" id="1_a17at"]
+[ext_resource type="Script" path="res://Scripts/electrical/note_item.gd" id="1_a17at"]
 [ext_resource type="Texture2D" uid="uid://cynm0xa0swdgl" path="res://Imports/note_overworld.png" id="1_g7n3p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dekuh"]

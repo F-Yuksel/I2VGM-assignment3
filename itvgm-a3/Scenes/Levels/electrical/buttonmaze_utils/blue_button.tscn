@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkhucln78dyvn"]
+
+[ext_resource type="Script" path="res://Scripts/electrical/blue_button.gd" id="1_2yu4g"]
+[ext_resource type="Texture2D" uid="uid://bl1qoipe1nhpq" path="res://Imports/buttonmaze_utils/blue_button.png" id="2_xk2gq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij33d"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohdjv"]
+atlas = ExtResource("2_xk2gq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciaf0"]
+atlas = ExtResource("2_xk2gq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gb6jg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohdjv")
+}],
+"loop": true,
+"name": &"off",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciaf0")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="blue_button" type="Area2D"]
+z_index = -1
+script = ExtResource("1_2yu4g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ij33d")
+debug_color = Color(0.174948, 0.516156, 1, 0.42)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_gb6jg")
+animation = &"on"
+autoplay = "off"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
