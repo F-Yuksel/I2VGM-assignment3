@@ -42,10 +42,13 @@ func remove_item(item):
 		for child in get_node("TabContainer/Logs/HBoxContainer/MarginContainer2/ScrollContainer/SlotContainer").get_children():
 			if child.item_name == item.item_name:
 				child.queue_free()
+				return true
 	else:
 		for child in get_node("TabContainer/Items/HBoxContainer/MarginContainer2/ScrollContainer/SlotContainer").get_children():
 			if child.item_name == item.item_name:
 				child.queue_free()
+				return true
+	return false
 	
 func get_slot_to_add(item):
 	if item.is_log:
