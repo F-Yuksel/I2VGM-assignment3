@@ -117,22 +117,22 @@ position = Vector2(-221.5, -73)
 shape = SubResource("RectangleShape2D_fv5jo")
 
 [node name="DoorToLQ3" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(153.88, -77.53)
+position = Vector2(160, -77)
 
 [node name="DoorToLQ1" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(850, -77.53)
+position = Vector2(864, -77)
 
 [node name="DoorToLQ2" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(1050, -77.53)
+position = Vector2(1056, -77)
 
 [node name="DoorToKK" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(650, -77.53)
+position = Vector2(640, -77)
 
 [node name="DoorToLQ4" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(420.68, -77.53)
+position = Vector2(416, -77)
 
 [node name="DoorToHub2" parent="." instance=ExtResource("3_agopb")]
-position = Vector2(1264, -80)
+position = Vector2(1280, -77)
 
 [node name="5Ea6f5b8-a6d0-4565-b1a4-500Fed3f60d2-removebg-preview(1)" type="Sprite2D" parent="."]
 position = Vector2(1656, -119)

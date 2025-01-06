@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://bvtv8el04pkbd"]
+[gd_scene load_steps=47 format=4 uid="uid://bvtv8el04pkbd"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_q2eao"]
@@ -26,33 +26,50 @@
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="24_taywp"]
 [ext_resource type="Texture2D" uid="uid://cynm0xa0swdgl" path="res://Imports/note_overworld.png" id="26_oe213"]
 [ext_resource type="Script" path="res://Scripts/radio.gd" id="26_sbgxv"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="27_oe12g"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_85s27"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1tg10"]
 texture = ExtResource("1_ypifs")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:0/0 = 0
+5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:0/0 = 0
+6:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:0/0 = 0
+7:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:1/0 = 0
+4:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:1/0 = 0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -61,12 +78,17 @@ texture_region_size = Vector2i(32, 32)
 7:1/0 = 0
 7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
+0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:2/0 = 0
+4:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:2/0 = 0
 6:2/0 = 0
@@ -74,20 +96,29 @@ texture_region_size = Vector2i(32, 32)
 7:2/0 = 0
 7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:3/0 = 0
+0:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:3/0 = 0
+1:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:3/0 = 0
+2:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:3/0 = 0
+3:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:3/0 = 0
+4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:3/0 = 0
+5:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:3/0 = 0
+6:3/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 7:3/0 = 0
+7:3/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 8:3/0 = 0
+8:3/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:4/0 = 0
@@ -97,12 +128,17 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:4/0 = 0
+4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:4/0 = 0
+5:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_85s27")
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:4/0 = 0
+6:4/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 7:4/0 = 0
+7:4/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 8:4/0 = 0
+8:4/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 0:5/0 = 0
 0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:5/0 = 0
@@ -115,8 +151,11 @@ texture_region_size = Vector2i(32, 32)
 5:5/0 = 0
 5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:5/0 = 0
+6:5/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 7:5/0 = 0
+7:5/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 8:5/0 = 0
+8:5/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 0:6/0 = 0
 0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 1:6/0 = 0
@@ -129,8 +168,11 @@ texture_region_size = Vector2i(32, 32)
 5:6/0 = 0
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:6/0 = 0
+6:6/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 7:6/0 = 0
+7:6/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 8:6/0 = 0
+8:6/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -138,8 +180,11 @@ texture_region_size = Vector2i(32, 32)
 4:7/0 = 0
 5:7/0 = 0
 6:7/0 = 0
+6:7/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 7:7/0 = 0
+7:7/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 8:7/0 = 0
+8:7/0/modulate = Color(0.76662, 0.76662, 0.76662, 1)
 2:8/0 = 0
 3:8/0 = 0
 4:8/0 = 0
@@ -150,6 +195,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_s2l8d"]
 tile_size = Vector2i(32, 32)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1tg10")
 
@@ -260,6 +306,9 @@ size = Vector2(118, 89)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqcvh"]
 size = Vector2(87.5, 62.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig2gj"]
+size = Vector2(3450, 944)
+
 [node name="Communication" type="Node2D"]
 
 [node name="BackgroundTiles" type="TileMapLayer" parent="."]
@@ -267,7 +316,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAGAAAAAAABAAAAAAAGAAAAAAACAAAAAAAGAAA
 tile_set = SubResource("TileSet_s2l8d")
 
 [node name="DoorToHub3" parent="." instance=ExtResource("2_q2eao")]
-position = Vector2(97, -47)
+position = Vector2(96, -45)
 
 [node name="Generator1" type="Sprite2D" parent="."]
 position = Vector2(654, -527)
@@ -324,6 +373,14 @@ position = Vector2(48, 64)
 texture = ExtResource("6_vbbs5")
 flip_h = true
 
+[node name="PointLight2D" type="PointLight2D" parent="Lever"]
+position = Vector2(2, 14)
+color = Color(0.496, 1, 0.46, 1)
+energy = 0.38
+shadow_enabled = true
+texture = ExtResource("27_oe12g")
+texture_scale = 0.36
+
 [node name="Lever2" type="Area2D" parent="."]
 position = Vector2(1332, 80)
 script = ExtResource("8_hij3f")
@@ -368,6 +425,14 @@ position = Vector2(-1332, -80)
 tile_map_data = PackedByteArray("AAAvAAYAAAACAAAAAAAwAAYAAAAAAAAAAAAxAAYAAAAAAAAAAAAyAAYAAAAAAAAAAAAzAAYAAAACAAAAADAzAAcAAAACAAAAAAA0AAcAAAAAAAAAAAA1AAcAAAAAAAAAAAA2AAcAAAAAAAAAAAA3AAcAAAAAAAAAAAA4AAcAAAACAAAAAGA4AAYAAAACAAAAADA3AAYAAAAAAAAAAAA2AAYAAAAAAAAAAAA1AAYAAAACAAAAAAA=")
 tile_set = ExtResource("9_j5eu0")
 
+[node name="PointLight2D" type="PointLight2D" parent="Lever2"]
+position = Vector2(2, 14)
+color = Color(0.496, 1, 0.46, 1)
+energy = 0.38
+shadow_enabled = true
+texture = ExtResource("27_oe12g")
+texture_scale = 0.36
+
 [node name="Lever3" type="Area2D" parent="."]
 position = Vector2(1824, -528)
 script = ExtResource("8_hij3f")
@@ -409,6 +474,14 @@ visible = false
 position = Vector2(-1824, 528)
 tile_map_data = PackedByteArray("AAA2APL/AAAAAAAAAAA3APL/AAAAAAAAAAA4APL/AAAAAAAAAAA5APL/AAAAAAAAAAA6APL/AAAAAAAAAAA7APL/AAAAAAAAAAA8APL/AAAAAAAAAAA9APL/AAAAAAAAAAA+APL/AAAAAAAAAAA/APL/AAAAAAAAAABAAPL/AAACAAAAADBAAPP/AAACAAAAAGA/APP/AAAAAAAAAAA+APP/AAAAAAAAAAA9APP/AAAAAAAAAAA8APP/AAAAAAAAAAA7APP/AAAAAAAAAAA6APP/AAAAAAAAAAA5APP/AAACAAAAAFA5APT/AAAEAAAAAAA5APX/AAAEAAAAAAA5APb/AAAEAAAAAAA5APf/AAACAAAAAAA6APf/AAAAAAAAAAA7APf/AAAAAAAAAAA8APf/AAAAAAAAAAA9APf/AAAAAAAAAAA+APf/AAAAAAAAAAA/APf/AAACAAAAAGA/APb/AAAEAAAAAAA/APX/AAAEAAAAAAA/APT/AAACAAAAAFBAAPT/AAAAAAAAAABBAPT/AAAAAAAAAABCAPT/AAAAAAAAAABDAPT/AAAAAAAAAABEAPT/AAAAAAAAAABFAPT/AAACAAAAADBFAPX/AAACAAAAAABGAPX/AAACAAAAAGBGAPT/AAAEAAAAAABGAPP/AAAEAAAAAABGAPL/AAAEAAAAAABGAPH/AAAEAAAAAABGAPD/AAACAAAAAFBHAPD/AAAAAAAAAABIAPD/AAACAAAAADBIAPH/AAAEAAAAAABIAPL/AAAEAAAAAABIAPP/AAAEAAAAAABIAPT/AAAEAAAAAABIAPX/AAAEAAAAAABIAPb/AAAEAAAAAABIAPf/AAACAAAAAGBHAPf/AAAAAAAAAABGAPf/AAAAAAAAAABFAPf/AAAAAAAAAABEAPf/AAAAAAAAAABDAPf/AAACAAAAAFBDAPj/AAAEAAAAAABDAPn/AAAEAAAAAABDAPr/AAAEAAAAAABDAPv/AAACAAAAAABEAPv/AAAAAAAAAABFAPv/AAAAAAAAAABGAPv/AAAAAAAAAABHAPv/AAAAAAAAAABIAPv/AAACAAAAADBIAPz/AAAEAAAAAABIAP3/AAAEAAAAAAA=")
 tile_set = ExtResource("9_j5eu0")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lever3"]
+position = Vector2(2, 14)
+color = Color(0.496, 1, 0.46, 1)
+energy = 0.38
+shadow_enabled = true
+texture = ExtResource("27_oe12g")
+texture_scale = 0.36
 
 [node name="Lever4" type="Area2D" parent="."]
 position = Vector2(1672, 79)
@@ -454,8 +527,16 @@ position = Vector2(-8.025, 17)
 tile_map_data = PackedByteArray("AAAAAAIAAAACAAAAAAAAAAEAAAACAAAAADD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAACAAAAAAD8/wAAAAACAAAAADD7/wAAAAAAAAAAAAD6/wAAAAACAAAAAAD6////AAAEAAAAAAD6//7/AAAEAAAAAAD6//3/AAAEAAAAAAA=")
 tile_set = ExtResource("9_j5eu0")
 
+[node name="PointLight2D" type="PointLight2D" parent="Lever4"]
+position = Vector2(2, 14)
+color = Color(0.496, 1, 0.46, 1)
+energy = 0.38
+shadow_enabled = true
+texture = ExtResource("27_oe12g")
+texture_scale = 0.36
+
 [node name="Player" parent="." instance=ExtResource("7_pcerb")]
-position = Vector2(3033, -555)
+position = Vector2(91, -31)
 
 [node name="Inventory" parent="Player" instance=ExtResource("24_taywp")]
 visible = false
@@ -600,7 +681,7 @@ texture = ExtResource("18_w3dgv")
 metadata/_edit_lock_ = true
 
 [node name="Battery" type="Area2D" parent="." node_paths=PackedStringArray("item")]
-position = Vector2(3037, -478)
+position = Vector2(3163, 89)
 scale = Vector2(1.685, 1.685)
 script = ExtResource("20_p5ayh")
 item = NodePath("BatteryItem")
@@ -748,6 +829,20 @@ texture = ExtResource("14_u6rmg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
 position = Vector2(-2.25, 5.25)
 shape = SubResource("RectangleShape2D_dqcvh")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(1569, -196)
+shape = SubResource("RectangleShape2D_ig2gj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.1824, 0.24, 0.24, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1004, -616)
+texture = ExtResource("27_oe12g")
+texture_scale = 4.52
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]

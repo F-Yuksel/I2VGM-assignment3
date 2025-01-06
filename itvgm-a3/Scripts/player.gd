@@ -9,7 +9,7 @@ var ableToMove: bool = true
 
 var jumps : int = 1
 var max_jumps : int = 2
-var gravity_multiplier : float = 1.0
+var gravity_multiplier : float = 1.5
 
 var on_ladder = false
 
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and jumps > 0 and not on_ladder:
-			sprite.play("jump")
+			#sprite.play("jump")
 			velocity.y = jump_velocity
 			jumps -= 1
 
@@ -55,10 +55,12 @@ func _physics_process(delta: float) -> void:
 				sprite.flip_h = false
 			elif direction == -1:	
 				sprite.flip_h = true
-			sprite.play("walk")
+			if is_on_floor():
+				sprite.play("walk")
 			velocity.x = direction * speed
 		else:
-			sprite.play("idle")
+			if is_on_floor():
+				sprite.play("idle")
 			velocity.x = move_toward(velocity.x, 0, speed)
 
 		move_and_slide()

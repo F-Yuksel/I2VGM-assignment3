@@ -1,15 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://xsors4k2rgg7"]
+[gd_scene load_steps=24 format=3 uid="uid://xsors4k2rgg7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_epgbd"]
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="2_ap76o"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_hw1go"]
 [ext_resource type="Texture2D" uid="uid://b6hp7enc5g18r" path="res://Imports/player/Character.png" id="4_q603o"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="5_7u1rl"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xewqd"]
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf0wy"]
-size = Vector2(32, 32)
+size = Vector2(25, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0y3q"]
 
@@ -44,6 +45,10 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ha2y0"]
 atlas = ExtResource("4_q603o")
 region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4kow"]
+atlas = ExtResource("4_q603o")
+region = Rect2(160, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ns26j"]
 atlas = ExtResource("4_q603o")
@@ -107,6 +112,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ha2y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4kow")
 }],
 "loop": true,
 "name": &"jump",
@@ -142,6 +150,7 @@ visible = false
 texture = SubResource("PlaceholderTexture2D_xewqd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_xf0wy")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -165,6 +174,12 @@ position = Vector2(0, 74.04)
 position = Vector2(0, -8)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_2nrsa")
-animation = &"idle"
+animation = &"fall"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.49
+shadow_enabled = true
+texture = ExtResource("5_7u1rl")
+texture_scale = 0.6
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_roomdetect_area_entered"]
