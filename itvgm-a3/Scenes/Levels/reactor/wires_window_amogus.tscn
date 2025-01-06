@@ -1,0 +1,285 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwd1ikd2iw333"]
+
+[ext_resource type="Texture2D" uid="uid://4ehnuemblned" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile038.png" id="1_p58d7"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_mm2bg"]
+[ext_resource type="Script" path="res://Scripts/wireRedController.gd" id="3_ri2ga"]
+[ext_resource type="Script" path="res://Scripts/wireGreenController.gd" id="4_uxyh2"]
+[ext_resource type="Script" path="res://Scripts/wireBlueController.gd" id="5_8y8rs"]
+[ext_resource type="Script" path="res://Scripts/wirePurpleController.gd" id="6_lcbw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imq05"]
+size = Vector2(113, 68)
+
+[node name="PuzzleWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(30.25, 16.25)
+texture = ExtResource("1_p58d7")
+
+[node name="WireEnds" type="Node" parent="."]
+
+[node name="Red" type="Node" parent="WireEnds"]
+
+[node name="r1-1" type="Sprite2D" parent="WireEnds/Red"]
+visible = false
+position = Vector2(575.672, 147.001)
+rotation = 1.5708
+scale = Vector2(5.5, 35.586)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="r1-2" type="Sprite2D" parent="WireEnds/Red"]
+visible = false
+position = Vector2(577.279, 204.24)
+rotation = 1.71915
+scale = Vector2(5.5, 36.1868)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="r1-3" type="Sprite2D" parent="WireEnds/Red"]
+visible = false
+position = Vector2(570.457, 270.123)
+rotation = 1.87623
+scale = Vector2(5.5, 37.7055)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="r1-4" type="Sprite2D" parent="WireEnds/Red"]
+visible = false
+position = Vector2(575.957, 325.49)
+rotation = 1.9984
+scale = Vector2(5.5, 39.6735)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="RedLeft" type="Sprite2D" parent="WireEnds/Red"]
+position = Vector2(154, 147)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="RedRight" type="Sprite2D" parent="WireEnds/Red"]
+position = Vector2(997, 392)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Area2D" type="Area2D" parent="WireEnds/Red"]
+script = ExtResource("3_ri2ga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WireEnds/Red/Area2D"]
+position = Vector2(169.5, 144)
+shape = SubResource("RectangleShape2D_imq05")
+
+[node name="Green" type="Node" parent="WireEnds"]
+
+[node name="g2-1" type="Sprite2D" parent="WireEnds/Green"]
+visible = false
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(574.677, 206.51)
+rotation = 1.42244
+scale = Vector2(5.5, 36.5682)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="g2-2" type="Sprite2D" parent="WireEnds/Green"]
+visible = false
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(578.088, 263.001)
+rotation = 1.5708
+scale = Vector2(5.5, 35.7147)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="g2-3" type="Sprite2D" parent="WireEnds/Green"]
+visible = false
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(574.902, 327.467)
+rotation = 1.7366
+scale = Vector2(5.5, 36.5727)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="g2-4" type="Sprite2D" parent="WireEnds/Green"]
+visible = false
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(576.085, 384.373)
+rotation = 1.87623
+scale = Vector2(5.5, 37.6308)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="GreenLeft" type="Sprite2D" parent="WireEnds/Green"]
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(154, 263)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="GreenRight" type="Sprite2D" parent="WireEnds/Green"]
+modulate = Color(0.113725, 0.898039, 0, 1)
+position = Vector2(997, 147)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Area2D" type="Area2D" parent="WireEnds/Green"]
+script = ExtResource("4_uxyh2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WireEnds/Green/Area2D"]
+position = Vector2(169.5, 263.538)
+shape = SubResource("RectangleShape2D_imq05")
+
+[node name="Blue" type="Node" parent="WireEnds"]
+
+[node name="BlueLeft" type="Sprite2D" parent="WireEnds/Blue"]
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(154, 389)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="b3-1" type="Sprite2D" parent="WireEnds/Blue"]
+visible = false
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(571.398, 267.87)
+rotation = 1.26536
+scale = Vector2(5.5, 37.5206)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="b3-2" type="Sprite2D" parent="WireEnds/Blue"]
+visible = false
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(570.702, 327.05)
+rotation = 1.41372
+scale = Vector2(5.5, 36.7242)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="b3-3" type="Sprite2D" parent="WireEnds/Blue"]
+visible = false
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(577.33, 389.001)
+rotation = 1.5708
+scale = Vector2(5.5, 35.7366)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="b3-4" type="Sprite2D" parent="WireEnds/Blue"]
+visible = false
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(573.753, 446.465)
+rotation = 1.71915
+scale = Vector2(5.5, 36.1938)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="BlueRight" type="Sprite2D" parent="WireEnds/Blue"]
+modulate = Color(0, 0.827806, 0.984479, 1)
+position = Vector2(997, 504)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Area2D" type="Area2D" parent="WireEnds/Blue"]
+script = ExtResource("5_8y8rs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WireEnds/Blue/Area2D"]
+position = Vector2(169.5, 386)
+shape = SubResource("RectangleShape2D_imq05")
+
+[node name="Purple" type="Node" parent="WireEnds"]
+
+[node name="p4-1" type="Sprite2D" parent="WireEnds/Purple"]
+visible = false
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(573.483, 326.134)
+rotation = 1.14319
+scale = Vector2(5.5, 39.4549)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="p4-2" type="Sprite2D" parent="WireEnds/Purple"]
+visible = false
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(576.252, 383)
+rotation = 1.27409
+scale = Vector2(5.5, 37.3491)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="p4-3" type="Sprite2D" parent="WireEnds/Purple"]
+visible = false
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(576.847, 446)
+rotation = 1.43117
+scale = Vector2(5.5, 35.9655)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="p4-4" type="Sprite2D" parent="WireEnds/Purple"]
+visible = false
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(576.847, 501.001)
+rotation = 1.5708
+scale = Vector2(5.5, 35.9655)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="PurpleLeft" type="Sprite2D" parent="WireEnds/Purple"]
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(154, 501)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="PurpleRight" type="Sprite2D" parent="WireEnds/Purple"]
+modulate = Color(0.266667, 0, 1, 1)
+position = Vector2(997, 264)
+rotation = 1.5708
+scale = Vector2(5.5, 2.97939)
+texture = ExtResource("2_mm2bg")
+region_enabled = true
+region_rect = Rect2(270, 261, 6, 22)
+
+[node name="Area2D" type="Area2D" parent="WireEnds/Purple"]
+script = ExtResource("6_lcbw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WireEnds/Purple/Area2D"]
+position = Vector2(169.5, 499)
+shape = SubResource("RectangleShape2D_imq05")
