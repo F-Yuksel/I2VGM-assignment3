@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhd0lqv6bvjjq" path="res://Imports/ladder_sprites/ladder_highlight.png" id="3_fh6tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qm2b"]
+resource_local_to_scene = true
 size = Vector2(28, 444.813)
 
 [node name="Ladder" type="Area2D"]
