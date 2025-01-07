@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_31jns"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_062wk"]
 [ext_resource type="Texture2D" uid="uid://bdmxqoueet1p" path="res://Imports/vault/Screenshot_from_2024-12-08_12-19-08.png" id="3_kt17c"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="4_kksy7"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="4_kom1x"]
 [ext_resource type="Script" path="res://Scripts/vault/vaultController.gd" id="4_smaqi"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="6_x4lwp"]
@@ -142,6 +141,9 @@ texture = ExtResource("6_x4lwp")
 [sub_resource type="TileSet" id="TileSet_efrev"]
 sources/0 = SubResource("TileSetAtlasSource_ip6g2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oac4o"]
+size = Vector2(555, 321)
+
 [node name="Kluiskamer" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -184,13 +186,14 @@ tile_set = SubResource("TileSet_efrev")
 [node name="Player" parent="." instance=ExtResource("2_062wk")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-
-[node name="Interact" parent="Player" instance=ExtResource("4_kksy7")]
-visible = false
-position = Vector2(0, 74.04)
-
 [node name="Keypad" parent="Player" instance=ExtResource("7_qo2v3")]
 visible = false
-position = Vector2(-191, -194)
+position = Vector2(-383, -239)
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(109.5, -150.5)
+shape = SubResource("RectangleShape2D_oac4o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

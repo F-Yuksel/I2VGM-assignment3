@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxcdhfshxhwre" path="res://Scenes/Levels/reactor/startReactor.tscn" id="5_3o8ku"]
 [ext_resource type="PackedScene" uid="uid://dv6c82iiobxr0" path="res://Scenes/Levels/reactor/noPower.tscn" id="5_bs5kw"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
@@ -137,6 +138,11 @@ sources/0 = SubResource("TileSetAtlasSource_2ts3v")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wekry"]
 size = Vector2(98, 72)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g31yo"]
+size = Vector2(111.75, 432)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvcfq"]
+size = Vector2(1267, 326)
 
 [node name="ReactorHallway" type="Node2D"]
 
@@ -186,3 +192,16 @@ script = ExtResource("7_gep6c")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="reactor"]
 position = Vector2(752, -65)
 shape = SubResource("RectangleShape2D_wekry")
+position = Vector2(-182.875, -73)
+shape = SubResource("RectangleShape2D_g31yo")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorToHallway"]
+position = Vector2(-190, -135)
+rotation = 3.14159
+scale = Vector2(0.245985, 1)
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(491.5, -173)
+shape = SubResource("RectangleShape2D_cvcfq")

@@ -136,6 +136,8 @@ sources/0 = SubResource("TileSetAtlasSource_0gfd7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf6kf"]
 size = Vector2(79, 71)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_by4dd"]
+size = Vector2(628, 321)
 
 [node name="lq3" type="Node2D"]
 
@@ -175,8 +177,8 @@ shape = SubResource("RectangleShape2D_nf6kf")
 [node name="Player" parent="." instance=ExtResource("2_5omtn")]
 position = Vector2(31, -45)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
+[node name="camera_zone_1" type="Area2D" parent="."]
 
-[node name="Interact" parent="Player" instance=ExtResource("5_573nf")]
-position = Vector2(0, 74.04)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(187, -150.5)
+shape = SubResource("RectangleShape2D_by4dd")

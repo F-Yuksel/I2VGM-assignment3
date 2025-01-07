@@ -68,7 +68,11 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Items/HBoxContainer/MarginContainer"]
+z_index = 1
 custom_minimum_size = Vector2(350, 425)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Items/HBoxContainer/MarginContainer"]
 layout_mode = 2
 
 [node name="Logs" type="TabBar" parent="TabContainer"]
@@ -124,9 +128,10 @@ info_text = "test info text"
 
 [node name="Item3" type="Node" parent="StarterItems"]
 script = ExtResource("3_us358")
-item_name = "TestName"
+item_name = "TestNamesfd"
 icon = ExtResource("3_8gdbg")
 info_text = "test info text"
+image = ExtResource("3_8gdbg")
 
 [node name="Item4" type="Node" parent="StarterItems"]
 script = ExtResource("3_us358")
