@@ -46,7 +46,7 @@ func _on_body_entered(body):
 			Global.doorPosition = Vector2(25, -100)
 		elif name == "DoorMain2":
 			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(850,-75)
+			Global.doorPosition = Vector2(1260,-75)
 		elif name == "DoorMain3":
 			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 			Global.doorPosition = Vector2(25, -100)

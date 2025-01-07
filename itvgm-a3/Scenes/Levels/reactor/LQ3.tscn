@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_uyl3h"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="4_fmq4x"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_573nf"]
-[ext_resource type="Script" path="res://Scenes/Levels/reactor/generatorController.gd" id="6_5e0a7"]
+[ext_resource type="Script" path="res://Scripts/generatorController.gd" id="6_5e0a7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfulm"]
 texture = ExtResource("1_eijj8")

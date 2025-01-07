@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://ddhbujk5src8h"]
+[gd_scene load_steps=15 format=4 uid="uid://ddhbujk5src8h"]
 
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_w0fer"]
-[ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="PackedScene" uid="uid://bxcdhfshxhwre" path="res://Scenes/Levels/reactor/startReactor.tscn" id="5_3o8ku"]
+[ext_resource type="PackedScene" uid="uid://dv6c82iiobxr0" path="res://Scenes/Levels/reactor/noPower.tscn" id="5_bs5kw"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
@@ -133,6 +135,9 @@ texture = ExtResource("1_6ws62")
 [sub_resource type="TileSet" id="TileSet_g74j4"]
 sources/0 = SubResource("TileSetAtlasSource_2ts3v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wekry"]
+size = Vector2(98, 72)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -160,9 +165,13 @@ position = Vector2(-1, -69)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
 
-[node name="Interact" parent="Player" instance=ExtResource("3_w0fer")]
+[node name="noPower" parent="Player" instance=ExtResource("5_bs5kw")]
 visible = false
-position = Vector2(0, 74.04)
+position = Vector2(0, 73.91)
+
+[node name="Interact" parent="Player" instance=ExtResource("5_3o8ku")]
+visible = false
+position = Vector2(0, 73.145)
 
 [node name="DoorToHallway" type="Area2D" parent="."]
 script = ExtResource("4_tx1fb")
@@ -170,3 +179,10 @@ script = ExtResource("4_tx1fb")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DoorToHallway"]
 position = Vector2(-143, -73)
 shape = SubResource("RectangleShape2D_fv5jo")
+
+[node name="reactor" type="Area2D" parent="."]
+script = ExtResource("7_gep6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reactor"]
+position = Vector2(752, -65)
+shape = SubResource("RectangleShape2D_wekry")
