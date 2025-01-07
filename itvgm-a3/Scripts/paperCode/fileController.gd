@@ -11,12 +11,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):
-		$"../../Player/CodePaper".visible = true
-		$"../../Player".ableToMove = false
-	elif ableToPickUp and Input.is_action_just_pressed("exit"):
-		$"../../Player".ableToMove = true
-		$"../../Player/CodePaper".visible = false
-		$"../../File".visible = false
 		Global.hasCodePaper = true
 	
 func _on_body_entered(body):

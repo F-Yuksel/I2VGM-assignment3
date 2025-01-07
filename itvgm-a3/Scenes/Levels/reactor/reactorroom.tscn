@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://ddhbujk5src8h"]
+[gd_scene load_steps=15 format=4 uid="uid://ddhbujk5src8h"]
 
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
-[ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_w0fer"]
-[ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
@@ -97,6 +97,9 @@ size = Vector2(1215, 224)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fv5jo"]
 size = Vector2(34.5, 432)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g31yo"]
+size = Vector2(111.75, 432)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ts3v"]
 texture = ExtResource("1_6ws62")
 2:0/0 = 0
@@ -133,6 +136,12 @@ texture = ExtResource("1_6ws62")
 [sub_resource type="TileSet" id="TileSet_g74j4"]
 sources/0 = SubResource("TileSetAtlasSource_2ts3v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwefe"]
+size = Vector2(46, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvcfq"]
+size = Vector2(1267, 326)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -149,6 +158,10 @@ shape = SubResource("RectangleShape2D_lbf7m")
 position = Vector2(1104.25, -71)
 shape = SubResource("RectangleShape2D_fv5jo")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(-182.875, -73)
+shape = SubResource("RectangleShape2D_g31yo")
+
 [node name="decor" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAKAP7/AAAAAAAAAAATAP3/AAAEAAQAAAARAP3/AAAEAAQAAAARAP7/AAAEAAUAAAASAP3/AAAFAAQAAAASAP7/AAAFAAUAAAAPAP3/AAAEAAQAAAAPAP7/AAAEAAUAAAAQAP3/AAAFAAQAAAAQAP7/AAAFAAUAAAANAP3/AAAEAAQAAAALAP3/AAAEAAQAAAACAP3/AAAAAAIAAAACAP7/AAAAAAMAAAADAP3/AAABAAIAAAADAP7/AAABAAMAAAAFAP3/AAACAAIAAAAFAP7/AAACAAMAAAAGAP3/AAADAAIAAAAGAP7/AAADAAMAAAAgAP7/AAAAAAEAAAAhAP7/AAABAAEAAAAgAP3/AAAAAAEAAAAhAP3/AAABAAEAAAAgAPv/AAAAAAEAAAAhAPv/AAABAAEAAAAgAPz/AAAAAAEAAAAhAPz/AAABAAEAAAAgAPr/AAAAAAEAAAAhAPr/AAABAAEAAAAeAP7/AAAAAAEAAAAfAP7/AAABAAEAAAAeAP3/AAAAAAEAAAAfAP3/AAABAAEAAAAeAPz/AAAAAAEAAAAfAPz/AAABAAEAAAAcAP7/AAACAAEAAAAdAP7/AAADAAEAAAAcAP3/AAACAAEAAAAdAP3/AAADAAEAAAAaAP7/AAAAAAEAAAAbAP7/AAABAAEAAAAaAP3/AAAAAAEAAAAbAP3/AAABAAEAAAAaAPz/AAAAAAEAAAAbAPz/AAABAAEAAAAaAPv/AAAAAAEAAAAbAPv/AAABAAEAAAAYAP3/AAAEAAIAAAAYAP7/AAAEAAMAAAAZAP3/AAAFAAIAAAAZAP7/AAAFAAMAAAAIAP7/AAAAAAEAAAAJAP7/AAABAAEAAAAMAP7/AAACAAEAAAANAP7/AAADAAEAAAAIAP3/AAAAAAEAAAAJAP3/AAABAAEAAAAUAP7/AAAAAAEAAAAVAP7/AAABAAEAAAAUAP3/AAAAAAEAAAAVAP3/AAABAAEAAAA=")
@@ -157,16 +170,27 @@ tile_set = SubResource("TileSet_g74j4")
 [node name="Player" parent="." instance=ExtResource("2_d4bd4")]
 position = Vector2(-1, -69)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(1.5, 1.5)
-
-[node name="Interact" parent="Player" instance=ExtResource("3_w0fer")]
-visible = false
-position = Vector2(0, 74.04)
-
 [node name="DoorToHallway" type="Area2D" parent="."]
 script = ExtResource("4_tx1fb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DoorToHallway"]
 position = Vector2(-143, -73)
 shape = SubResource("RectangleShape2D_fv5jo")
+
+[node name="Sprite2D" type="Sprite2D" parent="DoorToHallway"]
+position = Vector2(-190, -135)
+rotation = 3.14159
+scale = Vector2(0.245985, 1)
+
+[node name="reactor" type="Area2D" parent="."]
+script = ExtResource("7_gep6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reactor"]
+position = Vector2(752, -53.5)
+shape = SubResource("RectangleShape2D_xwefe")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(491.5, -173)
+shape = SubResource("RectangleShape2D_cvcfq")

@@ -4,6 +4,7 @@ var codeEntered: String = "";
 var codeCorrect: String = "1973";
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$"./1".connect("pressed", Callable(self, "_on_button_pressed_1"));
 	$"./2".connect("pressed", Callable(self, "_on_button_pressed_2"));
 	$"./3".connect("pressed", Callable(self, "_on_button_pressed_3"));
@@ -19,7 +20,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("exit"):
+		_on_button_pressed_esc()
 	
 func _on_button_pressed_1():
 	codeEntered += "1";
@@ -52,14 +54,17 @@ func _on_button_pressed_0():
 	codeEntered += "0";
 
 func _on_button_pressed_x():
-	codeEntered = "";
-	$"..".visible = false;
-	$"../..".ableToMove = true;
+	Global.doorPosition = Vector2(175,-60)
+	get_tree().change_scene_to_file("res://Scenes/Levels/reactor/kluiskamer.tscn")
+	
+func _on_button_pressed_esc():
+	Global.doorPosition = Vector2(175,-60)
+	get_tree().change_scene_to_file("res://Scenes/Levels/reactor/kluiskamer.tscn")
 	
 func _on_button_pressed_v():
 	if codeCorrect == codeEntered:
-		$"..".visible = false;
 		Global.hasSuit = true;
-		$"../..".ableToMove = true;
-	else :
+		Global.doorPosition = Vector2(175,-60)
+		get_tree().change_scene_to_file("res://Scenes/Levels/reactor/kluiskamer.tscn")
+	else:
 		codeEntered = "";
