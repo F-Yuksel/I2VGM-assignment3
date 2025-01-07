@@ -10,11 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if ableToInterract and Input.is_action_just_pressed("Interact"):
-		$"../../Player/Keypad".visible = true;
-		$"../../Player".ableToMove = false;
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		Global.inventoryLock = true
-		print("Yo wassup, name is keith")
+		get_tree().change_scene_to_file("res://Scenes/Levels/reactor/keypad.tscn")
 	
 func _on_body_entered(body):
 	if body.name == playerName:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://chmqmb41qhpsp"]
+[gd_scene load_steps=16 format=4 uid="uid://chmqmb41qhpsp"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_31jns"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_062wk"]
@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="4_kom1x"]
 [ext_resource type="Script" path="res://Scripts/vault/vaultController.gd" id="4_smaqi"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="6_x4lwp"]
-[ext_resource type="PackedScene" uid="uid://b7qxdfv21wywa" path="res://Scenes/Levels/reactor/keypad.tscn" id="7_qo2v3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc3wq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5x3x"]
 texture = ExtResource("1_31jns")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -91,7 +90,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_5t7cb"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_lc3wq")
+sources/0 = SubResource("TileSetAtlasSource_j5x3x")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7eeky"]
 size = Vector2(32, 287)
@@ -185,10 +184,6 @@ tile_set = SubResource("TileSet_efrev")
 
 [node name="Player" parent="." instance=ExtResource("2_062wk")]
 position = Vector2(-1, -69)
-
-[node name="Keypad" parent="Player" instance=ExtResource("7_qo2v3")]
-visible = false
-position = Vector2(-383, -239)
 
 [node name="camera_zone_1" type="Area2D" parent="."]
 

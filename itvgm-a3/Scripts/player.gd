@@ -17,6 +17,7 @@ var on_ladder = false
 @onready var sprite = $AnimatedSprite2D
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if Global.doorPosition != Vector2.ZERO:
 		print("Moving player to last door position:", Global.doorPosition)
 		global_position = Global.doorPosition

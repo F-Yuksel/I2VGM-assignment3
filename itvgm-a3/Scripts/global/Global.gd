@@ -12,4 +12,3 @@ func reset() -> void:
 	hasSuit = false
 	generatorOn = false
 	inventoryLock = false
-
