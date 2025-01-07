@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4iichfihpq7o"]
+
+[ext_resource type="Texture2D" uid="uid://bjpukoanluyba" path="res://Imports/lamps/linelamp.png" id="1_be8mv"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="2_chvi2"]
+
+[node name="Linelamp" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_be8mv")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.86
+shadow_enabled = true
+texture = ExtResource("2_chvi2")
+texture_scale = 0.6
