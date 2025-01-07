@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxcdhfshxhwre" path="res://Scenes/Levels/reactor/startReactor.tscn" id="5_3o8ku"]
 [ext_resource type="PackedScene" uid="uid://dv6c82iiobxr0" path="res://Scenes/Levels/reactor/noPower.tscn" id="5_bs5kw"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
-[ext_resource type="Script" path="res://Scenes/Levels/reactor/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_167u5")
