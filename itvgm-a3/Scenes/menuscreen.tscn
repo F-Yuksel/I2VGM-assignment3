@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdhdfcrom4d6v"]
+
+[ext_resource type="Script" path="res://Scripts/menuscreen.gd" id="1_tfpkm"]
+[ext_resource type="Texture2D" uid="uid://bimrcwcqv3qyp" path="res://Imports/start_screen_temp.jpg" id="2_suc3n"]
+
+[node name="menuscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfpkm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323.75)
+scale = Vector2(1.27889, 1.62219)
+texture = ExtResource("2_suc3n")
+
+[node name="StartButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 334.0
+offset_right = 1076.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 82
+text = "Spelletje spelen"
+flat = false
+icon_alignment = 2
+vertical_icon_alignment = 2
+
+[node name="QuitButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 552.0
+offset_right = 647.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="CreditsButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 14.0
+offset_right = 1118.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_menu_button_2_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
