@@ -11,11 +11,8 @@ func _ready() -> void:
 	print("Ik start opnieuw")
 	$".".connect("body_entered", Callable(self, "_on_body_entered"))
 	$".".connect("body_exited", Callable(self, "_on_body_exited"))
-<<<<<<< Updated upstream
-=======
 	if global_inventory.check_item(item):
 		print("Lmao im bussin")
->>>>>>> Stashed changes
 
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):

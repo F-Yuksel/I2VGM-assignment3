@@ -156,18 +156,12 @@ position = Vector2(-1202, -239)
 nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
 Coords = Vector2(25, -100)
 
-[node name="Label" parent="DoorMain1" index="2"]
-scale = Vector2(0.532583, 0.588252)
-theme_override_colors/font_color = Color(0.67069, 0.67069, 0.67069, 1)
-
 [node name="DoorMain2" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1520, -239)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 Coords = Vector2(1260, -75)
 
 [node name="Label" parent="DoorMain2" index="2"]
-scale = Vector2(0.532583, 0.588252)
-theme_override_colors/font_color = Color(0.67069, 0.67069, 0.67069, 1)
 text = "
 "
 
