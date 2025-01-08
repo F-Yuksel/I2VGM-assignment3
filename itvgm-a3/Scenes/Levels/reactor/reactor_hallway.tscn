@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://dy48isccya80f"]
+[gd_scene load_steps=15 format=4 uid="uid://dy48isccya80f"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_agopb"]
 [ext_resource type="Texture2D" uid="uid://dgycrhtixvwas" path="res://textures/Decor/normalDoor1.png" id="3_brxsv"]
+[ext_resource type="Texture2D" uid="uid://c1qgkklks1pgg" path="res://textures/Decor/normalDoor2.png" id="4_ui6bw"]
 [ext_resource type="Texture2D" uid="uid://bnsa21v78yu60" path="res://Imports/5ea6f5b8-a6d0-4565-b1a4-500fed3f60d2-removebg-preview (1).png" id="5_f467r"]
 [ext_resource type="Script" path="res://Scripts/door/door_to_reactor.gd" id="6_ajbvr"]
 [ext_resource type="PackedScene" uid="uid://b4iichfihpq7o" path="res://Scenes/Objects/linelamp.tscn" id="7_q1axm"]
@@ -129,11 +130,19 @@ position = Vector2(160, -77)
 [node name="Sprite2D" parent="DoorToLQ3" index="0"]
 texture = ExtResource("3_brxsv")
 
+[node name="Label" parent="DoorToLQ3" index="2"]
+text = "
+"
+
 [node name="DoorToLQ1" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(864, -77)
 
 [node name="Sprite2D" parent="DoorToLQ1" index="0"]
 texture = ExtResource("3_brxsv")
+
+[node name="Label" parent="DoorToLQ1" index="2"]
+text = "
+"
 
 [node name="DoorToLQ2" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(1056, -77)
@@ -145,7 +154,7 @@ texture = ExtResource("3_brxsv")
 position = Vector2(640, -77)
 
 [node name="Sprite2D" parent="DoorToKK" index="0"]
-texture = ExtResource("3_brxsv")
+texture = ExtResource("4_ui6bw")
 
 [node name="DoorToLQ4" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(416, -77)

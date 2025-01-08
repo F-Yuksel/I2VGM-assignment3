@@ -4,7 +4,7 @@ var interactable = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"../Player/Interact".visible = false
+	$"../Player/CanvasLayer/Interact".visible = false
 	pass # Replace with function body.
 
 
@@ -16,11 +16,11 @@ func _process(delta: float) -> void:
 		
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
-		$"../Player/Interact".visible = true;
+		$"../Player/CanvasLayer/Interact".visible = true;
 		interactable = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if "Player" in body.name:
-		$"../Player/Interact".visible = false;
+		$"../Player/CanvasLayer/Interact".visible = false;
 		interactable = false

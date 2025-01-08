@@ -401,6 +401,11 @@ position = Vector2(-64, -220)
 offset_top = -68.0
 offset_bottom = 220.0
 
+[node name="hightlighted" parent="Ladders/Ladder1" index="1"]
+visible = true
+offset_top = -70.0
+offset_bottom = 219.0
+
 [node name="CollisionShape2D" parent="Ladders/Ladder1" index="2"]
 position = Vector2(0, 74.7968)
 shape = SubResource("RectangleShape2D_hpwd2")
@@ -410,6 +415,10 @@ unique_name_in_owner = true
 position = Vector2(-1745, 144)
 
 [node name="default" parent="Ladders/Ladder2" index="0"]
+offset_top = -145.0
+offset_bottom = 112.0
+
+[node name="hightlighted" parent="Ladders/Ladder2" index="1"]
 offset_top = -145.0
 offset_bottom = 112.0
 
