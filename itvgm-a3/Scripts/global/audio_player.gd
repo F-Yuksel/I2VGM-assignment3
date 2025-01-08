@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 const level_music = preload("res://Imports/Music/BackgroundMusic.mp3")
 
-func _play_music(music: AudioStream, volume = 0.0):
+func _play_music(music: AudioStream, volume = -100.0):
 	if stream == music:
 		return
 		

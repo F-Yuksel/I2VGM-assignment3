@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8ihqeukrta4m"]
+
+[ext_resource type="Texture2D" uid="uid://4xwdxvfusrx4" path="res://Imports/screen.png" id="1_p7utg"]
+[ext_resource type="Texture2D" uid="uid://dtf6jiatr2v5y" path="res://Imports/startButton.png" id="2_sle2y"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/startReactorSequenceButton.gd" id="3_1gh8b"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/quickTimeEvent.gd" id="4_jhekh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mnxb"]
+font_size = 14
+font_color = Color(0, 0.870909, 0.828225, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hw4gh"]
+radius = 108.167
+
+[node name="ReactorStartUpSequence" type="Node2D"]
+
+[node name="Screen" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_p7utg")
+
+[node name="StartButton" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_sle2y")
+
+[node name="Label" type="Label" parent="StartButton"]
+offset_left = -68.0
+offset_top = -25.0
+offset_right = 83.0
+offset_bottom = 18.0
+text = "Press to start reactor 
+initialization squence!"
+label_settings = SubResource("LabelSettings_7mnxb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Area2D" parent="StartButton"]
+script = ExtResource("3_1gh8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton/Button"]
+position = Vector2(9, 0)
+shape = SubResource("CircleShape2D_hw4gh")
+
+[node name="1" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="2" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="3" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="4" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="5" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="6" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="7" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="8" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="9" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="10" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="11" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="12" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="13" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="14" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="15" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="16" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="17" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="18" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="19" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")
+
+[node name="20" type="Node2D" parent="."]
+script = ExtResource("4_jhekh")

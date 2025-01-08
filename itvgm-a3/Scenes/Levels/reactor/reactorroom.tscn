@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://ddhbujk5src8h"]
+[gd_scene load_steps=17 format=4 uid="uid://ddhbujk5src8h"]
 
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
 [ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
+[ext_resource type="AudioStream" uid="uid://bijyu2vklofwg" path="res://Imports/Music/Alarm sound effect.mp3" id="6_olj0u"]
+[ext_resource type="AudioStream" uid="uid://ba2j48hm8fef2" path="res://Imports/Music/Machine Power Up Sound Effect 2  No Copyright.mp3" id="7_5nnok"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
@@ -194,3 +196,9 @@ shape = SubResource("RectangleShape2D_xwefe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
 position = Vector2(491.5, -173)
 shape = SubResource("RectangleShape2D_cvcfq")
+
+[node name="alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_olj0u")
+
+[node name="reactorStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5nnok")

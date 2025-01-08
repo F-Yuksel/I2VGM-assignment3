@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba2j48hm8fef2"
+path="res://.godot/imported/Machine Power Up Sound Effect 2  No Copyright.mp3-666102dbb391728ede701b0257591630.mp3str"
+
+[deps]
+
+source_file="res://Imports/Music/Machine Power Up Sound Effect 2  No Copyright.mp3"
+dest_files=["res://.godot/imported/Machine Power Up Sound Effect 2  No Copyright.mp3-666102dbb391728ede701b0257591630.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

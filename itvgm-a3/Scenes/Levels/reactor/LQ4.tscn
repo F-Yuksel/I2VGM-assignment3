@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c0ues45esb4a8"]
+[gd_scene load_steps=20 format=4 uid="uid://c0ues45esb4a8"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_xjb3v"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_bmtg3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/item.gd" id="7_dio1s"]
 [ext_resource type="Texture2D" uid="uid://dqlb8m2oyhwkp" path="res://Imports/papers/paper.png" id="7_p435w"]
 [ext_resource type="Script" path="res://Scripts/paperCode/fileController.gd" id="8_63m3u"]
+[ext_resource type="AudioStream" uid="uid://dbbp8kjqqagqy" path="res://Imports/Music/paper sound   sound effect  free download sounds.mp3" id="10_0ii1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_halw5"]
 texture = ExtResource("1_xjb3v")
@@ -210,3 +211,7 @@ shape = SubResource("RectangleShape2D_leeao")
 
 [node name="Player" parent="." instance=ExtResource("3_ep54k")]
 position = Vector2(29, -17)
+
+[node name="PaperSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0ii1h")
+volume_db = -0.16
