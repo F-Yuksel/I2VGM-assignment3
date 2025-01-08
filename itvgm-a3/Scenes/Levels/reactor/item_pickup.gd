@@ -3,7 +3,7 @@ extends Area2D
 var ableToPickUp: bool = false
 var playerName: String = "Player"
 var player: Node = null
-
+var global_inventory = GlobalInventory
 
 @export var item : Node
 
@@ -11,6 +11,11 @@ func _ready() -> void:
 	print("Ik start opnieuw")
 	$".".connect("body_entered", Callable(self, "_on_body_entered"))
 	$".".connect("body_exited", Callable(self, "_on_body_exited"))
+<<<<<<< Updated upstream
+=======
+	if global_inventory.check_item(item):
+		print("Lmao im bussin")
+>>>>>>> Stashed changes
 
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):

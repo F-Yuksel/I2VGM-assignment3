@@ -128,7 +128,6 @@ offset_bottom = 111.0
 visible = true
 offset_top = -81.0
 offset_bottom = 110.0
-stretch_mode = 1
 
 [node name="CollisionShape2D" parent="Ladders/Ladder" index="2"]
 position = Vector2(0, 15)
