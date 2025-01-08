@@ -15,10 +15,10 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/Levels/reactor/wires_window_amogus.tscn")	
 func _on_body_entered(body):
 	if body.name == playerName and !Global.generatorOn:
-		$"../Player/Interact".visible = true
+		$"../Player/CanvasLayer/Interact".visible = true
 		ableToInterract = true
 		
 func _on_body_exited(body):
 	if body.name == playerName:
 		ableToInterract = false
-		$"../Player/Interact".visible = false
+		$"../Player/CanvasLayer/Interact".visible = false

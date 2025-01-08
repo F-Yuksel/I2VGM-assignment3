@@ -162,6 +162,7 @@ scale = Vector2(0.275862, 0.275862)
 texture = ExtResource("5_f467r")
 
 [node name="Player" parent="." instance=ExtResource("2_dniw1")]
+z_index = 1
 position = Vector2(-1, -69)
 
 [node name="DoorToReactor" type="Area2D" parent="."]

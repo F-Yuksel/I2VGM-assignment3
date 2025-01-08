@@ -156,6 +156,8 @@ position = Vector2(1036, -239)
 
 [node name="DoorMain1" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1202, -239)
+nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
+Coords = Vector2(25, -100)
 
 [node name="DoorMain2" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1520, -239)

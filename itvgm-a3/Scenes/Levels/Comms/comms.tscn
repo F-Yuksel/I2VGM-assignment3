@@ -855,6 +855,24 @@ position = Vector2(240, -58)
 [node name="pointlamp2" parent="LampObjects" instance=ExtResource("29_y46d3")]
 position = Vector2(368, -58)
 
+[node name="pointlamp9" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(1168, -59)
+
+[node name="pointlamp10" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(1328, -59)
+
+[node name="pointlamp11" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(2032, -59)
+
+[node name="pointlamp12" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(2192, -59)
+
+[node name="pointlamp13" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(2832, -59)
+
+[node name="pointlamp14" parent="LampObjects" instance=ExtResource("29_y46d3")]
+position = Vector2(2992, -59)
+
 [node name="pointlamp3" parent="LampObjects" instance=ExtResource("29_y46d3")]
 position = Vector2(-48, -58)
 

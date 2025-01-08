@@ -37,7 +37,7 @@ func _on_body_entered(body):
 		if !Global.generatorOn:
 			$"../Player/CanvasLayer/noPower".visible = true
 		else:
-			$"../Player/Interact".visible = true
+			$"../Player/CanvasLayer/Interact".visible = true
 			ableToInterract = true
 		
 func _on_body_exited(body):

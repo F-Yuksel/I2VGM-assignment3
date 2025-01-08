@@ -7,8 +7,8 @@ var playerName: String = "Player"
 func _ready() -> void:
 	$".".connect("body_entered", Callable(self, "_on_body_entered"))
 	$".".connect("body_exited", Callable(self, "_on_body_exited"))
-	if Global.hasCodePaper:
-		$"../../File".visible = false
+	#if Global.hasCodePaper:
+		#$"../../File".visible = false
 
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):

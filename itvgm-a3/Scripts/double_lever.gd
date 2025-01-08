@@ -39,13 +39,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == $"../Player" and has_power:
-		$"../Player/Interact".visible = true
+		$"../Player/CanvasLayer/Interact".visible = true
 		in_body = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body == $"../Player":
-		$"../Player/Interact".visible = false
+		$"../Player/CanvasLayer/Interact".visible = false
 		in_body = false
 		
 
