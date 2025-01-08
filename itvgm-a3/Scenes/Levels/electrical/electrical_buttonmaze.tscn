@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cwwlat0hcj724"]
+[gd_scene load_steps=25 format=4 uid="uid://cwwlat0hcj724"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/buttonlogic.gd" id="1_thuct"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_wyii8"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dkhucln78dyvn" path="res://Scenes/Levels/electrical/buttonmaze_utils/blue_button.tscn" id="7_xg4ls"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="9_1w0h3"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/green_button.tscn" id="10_88k1p"]
+[ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="11_k7e14"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fbt4i"]
@@ -461,6 +462,16 @@ offset_bottom = 222.0
 [node name="CollisionShape2D" parent="Ladders/Ladder5" index="2"]
 position = Vector2(0, 77.5)
 shape = SubResource("RectangleShape2D_l8hd5")
+
+[node name="DoorToButtonMaze" parent="." instance=ExtResource("11_k7e14")]
+position = Vector2(-2207, 147)
+nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
+Coords = Vector2(172, -365)
+
+[node name="DoorToHub" parent="." instance=ExtResource("11_k7e14")]
+position = Vector2(-3494, -621)
+nextScenePath = "res://Scenes/Levels/test_scene.tscn"
+Coords = Vector2(-1202, -239)
 
 [node name="Player" parent="." instance=ExtResource("6_08ud1")]
 position = Vector2(-2208, 174)

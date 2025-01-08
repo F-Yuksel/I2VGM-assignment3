@@ -183,9 +183,13 @@ position = Vector2(64, -209)
 [node name="DoorToHub" parent="." instance=ExtResource("7_y8omo")]
 z_index = -1
 position = Vector2(96, -45)
+nextScenePath = "res://Scenes/Levels/test_scene.tscn"
+Coords = Vector2(-1230, -200)
 
 [node name="DoorToBreakers" parent="." instance=ExtResource("7_y8omo")]
 z_index = -1
 position = Vector2(672, -45)
+nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
+Coords = Vector2(172, -45)
 
 [editable path="Ladders/Ladder"]
