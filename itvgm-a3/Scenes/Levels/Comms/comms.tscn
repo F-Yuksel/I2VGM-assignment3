@@ -320,6 +320,8 @@ tile_set = SubResource("TileSet_s2l8d")
 
 [node name="DoorToHub3" parent="." instance=ExtResource("2_q2eao")]
 position = Vector2(96, -45)
+nextScenePath = "res://Scenes/Levels/test_scene.tscn"
+Coords = Vector2(720, -240)
 
 [node name="Generator1" type="Sprite2D" parent="."]
 position = Vector2(654, -527)

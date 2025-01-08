@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/green_button.tscn" id="10_88k1p"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="11_k7e14"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
-[ext_resource type="PackedScene" uid="uid://ceficsoqdxtxa" path="res://Scenes/Levels/electrical/buttonmaze_utils/green_button.tscn" id="10_88k1p"]
-[ext_resource type="PackedScene" uid="uid://cn7paqt3ollnd" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fbt4i"]
 texture = ExtResource("1_wyii8")
