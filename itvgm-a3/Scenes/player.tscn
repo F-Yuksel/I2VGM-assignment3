@@ -281,17 +281,17 @@ layer = 10
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("2_ap76o")]
 
-[node name="Interact" parent="." instance=ExtResource("3_hw1go")]
+[node name="Interact" parent="CanvasLayer" instance=ExtResource("3_hw1go")]
 visible = false
-position = Vector2(0, 74.04)
+position = Vector2(552, 668)
 
-[node name="noHazmat" parent="." instance=ExtResource("4_qkdj7")]
+[node name="noHazmat" parent="CanvasLayer" instance=ExtResource("4_qkdj7")]
 visible = false
-position = Vector2(-92.965, 73.665)
+position = Vector2(511, 668)
 
-[node name="noPower" parent="." instance=ExtResource("5_ybo7d")]
+[node name="noPower" parent="CanvasLayer" instance=ExtResource("5_ybo7d")]
 visible = false
-position = Vector2(0, 72.86)
+position = Vector2(461, 667)
 
 [node name="startReactor" parent="." instance=ExtResource("8_1h7tc")]
 visible = false

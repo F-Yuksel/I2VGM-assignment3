@@ -26,6 +26,10 @@ TransitionScene="*res://Scenes/Misc/transition_scene.tscn"
 
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom_font="res://Imports/Fonts/PixelOperator8.ttf"
+
 [input]
 
 Left={

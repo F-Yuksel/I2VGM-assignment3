@@ -66,13 +66,13 @@ func _on_body_entered(body):
 			print("Warning: Unknown door name. nextScenePath is not set.")
 		playerInside = true
 		 
-		$"../Player/Interact".visible = true;
+		$"../Player/CanvasLayer/Interact".visible = true;
 		print("Player entered the door area.")
 
 func _on_body_exited(body):
 	if body.name == playerName:
 		playerInside = false
-		$"../Player/Interact".visible = false;
+		$"../Player/CanvasLayer/Interact".visible = false;
 		print("Player exited the door area.")
 
 func _process(delta: float) -> void:

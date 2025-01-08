@@ -13,9 +13,9 @@ func _on_body_entered(body):
 			Global.doorPosition = Vector2(0,-45)
 			get_tree().change_scene_to_file("res://Scenes/Levels/reactor/reactorroom.tscn")
 		else:
-			$"../Player/noHazmat".visible = true
+			$"../Player/CanvasLayer/noHazmat".visible = true
 
 func _on_body_exited(body):
 	if body.name == playerName:
-		$"../Player/noHazmat".visible = false
+		$"../Player/CanvasLayer/noHazmat".visible = false
 	
