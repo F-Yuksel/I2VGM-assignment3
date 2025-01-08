@@ -24,6 +24,14 @@ func _ready() -> void:
 		Global.doorPosition = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
+	if Global.hasSuit:
+		$"AnimatedSprite2D".visible = false
+		$"hazmatSuite".visible = true
+		sprite = $hazmatSuite
+	else:
+		$"AnimatedSprite2D".visible = true
+		$"hazmatSuite".visible = false
+		sprite = $AnimatedSprite2D
 	# Disable movement while in a menu
 	if ableToMove:	
 		# Add the gravity.
