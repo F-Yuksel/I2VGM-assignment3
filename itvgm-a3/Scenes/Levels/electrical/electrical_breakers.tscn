@@ -19,9 +19,9 @@ size = Vector2(30, 324.797)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obfuv"]
 size = Vector2(29, 206.406)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_42hty"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgvkv"]
 resource_local_to_scene = true
-size = Vector2(28, 444.813)
+size = Vector2(30, 160)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c82si"]
 texture = ExtResource("1_hgnvn")
@@ -246,15 +246,15 @@ position = Vector2(0.5, 65.7968)
 shape = SubResource("RectangleShape2D_obfuv")
 
 [node name="Ladder3" parent="Ladders" instance=ExtResource("10_ob6ci")]
-position = Vector2(1650, -512)
+position = Vector2(1648, -511)
 
 [node name="default" parent="Ladders/Ladder3" index="0"]
 offset_top = 62.0
 offset_bottom = 224.0
 
 [node name="CollisionShape2D" parent="Ladders/Ladder3" index="2"]
-position = Vector2(0, 143)
-shape = SubResource("RectangleShape2D_42hty")
+position = Vector2(-1, 143)
+shape = SubResource("RectangleShape2D_fgvkv")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -2

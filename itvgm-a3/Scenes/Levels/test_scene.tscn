@@ -150,15 +150,13 @@ position = Vector2(720, -240)
 
 [node name="DoorMain4" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(1036, -239)
+nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
+Coords = Vector2(-1, -20)
 
 [node name="DoorMain1" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1202, -239)
 nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
 Coords = Vector2(25, -100)
-
-[node name="Label" parent="DoorMain1" index="2"]
-scale = Vector2(0.532583, 0.588252)
-theme_override_colors/font_color = Color(0.67069, 0.67069, 0.67069, 1)
 
 [node name="DoorMain2" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1520, -239)
@@ -166,8 +164,6 @@ nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 Coords = Vector2(1260, -75)
 
 [node name="Label" parent="DoorMain2" index="2"]
-scale = Vector2(0.532583, 0.588252)
-theme_override_colors/font_color = Color(0.67069, 0.67069, 0.67069, 1)
 text = "
 "
 
@@ -183,5 +179,6 @@ position = Vector2(719, -313)
 [node name="light4" parent="." instance=ExtResource("5_esgsr")]
 position = Vector2(1038, -313)
 
+[editable path="DoorMain4"]
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]

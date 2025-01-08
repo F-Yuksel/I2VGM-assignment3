@@ -33,7 +33,15 @@ mouse_filter = 2
 texture = ExtResource("2_x6npo")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 28.0
+offset_right = 327.0
+offset_bottom = 68.0
+scale = Vector2(0.333333, 0.487622)
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("3_omjvk")
