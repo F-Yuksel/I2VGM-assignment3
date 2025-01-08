@@ -4,7 +4,6 @@ var nextScenePath: String
 var playerName: String = "Player"
 var playerInside: bool = false
 
-
 func _ready() -> void:
 	$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
 	$Area2D.connect("body_exited", Callable(self, "_on_body_exited"))

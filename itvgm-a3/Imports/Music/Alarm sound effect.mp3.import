@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bijyu2vklofwg"
+path="res://.godot/imported/Alarm sound effect.mp3-5b808bb68cc4103858320e57c354e3d9.mp3str"
+
+[deps]
+
+source_file="res://Imports/Music/Alarm sound effect.mp3"
+dest_files=["res://.godot/imported/Alarm sound effect.mp3-5b808bb68cc4103858320e57c354e3d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
