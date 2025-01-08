@@ -20,4 +20,5 @@ func reset() -> void:
 	
 	elecwires_solved = false
 	elecbreakers_solved = false
+	elecbuttons_solved = false
 	electrical_allsolved = false

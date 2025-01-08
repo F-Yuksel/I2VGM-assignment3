@@ -10,6 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("Interact"):
+		Global.elecbuttons_solved = true
 		Global.electrical_allsolved = true
 		interactable = false
 		$"../Player/Interact".visible = false
