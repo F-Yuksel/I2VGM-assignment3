@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://ircfkyobbeiv"]
+[gd_scene load_steps=13 format=4 uid="uid://bpdjxejdhj8vs"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/buttonlogic.gd" id="1_thuct"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_wyii8"]
@@ -148,10 +148,10 @@ position = Vector2(211, -31)
 [node name="Player" parent="." instance=ExtResource("6_08ud1")]
 position = Vector2(15, -19)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(0, -50)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Interact" parent="Player" instance=ExtResource("7_dm6b2")]
+[node name="Interact2" parent="Player" instance=ExtResource("7_dm6b2")]
 visible = false
 position = Vector2(3, 75)

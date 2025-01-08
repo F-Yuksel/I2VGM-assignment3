@@ -14,8 +14,6 @@ func set_visibility_recursive(node: Node, is_visible: bool) -> void:
 	for child in node.get_children():
 		set_visibility_recursive(child, is_visible)
 
-func show_closebutton():
-	$Close.visible = true
 
 func _on_close_pressed() -> void:
 	set_visibility_recursive($BreakersWindow, false)

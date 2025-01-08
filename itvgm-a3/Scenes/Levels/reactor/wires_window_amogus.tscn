@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwd1ikd2iw333"]
+[gd_scene load_steps=8 format=3 uid="uid://dfi0rgh3tioyj"]
 
 [ext_resource type="Texture2D" uid="uid://4ehnuemblned" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile038.png" id="1_p58d7"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_mm2bg"]
