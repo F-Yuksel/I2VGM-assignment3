@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://r6cpniq0tblf"]
+[gd_scene load_steps=12 format=3 uid="uid://r6cpniq0tblf"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/breakerlogic.gd" id="1_weh0l"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_6bj28"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="2_6nggn"]
 [ext_resource type="Texture2D" uid="uid://biypbigxv0d68" path="res://Imports/breaker_off.png" id="3_fvtrb"]
 [ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_bmrrw"]
 [ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="5_3qb53"]
+[ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="6_l6ep4"]
 
 [sub_resource type="GDScript" id="GDScript_h4lce"]
 script/source = "extends Control
@@ -59,6 +61,13 @@ script = SubResource("GDScript_h4lce")
 
 [node name="breakerlogic" type="Node" parent="."]
 script = ExtResource("1_weh0l")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(42.6667, -13.3333)
+scale = Vector2(56.8333, 35.5269)
+texture = ExtResource("2_6bj28")
+region_enabled = true
+region_rect = Rect2(255.977, 96.0119, 32.1716, 31.8064)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -211,6 +220,23 @@ theme_override_colors/font_color = Color(0.6916, 0.81536, 0.91, 1)
 theme_override_fonts/font = ExtResource("5_3qb53")
 theme_override_font_sizes/font_size = 64
 text = "V"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -372.0
+offset_top = -378.667
+offset_right = 372.0
+offset_bottom = -346.667
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.870588, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_l6ep4")
+theme_override_font_sizes/font_size = 32
+text = "Press [ESC] to close the menu"
 
 [connection signal="toggled" from="Buttons/Button1" to="breakerlogic" method="_on_button_1_toggled"]
 [connection signal="toggled" from="Buttons/Button2" to="breakerlogic" method="_on_button_2_toggled"]
