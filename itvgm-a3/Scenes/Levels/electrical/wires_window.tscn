@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://vj8f673ddrlf"]
+[gd_scene load_steps=14 format=3 uid="uid://vj8f673ddrlf"]
 
+[ext_resource type="Script" path="res://Scripts/electrical/wires_files/wires_window.gd" id="1_lpofa"]
 [ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="1_tucvf"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_c0g6p"]
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/red_area.gd" id="3_vb6q2"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/blue_area.gd" id="5_y3f2e"]
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/purple_area.gd" id="6_dhyw3"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="7_yyilu"]
+[ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="8_7kxre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aowk6"]
 size = Vector2(146, 64)
@@ -23,6 +25,7 @@ size = Vector2(143, 64)
 [node name="PuzzleWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_lpofa")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(576, 325)
@@ -309,3 +312,22 @@ script = ExtResource("6_dhyw3")
 [node name="col_2d_purple" type="CollisionShape2D" parent="WireEnds/Purple/purple_area"]
 position = Vector2(189.5, 503)
 shape = SubResource("RectangleShape2D_qf8h8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 198.0
+offset_top = 14.0
+offset_right = 942.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.870588, 0.827451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("8_7kxre")
+theme_override_font_sizes/font_size = 32
+text = "Press [ESC] to close the menu"

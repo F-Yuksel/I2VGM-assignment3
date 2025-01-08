@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://r6cpniq0tblf"]
+[gd_scene load_steps=12 format=3 uid="uid://r6cpniq0tblf"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/breakerlogic.gd" id="1_weh0l"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_6bj28"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="2_6nggn"]
 [ext_resource type="Texture2D" uid="uid://biypbigxv0d68" path="res://Imports/breaker_off.png" id="3_fvtrb"]
 [ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_bmrrw"]
@@ -60,6 +61,13 @@ script = SubResource("GDScript_h4lce")
 
 [node name="breakerlogic" type="Node" parent="."]
 script = ExtResource("1_weh0l")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(42.6667, -13.3333)
+scale = Vector2(56.8333, 35.5269)
+texture = ExtResource("2_6bj28")
+region_enabled = true
+region_rect = Rect2(255.977, 96.0119, 32.1716, 31.8064)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

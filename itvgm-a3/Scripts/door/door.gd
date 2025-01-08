@@ -42,8 +42,8 @@ func _on_body_entered(body):
 			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 			Global.doorPosition = Vector2(1050,-75)
 		elif name == "DoorMain1":
-			nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
-			Global.doorPosition = Vector2(25, -100)
+			nextScenePath = "res://Scenes/Levels/electrical/electrical_wires.tscn"
+			Global.doorPosition = Vector2(96, -45)
 		elif name == "DoorMain2":
 			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 			Global.doorPosition = Vector2(1260,-75)

@@ -17,8 +17,10 @@ var seq_tracker = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# If room is already solved, put it in solved position
 	if Global.elecbreakers_solved == true:
+		print("puzzle is already solved")
 		button_1.disabled = true
 		button_1_anim.play("on")
 		
@@ -37,7 +39,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	# Detects closing input
+	if Input.is_action_just_pressed("exit"):
+		Global.doorPosition = Vector2(1154,-33)
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		get_tree().change_scene_to_file("res://Scenes/Levels/electrical/electrical_breakers.tscn")
 
 
 func reset_buttons():
