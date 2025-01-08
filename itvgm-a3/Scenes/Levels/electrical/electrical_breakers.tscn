@@ -4,14 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_rvlkk"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_0800o"]
 [ext_resource type="PackedScene" uid="uid://xggq2g2g4nt5" path="res://Scenes/Levels/electrical/breakers_panel.tscn" id="3_n5rkd"]
-[ext_resource type="Script" path="res://Scripts/electrical/hud_breakers.gd" id="3_rkaai"]
-[ext_resource type="PackedScene" uid="uid://r6cpniq0tblf" path="res://Scenes/Levels/electrical/breakers_window.tscn" id="4_xefu0"]
-[ext_resource type="Texture2D" uid="uid://ljsn1f2vo1hm" path="res://Imports/cancelbutton.png" id="6_k5r5q"]
+[ext_resource type="PackedScene" uid="uid://r6cpniq0tblf" path="res://Scenes/Levels/electrical/breakers_window.tscn" id="5_j5iql"]
+[ext_resource type="Script" path="res://Scripts/electrical/hud_breakers.gd" id="5_sdre4"]
 [ext_resource type="PackedScene" uid="uid://b7u75dbeu24st" path="res://Scenes/Levels/electrical/note_item.tscn" id="9_2abau"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="10_ob6ci"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="11_ck65h"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxe80"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hu6i"]
 size = Vector2(30, 324.797)
 
@@ -101,7 +99,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_i418u"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_nxe80")
+sources/0 = SubResource("TileSetAtlasSource_c82si")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsht"]
 size = Vector2(2428, 382)
@@ -247,6 +245,11 @@ position = Vector2(15, -19)
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(0, -50)
 zoom = Vector2(1.5, 1.5)
+
+[node name="HUD_breakers" type="CanvasLayer" parent="Player/Camera2D2"]
+script = ExtResource("5_sdre4")
+
+[node name="BreakersWindow" parent="Player/Camera2D2/HUD_breakers" instance=ExtResource("5_j5iql")]
 
 [node name="Interact2" parent="Player" instance=ExtResource("3_0800o")]
 visible = false
