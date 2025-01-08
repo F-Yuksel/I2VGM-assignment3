@@ -22,3 +22,11 @@ func remove_item(item_node: Node):
 			item_node.queue_free()  # Remove from the scene and free memory
 			return true
 	return false
+
+func check_item(item_node: Node):
+	for child in get_children():
+		print(child.name)
+		if child.name.begins_with(item_node.name):
+			print(find_child(item_node.name))
+			item_node.queue_free()  # Remove from the scene and free memory
+			return true
