@@ -2,6 +2,7 @@ extends Node
 
 var ableToPickUp: bool = false
 var playerName: String = "Player"
+@onready var paper_sound: AudioStreamPlayer = $"../../PaperSound"
 
 func _ready() -> void:
 	$".".connect("body_entered", Callable(self, "_on_body_entered"))
@@ -12,6 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):
 		Global.hasCodePaper = true
+		paper_sound.play()
 	
 func _on_body_entered(body):
 	if body.name == playerName:

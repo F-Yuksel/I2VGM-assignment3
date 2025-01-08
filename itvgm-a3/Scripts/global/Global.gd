@@ -10,6 +10,7 @@ var hasCodePaper: bool = false
 var hasSuit: bool = false
 var generatorOn: bool = false
 var inventoryLock: bool = false
+var reactorOn: bool = false
 
 func reset() -> void:
 	doorPosition = Vector2.ZERO
@@ -22,3 +23,5 @@ func reset() -> void:
 	elecbreakers_solved = false
 	elecbuttons_solved = false
 	electrical_allsolved = false
+	reactorOn = false
+	elecbuttons_solved = false

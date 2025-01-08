@@ -2,11 +2,16 @@ extends Node
 
 var playerName: String = "Player";
 var ableToInterract: bool = false;
+@onready var vault_open: AudioStreamPlayer = $"../../VaultOpen"
+@onready var suit_on: AudioStreamPlayer = $"../../SuitOn"
 
 func _ready() -> void:
 	$".".connect("body_entered", Callable(self, "_on_body_entered"));
 	$".".connect("body_exited", Callable(self, "_on_body_exited"));
-
+	if Global.hasSuit:
+		vault_open.play()
+		suit_on.play()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if ableToInterract and Input.is_action_just_pressed("Interact"):
