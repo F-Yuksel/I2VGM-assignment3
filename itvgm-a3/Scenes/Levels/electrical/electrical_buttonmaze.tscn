@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/green_button.tscn" id="10_88k1p"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="11_k7e14"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
+[ext_resource type="PackedScene" uid="uid://ceficsoqdxtxa" path="res://Scenes/Levels/electrical/buttonmaze_utils/green_button.tscn" id="10_88k1p"]
+[ext_resource type="PackedScene" uid="uid://cn7paqt3ollnd" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fbt4i"]
 texture = ExtResource("1_wyii8")
@@ -335,7 +337,7 @@ size = Vector2(28, 257)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am704"]
 resource_local_to_scene = true
-size = Vector2(28, 288)
+size = Vector2(28, 289)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t45q2"]
 resource_local_to_scene = true
@@ -403,7 +405,6 @@ offset_top = -68.0
 offset_bottom = 220.0
 
 [node name="hightlighted" parent="Ladders/Ladder1" index="1"]
-visible = true
 offset_top = -70.0
 offset_bottom = 219.0
 
@@ -435,8 +436,12 @@ position = Vector2(-1602, -220)
 offset_top = -69.0
 offset_bottom = 220.0
 
+[node name="hightlighted" parent="Ladders/Ladder3" index="1"]
+offset_top = -69.0
+offset_bottom = 220.0
+
 [node name="CollisionShape2D" parent="Ladders/Ladder3" index="2"]
-position = Vector2(0, 75)
+position = Vector2(0, 75.5)
 shape = SubResource("RectangleShape2D_am704")
 
 [node name="Ladder4" parent="Ladders" instance=ExtResource("9_1w0h3")]
@@ -444,6 +449,10 @@ unique_name_in_owner = true
 position = Vector2(-705, -507)
 
 [node name="default" parent="Ladders/Ladder4" index="0"]
+offset_top = -134.0
+offset_bottom = 219.0
+
+[node name="hightlighted" parent="Ladders/Ladder4" index="1"]
 offset_top = -134.0
 offset_bottom = 219.0
 
@@ -456,6 +465,10 @@ unique_name_in_owner = true
 position = Vector2(-2671, -510)
 
 [node name="default" parent="Ladders/Ladder5" index="0"]
+offset_top = -67.0
+offset_bottom = 222.0
+
+[node name="hightlighted" parent="Ladders/Ladder5" index="1"]
 offset_top = -67.0
 offset_bottom = 222.0
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="4_2d0qi"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="4_etb6b"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_d32dn"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
+[ext_resource type="PackedScene" uid="uid://kjnvb7cl4xos" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="7_y8omo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koxs5"]
@@ -125,7 +125,6 @@ offset_top = -81.0
 offset_bottom = 111.0
 
 [node name="hightlighted" parent="Ladders/Ladder" index="1"]
-visible = true
 offset_top = -81.0
 offset_bottom = 110.0
 

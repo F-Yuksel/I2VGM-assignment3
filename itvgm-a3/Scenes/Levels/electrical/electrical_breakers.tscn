@@ -14,14 +14,14 @@
 size = Vector2(41.3436, 45.4008)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hu6i"]
-size = Vector2(30, 324.797)
+size = Vector2(30, 329)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obfuv"]
-size = Vector2(29, 206.406)
+size = Vector2(29, 204.406)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42hty"]
 resource_local_to_scene = true
-size = Vector2(28, 444.813)
+size = Vector2(28, 162)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c82si"]
 texture = ExtResource("1_hgnvn")
@@ -227,11 +227,15 @@ texture = ExtResource("3_d0byq")
 position = Vector2(594, -100)
 
 [node name="default" parent="Ladders/Ladder" index="0"]
-offset_top = -231.0
-offset_bottom = 101.0
+offset_top = -229.0
+offset_bottom = 100.0
+
+[node name="hightlighted" parent="Ladders/Ladder" index="1"]
+offset_top = -229.0
+offset_bottom = 100.0
 
 [node name="CollisionShape2D" parent="Ladders/Ladder" index="2"]
-position = Vector2(-1, -66.3985)
+position = Vector2(-1, -64.5)
 shape = SubResource("RectangleShape2D_5hu6i")
 
 [node name="Ladder2" parent="Ladders" instance=ExtResource("10_ob6ci")]
@@ -241,14 +245,22 @@ position = Vector2(1232, -167)
 offset_top = -37.0
 offset_bottom = 167.0
 
+[node name="hightlighted" parent="Ladders/Ladder2" index="1"]
+offset_top = -37.0
+offset_bottom = 167.0
+
 [node name="CollisionShape2D" parent="Ladders/Ladder2" index="2"]
-position = Vector2(0.5, 65.7968)
+position = Vector2(0.5, 64.7969)
 shape = SubResource("RectangleShape2D_obfuv")
 
 [node name="Ladder3" parent="Ladders" instance=ExtResource("10_ob6ci")]
 position = Vector2(1650, -512)
 
 [node name="default" parent="Ladders/Ladder3" index="0"]
+offset_top = 62.0
+offset_bottom = 224.0
+
+[node name="hightlighted" parent="Ladders/Ladder3" index="1"]
 offset_top = 62.0
 offset_bottom = 224.0
 
