@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="2_ap76o"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_hw1go"]
 [ext_resource type="Texture2D" uid="uid://b6hp7enc5g18r" path="res://Imports/player/Character.png" id="4_q603o"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/reactor/noHazmat.tscn" id="4_qkdj7"]
+[ext_resource type="PackedScene" uid="uid://7d0e4t51hgnw" path="res://Scenes/Levels/reactor/noHazmat.tscn" id="4_qkdj7"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="5_7u1rl"]
 [ext_resource type="PackedScene" uid="uid://dv6c82iiobxr0" path="res://Scenes/Levels/reactor/noPower.tscn" id="5_ybo7d"]
 [ext_resource type="PackedScene" uid="uid://bxcdhfshxhwre" path="res://Scenes/Levels/reactor/startReactor.tscn" id="8_1h7tc"]
@@ -292,6 +292,22 @@ position = Vector2(511, 668)
 [node name="noPower" parent="CanvasLayer" instance=ExtResource("5_ybo7d")]
 visible = false
 position = Vector2(461, 667)
+
+[node name="TextBox" type="Node2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(0, -176)
+
+[node name="Label" type="Label" parent="CanvasLayer/TextBox"]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 182.0
+offset_top = 719.0
+offset_right = 980.0
+offset_bottom = 742.0
+grow_horizontal = 2
+text = "The message has been sent! Hopefully someone will help us soon!"
 
 [node name="startReactor" parent="." instance=ExtResource("8_1h7tc")]
 visible = false

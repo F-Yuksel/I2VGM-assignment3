@@ -343,8 +343,15 @@ position = Vector2(3, 75)
 [node name="breakers_panel" parent="." instance=ExtResource("3_n5rkd")]
 position = Vector2(1154, -33)
 
-[node name="DoorToHub" parent="." instance=ExtResource("11_ck65h")]
+[node name="DoorToWires" parent="." instance=ExtResource("11_ck65h")]
 position = Vector2(172, -45)
+nextScenePath = "res://Scenes/Levels/electrical/electrical_wires.tscn"
+Coords = Vector2(672, -45)
+
+[node name="DoorToButtonMaze" parent="." instance=ExtResource("11_ck65h")]
+position = Vector2(172, -365)
+nextScenePath = "res://Scenes/Levels/electrical/electrical_buttonmaze.tscn"
+Coords = Vector2(-2208, 174)
 
 [editable path="Ladders/Ladder"]
 [editable path="Ladders/Ladder2"]
