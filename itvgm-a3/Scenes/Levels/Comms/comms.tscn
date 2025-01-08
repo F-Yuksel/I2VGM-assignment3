@@ -847,11 +847,7 @@ color = Color(0.1824, 0.24, 0.24, 1)
 [node name="LampObjects" type="Node" parent="."]
 
 [node name="Linelamp" parent="LampObjects" instance=ExtResource("28_cgykb")]
-modulate = Color(0, 1, 1, 1)
 position = Vector2(96, -80)
-
-[node name="PointLight2D" parent="LampObjects/Linelamp" index="1"]
-color = Color(0, 1, 1, 1)
 
 [node name="pointlamp" parent="LampObjects" instance=ExtResource("29_y46d3")]
 position = Vector2(240, -58)

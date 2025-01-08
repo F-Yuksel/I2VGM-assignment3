@@ -79,6 +79,8 @@ func _on_body_exited(body):
 func _process(delta: float) -> void:
 	if playerInside and Input.is_action_just_pressed("Interact"):
 		if nextScenePath != "":
+			TransitionScene.transition()
+			await TransitionScene.on_transition_finished
 			print("Switching to scene:", nextScenePath)
 			var result = get_tree().change_scene_to_file(nextScenePath)
 			if result != OK:

@@ -182,11 +182,23 @@ color = Color(0.1824, 0.24, 0.24, 1)
 
 [node name="LampObjects" type="Node" parent="."]
 
-[node name="Linelamp" parent="." instance=ExtResource("7_q1axm")]
+[node name="Linelamp" parent="LampObjects" instance=ExtResource("7_q1axm")]
 position = Vector2(1280, -111)
 
-[node name="pointlamp" parent="." instance=ExtResource("8_psbrt")]
+[node name="pointlamp" parent="LampObjects" instance=ExtResource("8_psbrt")]
 position = Vector2(1056, -100)
+
+[node name="pointlamp2" parent="LampObjects" instance=ExtResource("8_psbrt")]
+position = Vector2(864, -100)
+
+[node name="pointlamp3" parent="LampObjects" instance=ExtResource("8_psbrt")]
+position = Vector2(640, -100)
+
+[node name="pointlamp4" parent="LampObjects" instance=ExtResource("8_psbrt")]
+position = Vector2(416, -100)
+
+[node name="pointlamp5" parent="LampObjects" instance=ExtResource("8_psbrt")]
+position = Vector2(160, -100)
 
 [editable path="DoorToLQ3"]
 [editable path="DoorToLQ1"]
