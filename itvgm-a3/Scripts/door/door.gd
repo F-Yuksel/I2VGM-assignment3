@@ -1,8 +1,10 @@
 extends Node2D
 
-var nextScenePath: String  
 var playerName: String = "Player"
 var playerInside: bool = false
+
+@export var nextScenePath: String
+@export var Coords: Vector2
 
 func _ready() -> void:
 	$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
@@ -10,74 +12,23 @@ func _ready() -> void:
 
 func _on_body_entered(body):
 	if body.name == playerName:
-		if name == "DoorToLQ3":
-			nextScenePath = "res://Scenes/Levels/reactor/LQ3.tscn"
-			Global.doorPosition = Vector2(25, -45)
-		elif name == "DoorToHallwayLQ3":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(150, -75)
-		elif name == "DoorToLQ4":
-			nextScenePath = "res://Scenes/Levels/reactor/LQ4.tscn"
-			Global.doorPosition = Vector2(25, -45)
-		elif name == "DoorToHallwayLQ4":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(420, -75)
-		elif name == "DoorToKK":
-			nextScenePath = "res://Scenes/Levels/reactor/kluiskamer.tscn"
-			Global.doorPosition = Vector2(0,-45)
-		elif name == "DoorToHallwayKK":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(650,-75)
-		elif name == "DoorToHallwayLQ1":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(850,-75)
-		elif name == "DoorToLQ1":
-			nextScenePath = "res://Scenes/Levels/reactor/LQ1.tscn"
-			Global.doorPosition = Vector2(0,-75)
-		elif name == "DoorToLQ2":
-			nextScenePath = "res://Scenes/Levels/reactor/LQ2.tscn"
-			Global.doorPosition = Vector2(0,-75)
-		elif name == "DoorToHallwayLQ2":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(1050,-75)
-		elif name == "DoorMain1":
-			nextScenePath = "res://Scenes/Levels/electrical/electrical_wires.tscn"
-			Global.doorPosition = Vector2(96, -45)
-		elif name == "DoorMain2":
-			nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-			Global.doorPosition = Vector2(1260,-75)
-		elif name == "DoorMain3":
-			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-			Global.doorPosition = Vector2(25, -100)
-		elif name == "DoorMain4":
-			nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
-			Global.doorPosition = Vector2(-1, -20)
-		elif name == "DoorToHub":
-			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-			Global.doorPosition = Vector2(-1230, -200)
-		elif name == "DoorToHub2":
-			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-			Global.doorPosition = Vector2(-1450, -200)
-		elif name == "DoorToHub3":
-			nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-			Global.doorPosition = Vector2(1000, -200)
-
-		else:
-			print("Warning: Unknown door name. nextScenePath is not set.")
+		Global.doorPosition = Coords
 		playerInside = true
 		 
-		$"../Player/Interact".visible = true;
+		$"../Player/CanvasLayer/Interact".visible = true;
 		print("Player entered the door area.")
 
 func _on_body_exited(body):
 	if body.name == playerName:
 		playerInside = false
-		$"../Player/Interact".visible = false;
+		$"../Player/CanvasLayer/Interact".visible = false;
 		print("Player exited the door area.")
 
 func _process(delta: float) -> void:
 	if playerInside and Input.is_action_just_pressed("Interact"):
 		if nextScenePath != "":
+			TransitionScene.transition()
+			await TransitionScene.on_transition_finished
 			print("Switching to scene:", nextScenePath)
 			var result = get_tree().change_scene_to_file(nextScenePath)
 			if result != OK:

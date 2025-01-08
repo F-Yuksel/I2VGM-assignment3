@@ -35,16 +35,16 @@ func _process(delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == playerName:
 		if !Global.generatorOn:
-			$"../Player/noPower".visible = true
+			$"../Player/CanvasLayer/noPower".visible = true
 		else:
-			$"../Player/Interact".visible = true
+			$"../Player/CanvasLayer/Interact".visible = true
 			ableToInterract = true
 		
 func _on_body_exited(body):
 	if body.name == playerName:
 		ableToInterract = false
-		$"../Player/Interact".visible = false
-		$"../Player/noPower".visible = false
+		$"../Player/CanvasLayer/Interact".visible = false
+		$"../Player/CanvasLayer/noPower".visible = false
 	
 func _draw():
 	if !Global.reactorOn and alarmState:

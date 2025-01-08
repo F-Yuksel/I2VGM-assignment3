@@ -175,29 +175,29 @@ tile_set = SubResource("TileSet_c8em3")
 [node name="DoorToHallwayLQ4" parent="." instance=ExtResource("3_sl505")]
 position = Vector2(29.805, -46.37)
 
-[node name="File" type="Sprite2D" parent="."]
+[node name="ItemPickup" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(285, -8)
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("6_kocqg")
-
-[node name="ItemPickup" type="Area2D" parent="File" node_paths=PackedStringArray("item")]
 script = ExtResource("6_otq5o")
 item = NodePath("VaultNote")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="File/ItemPickup"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickup"]
 position = Vector2(-0.00195313, -83.3333)
 shape = SubResource("RectangleShape2D_lin2f")
 
-[node name="VaultNote" type="Node" parent="File/ItemPickup"]
+[node name="VaultNote" type="Node" parent="ItemPickup"]
 script = ExtResource("7_dio1s")
 item_name = "Vault Note"
 icon = ExtResource("7_p435w")
-image = ExtResource("7_p435w")
+info_text = "An empty file. Maybe something is written on it?"
 
-[node name="Area2D" type="Area2D" parent="File"]
+[node name="File" type="Sprite2D" parent="ItemPickup"]
+texture = ExtResource("6_kocqg")
+
+[node name="Area2D" type="Area2D" parent="ItemPickup"]
 script = ExtResource("8_63m3u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="File/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickup/Area2D"]
 position = Vector2(-0.000976563, -83.3333)
 shape = SubResource("RectangleShape2D_xnabi")
 

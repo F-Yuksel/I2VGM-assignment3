@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8ihqeukrta4m"]
+[gd_scene load_steps=8 format=3 uid="uid://cdpiag0dwjig7"]
 
 [ext_resource type="Texture2D" uid="uid://4xwdxvfusrx4" path="res://Imports/screen.png" id="1_p7utg"]
 [ext_resource type="Texture2D" uid="uid://dtf6jiatr2v5y" path="res://Imports/startButton.png" id="2_sle2y"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/startReactorSequenceButton.gd" id="3_1gh8b"]
+[ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="3_2e4fo"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/quickTimeEvent.gd" id="4_jhekh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mnxb"]
@@ -25,12 +26,15 @@ position = Vector2(576, 324)
 texture = ExtResource("2_sle2y")
 
 [node name="Label" type="Label" parent="StartButton"]
-offset_left = -68.0
-offset_top = -25.0
-offset_right = 83.0
-offset_bottom = 18.0
-text = "Press to start reactor 
-initialization squence!"
+offset_left = -114.0
+offset_top = -36.0
+offset_right = 137.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("3_2e4fo")
+text = "Press to start 
+reactor
+ initialization 
+sequence!"
 label_settings = SubResource("LabelSettings_7mnxb")
 horizontal_alignment = 1
 vertical_alignment = 1

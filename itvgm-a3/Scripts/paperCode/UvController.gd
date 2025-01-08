@@ -19,9 +19,9 @@ func _on_body_entered(body):
 	if body.name == playerName:
 		if Global.hasCodePaper:
 			ableToUse = true
-			$"../../Player/Interact".visible = true;
+			$"../../Player/CanvasLayer/Interact".visible = true;
 	
 func _on_body_exited(body):
 	if body.name == playerName:
 		ableToUse = false
-		$"../../Player/Interact".visible = false;
+		$"../../Player/CanvasLayer/Interact".visible = false;

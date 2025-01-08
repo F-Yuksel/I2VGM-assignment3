@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://mrjdsa0eh06j"]
+[gd_scene load_steps=5 format=3 uid="uid://mrjdsa0eh06j"]
 
 [ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_tyspt"]
 [ext_resource type="Texture2D" uid="uid://6204j7q4mmh8" path="res://Imports/Free-Protective-Suit-Against-Radiation-and-Things-Pixel-Art-Icons/1 Icons/Icon10_04.png" id="2_x6npo"]
+[ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="3_omjvk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0osb"]
 font_size = 32
 
 [node name="InventorySlot" type="Button"]
 custom_minimum_size = Vector2(350, 75)
+size_flags_stretch_ratio = 0.35
 script = ExtResource("1_tyspt")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -33,6 +35,9 @@ expand_mode = 1
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_omjvk")
+theme_override_font_sizes/font_size = 1
 text = "Spacesuit"
 label_settings = SubResource("LabelSettings_x0osb")
 

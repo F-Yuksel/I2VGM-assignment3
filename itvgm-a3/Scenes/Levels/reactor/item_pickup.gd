@@ -24,19 +24,19 @@ func _process(delta: float) -> void:
 			global_inventory.add_child(new_item)
 			inventory.add_item(item)  # Add the item to the player's inventory
 			queue_free()  # Remove the item from the world
-			$"../../File".visible = false
+			#$"../../File".visible = false
 	
 func _on_body_entered(body):
 	if body.name == playerName:
 		player = body
-		var interact_screen = body.get_node("Interact")
+		var interact_screen = body.get_node("CanvasLayer/Interact")
 		print(interact_screen)
 		ableToPickUp = true
 		interact_screen.visible = true
 	
 func _on_body_exited(body):
 	if body.name == playerName:
-		var interact_screen = body.get_node("Interact")
+		var interact_screen = body.get_node("CanvasLayer/Interact")
 		print(interact_screen)
 		ableToPickUp = false
 		interact_screen.visible = false

@@ -19,10 +19,10 @@ func _process(delta: float) -> void:
 	
 func _on_body_entered(body):
 	if body.name == playerName:
-		$"../../Player/Interact".visible = true
+		$"../../Player/CanvasLayer/Interact".visible = true
 		ableToInterract = true
 		
 func _on_body_exited(body):
 	if body.name == playerName:
 		ableToInterract = false
-		$"../../Player/Interact".visible = false
+		$"../../Player/CanvasLayer/Interact".visible = false
