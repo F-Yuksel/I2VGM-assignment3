@@ -13,6 +13,8 @@ var generatorOn: bool = false
 var inventoryLock: bool = false
 var reactorOn: bool = false
 
+var coordsGet: bool = false
+
 func reset() -> void:
 	doorPosition = Vector2.ZERO
 	hasCodePaper = false

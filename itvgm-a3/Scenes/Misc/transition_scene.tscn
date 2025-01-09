@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw8wwatgms7bl"]
+[gd_scene load_steps=8 format=3 uid="uid://cw8wwatgms7bl"]
 
 [ext_resource type="Script" path="res://Scenes/Misc/transition_scene.gd" id="1_o1yfc"]
 
@@ -49,11 +49,45 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_hdwmm"]
+resource_name = "slow_transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h2gkm"]
+resource_name = "slow_transition_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kt4d5"]
 _data = {
 "RESET": SubResource("Animation_6rsr0"),
 "fade_black": SubResource("Animation_wexya"),
-"fade_in": SubResource("Animation_85qtg")
+"fade_in": SubResource("Animation_85qtg"),
+"slow_transition": SubResource("Animation_hdwmm"),
+"slow_transition_out": SubResource("Animation_h2gkm")
 }
 
 [node name="transition_scene" type="CanvasLayer"]

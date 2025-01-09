@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="2_ap76o"]
 [ext_resource type="AudioStream" uid="uid://c06tbq1ijxrhn" path="res://Imports/Music/SFX/Jump.mp3" id="3_hj2jp"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="3_hw1go"]
-[ext_resource type="AudioStream" uid="uid://c232ldhv3vg51" path="res://Imports/Music/SFX/ItemPickup.mp3" id="4_frgpm"]
+[ext_resource type="AudioStream" uid="uid://pdt7ls86emas" path="res://Imports/Music/SFX/ItemPickup.mp3" id="4_frgpm"]
 [ext_resource type="Texture2D" uid="uid://b6hp7enc5g18r" path="res://Imports/player/Character.png" id="4_q603o"]
 [ext_resource type="PackedScene" path="res://Scenes/Levels/reactor/noHazmat.tscn" id="4_qkdj7"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="5_7u1rl"]

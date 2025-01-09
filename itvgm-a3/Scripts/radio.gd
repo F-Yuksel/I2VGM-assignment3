@@ -12,7 +12,13 @@ func _process(delta: float) -> void:
 		$"../Player/CanvasLayer/TextBox".visible = true
 		await get_tree().create_timer(3.0).timeout
 		$"../Player/CanvasLayer/TextBox".visible = false
-
+	if has_power:
+		$comscreen/error.visible = false
+	else:
+		$comscreen/error.visible = true
+	
+	if Global.coordsGet:
+		$comscreen/fixed.visible = true
 func _on_body_entered(body: Node2D):
 	if body.name == playerName and has_power:
 		var interact_screen = body.get_node("CanvasLayer/Interact")

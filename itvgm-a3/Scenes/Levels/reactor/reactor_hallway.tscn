@@ -183,7 +183,7 @@ texture = ExtResource("3_brxsv")
 [node name="DoorToHub2" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(1280, -77)
 nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-Coords = Vector2(-1450, -200)
+Coords = Vector2(-864, -237)
 
 [node name="Player" parent="." instance=ExtResource("2_dniw1")]
 z_index = 1

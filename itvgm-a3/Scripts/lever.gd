@@ -11,12 +11,20 @@ var in_body = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$A_on.visible = true
-	$A_off.visible = false
-	$B_on.visible = false
-	$B_off.visible = true
-	emit_signal("power_a", true)
-	emit_signal("power_b", false)
+	if Global.elecbreakers_solved:
+		$A_on.visible = true
+		$A_off.visible = false
+		$B_on.visible = false
+		$B_off.visible = true
+		emit_signal("power_a", true)
+		emit_signal("power_b", false)
+	else:
+		$A_on.visible = false
+		$A_off.visible = true
+		$B_on.visible = false
+		$B_off.visible = true
+		emit_signal("power_a", false)
+		emit_signal("power_b", false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

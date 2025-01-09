@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh2bbyu68mt75"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/errorscreen.gd" id="1_uaa1v"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="2_tglsq"]
+
+[node name="errorscreen" type="Node2D"]
+script = ExtResource("1_uaa1v")
+
+[node name="fixed" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(0.465079, 0.668698, 5.77569e-07, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="fixed"]
+position = Vector2(17, 13)
+color = Color(0.476565, 0.953542, 0, 1)
+texture = ExtResource("2_tglsq")
+texture_scale = 0.2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="fixed"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 48.0
+scale = Vector2(0.843306, 1.16456)
+theme_override_font_sizes/normal_font_size = 8
+text = "online"
+
+[node name="error" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(0, 0, 0, 1)
