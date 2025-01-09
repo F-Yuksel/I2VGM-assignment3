@@ -5,6 +5,21 @@
 [ext_resource type="AudioStream" uid="uid://cjjm7ks2uwdnu" path="res://Imports/Music/SFX/MenuButtonPress.mp3" id="3_5ab33"]
 [ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="3_nn7of"]
 
+[sub_resource type="Animation" id="Animation_7dwb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.954693, 0.136571, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_kf5rp"]
 resource_name = "color"
 length = 30.0
@@ -20,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.954693, 0.136571, 0, 1), Color(4.57242e-06, 0.623178, 0.34527, 1), Color(0.318857, 0.46626, 1, 1), Color(0.952941, 0.137255, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_7dwb4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:theme_override_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.954693, 0.136571, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2qu5v"]

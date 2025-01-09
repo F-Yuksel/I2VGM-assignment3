@@ -19,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if textisshown or Input.is_action_just_pressed("Jump"):
+	if textisshown and Input.is_action_just_pressed("Jump"):
 		TransitionScene.transition_slow()
 		await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/Levels/test_scene.tscn")

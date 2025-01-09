@@ -28,6 +28,8 @@ func _ready() -> void:
 		$Lamps/OtherLamps/emergencyLamp4.visible = true
 		$Lamps/OtherLamps/emergencyLamp5.visible = true
 		$Lamps/OtherLamps/emergencyLamp6.visible = true
+		#AudioPlayer.stop_playing()
+		
 	if Global.elecwires_solved:
 		$Lamps/Electrical/Normal.visible = true
 		$Lamps/Electrical/Emergency.visible = false
@@ -55,10 +57,9 @@ func _ready() -> void:
 	if Global.reactorOn:
 		$Lamps/Reactor/Normal.visible = false
 		$Lamps/Reactor/Solved.visible = true
-		
-		AudioPlayer.play_music_level()
-	else:
-		AudioPlayer.stop_playing()
+	
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
