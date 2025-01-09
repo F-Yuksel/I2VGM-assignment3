@@ -1,7 +1,7 @@
 extends Button
 
 @onready var icon_ : TextureRect = get_node("HBoxContainer/Icon")
-@onready var label : Label = get_node("HBoxContainer/Label")
+@onready var label : Label = get_node("HBoxContainer2/Label")
 var info_text : String
 var inventory
 var is_log : bool

@@ -13,6 +13,7 @@ func _ready() -> void:
 	$".".connect("body_exited", Callable(self, "_on_body_exited"))
 	if global_inventory.check_item(item):
 		print("Lmao im bussin")
+		queue_free()
 
 func _process(delta: float) -> void:
 	if ableToPickUp and Input.is_action_just_pressed("Interact"):
