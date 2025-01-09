@@ -15,13 +15,13 @@ func _ready() -> void:
 	set_process(true)
 
 func _process(delta):
+	circleRadius -= 40 * delta
+	circleColor = Color(circleColor.r, circleColor.g, circleColor.b, circleColor.a-0.5*delta)
 	queue_redraw()
 
 func _draw() -> void:
 	if sequenceRunning:
 		draw_circle(Vector2(xPos, yPos), circleRadius, circleColor)
-		circleRadius -= .75
-		circleColor = Color(circleColor.r, circleColor.g, circleColor.b, circleColor.a-.01)
 		if circleRadius <= 0:
 			get_tree().change_scene_to_file("res://Scenes/Levels/reactor/reactorroom.tscn")
 			Global.doorPosition = Vector2(752, -60)
@@ -31,6 +31,8 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		var click_position = event.position
 		var circle_position = Vector2(xPos, yPos)
+		circleRadius = 75
+		circleColor = Color(0.298, 0.659, 0.651, 1)
 		if sequenceRunning and click_position.distance_to(circle_position) <= circleRadius:
 			_on_circle_pressed()
 

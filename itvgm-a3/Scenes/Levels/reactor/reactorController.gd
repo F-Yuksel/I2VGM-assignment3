@@ -11,9 +11,9 @@ var timer = timerBase
 
 func _ready() -> void:
 	set_process(true)
-	$".".connect("body_entered", Callable(self, "_on_body_entered"));
-	$".".connect("body_exited", Callable(self, "_on_body_exited"));		
-	
+	$".".connect("body_entered", Callable(self, "_on_body_entered"))
+	$".".connect("body_exited", Callable(self, "_on_body_exited"))
+	alarm_flash_loop()
 	if !Global.reactorOn:
 		alarm.play()
 	else:
@@ -23,14 +23,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	queue_redraw()
-	timer -= 1
-	if (timer < 0):
-		timer = timerBase
-		alarmState = !alarmState
-		
 	if ableToInterract and Input.is_action_just_pressed("Interact"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/reactor/reactorStartUpSequence.tscn")
+	
+func alarm_flash_loop():
+	if !Global.reactorOn:
+		queue_redraw()
+		await get_tree().create_timer(0.4).timeout
+		alarmState = !alarmState
+		alarm_flash_loop()
+	else:
+		alarmState = false
 	
 func _on_body_entered(body):
 	if body.name == playerName:
