@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
 		if global_inventory:
 			print("Adding item", item)
 			var inventory = player.get_node("CanvasLayer/Inventory")
+			var audio = player.get_node("Sounds/Pickup")
+			audio.play()
 			var new_item = item.duplicate()
 			# Add the item to the global inventory
 			global_inventory.add_child(new_item)

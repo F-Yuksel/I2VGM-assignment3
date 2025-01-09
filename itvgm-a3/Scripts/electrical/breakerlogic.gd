@@ -43,7 +43,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	# Detects closing input
 	if Input.is_action_just_pressed("exit"):
-		Global.doorPosition = Vector2(1154,-33)
+		Global.doorPosition = Vector2(880,-33)
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		get_tree().change_scene_to_file("res://Scenes/Levels/electrical/electrical_breakers.tscn")
 

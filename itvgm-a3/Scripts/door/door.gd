@@ -51,6 +51,7 @@ func _process(delta: float) -> void:
 				$"../Player/CanvasLayer/Notification".text = NotifVar
 				$"../Player/CanvasLayer/Notification".visible = true;
 				$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
+				return
 		if nextScenePath != "":
 			openSFX.play()
 			TransitionScene.transition()

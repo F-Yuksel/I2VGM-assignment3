@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://bvtv8el04pkbd"]
+[gd_scene load_steps=50 format=4 uid="uid://bvtv8el04pkbd"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_q2eao"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://Scripts/radio.gd" id="26_sbgxv"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="27_oe12g"]
 [ext_resource type="PackedScene" uid="uid://b4iichfihpq7o" path="res://Scenes/Objects/linelamp.tscn" id="28_cgykb"]
+[ext_resource type="Texture2D" uid="uid://c60ckkv1q4iji" path="res://textures/UI/bluekey.png" id="29_km6ju"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="29_y46d3"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="30_e5wev"]
 
@@ -309,6 +310,9 @@ size = Vector2(87.5, 62.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ig2gj"]
 size = Vector2(3450, 944)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifctg"]
+size = Vector2(41.3436, 45.4008)
 
 [node name="Communication" type="Node2D"]
 
@@ -829,6 +833,25 @@ position = Vector2(1968, -624)
 
 [node name="roomlamp3" parent="LampObjects" instance=ExtResource("30_e5wev")]
 position = Vector2(2801, -611)
+
+[node name="BlueKey" type="Area2D" parent="." node_paths=PackedStringArray("item")]
+position = Vector2(3152, 86)
+script = ExtResource("20_p5ayh")
+item = NodePath("BlueKey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueKey"]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_ifctg")
+
+[node name="BlueKey" type="Node" parent="BlueKey"]
+script = ExtResource("13_aqrxq")
+item = "BlueKey"
+item_name = "Blue Key"
+icon = ExtResource("29_km6ju")
+info_text = "Blue Key card. Could be used to open certain doors.."
+
+[node name="Note1" type="Sprite2D" parent="BlueKey"]
+texture = ExtResource("29_km6ju")
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]

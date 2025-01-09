@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="4_2d0qi"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="4_etb6b"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_d32dn"]
-[ext_resource type="PackedScene" uid="uid://kjnvb7cl4xos" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
+[ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="7_y8omo"]
 [ext_resource type="AudioStream" uid="uid://sq7xrhwl0xj0" path="res://Imports/Music/SFX/PowerOn.mp3" id="8_nogus"]
 
@@ -184,7 +184,7 @@ position = Vector2(64, -209)
 z_index = -1
 position = Vector2(96, -45)
 nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-Coords = Vector2(-1230, -200)
+Coords = Vector2(-240, -545)
 
 [node name="DoorToBreakers" parent="." instance=ExtResource("7_y8omo")]
 z_index = -1
