@@ -320,6 +320,8 @@ tile_set = SubResource("TileSet_s2l8d")
 
 [node name="DoorToHub3" parent="." instance=ExtResource("2_q2eao")]
 position = Vector2(96, -45)
+nextScenePath = "res://Scenes/Levels/test_scene.tscn"
+Coords = Vector2(720, -240)
 
 [node name="Generator1" type="Sprite2D" parent="."]
 position = Vector2(654, -527)
@@ -541,7 +543,7 @@ texture = ExtResource("27_oe12g")
 texture_scale = 0.36
 
 [node name="Player" parent="." instance=ExtResource("7_pcerb")]
-position = Vector2(91, -31)
+position = Vector2(3000, -31)
 
 [node name="Inventory" parent="Player" instance=ExtResource("24_taywp")]
 visible = false
@@ -549,21 +551,6 @@ offset_left = 1.0
 offset_top = 40.0
 offset_right = 1.0
 offset_bottom = 40.0
-
-[node name="TextBox" type="Node2D" parent="Player"]
-visible = false
-position = Vector2(0, -176)
-
-[node name="Label" type="Label" parent="Player/TextBox"]
-custom_minimum_size = Vector2(500, 0)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -250.0
-offset_right = 250.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "The message has been sent! Hopefully someone will help us soon!"
 
 [node name="Door1" type="StaticBody2D" parent="."]
 position = Vector2(1488, -16)

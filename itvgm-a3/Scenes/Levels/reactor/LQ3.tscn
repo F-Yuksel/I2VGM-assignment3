@@ -162,6 +162,8 @@ shape = SubResource("RectangleShape2D_52rxr")
 
 [node name="DoorToHallwayLQ3" parent="." instance=ExtResource("4_fmq4x")]
 position = Vector2(22.6, -46.03)
+nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
+Coords = Vector2(150, -75)
 
 [node name="decor" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)

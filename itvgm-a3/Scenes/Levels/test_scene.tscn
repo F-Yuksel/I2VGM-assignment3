@@ -163,14 +163,19 @@ position = Vector2(0, 72)
 
 [node name="DoorMain3" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(720, -240)
+nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
+Coords = Vector2(96, -45)
 
 [node name="DoorMain4" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(1036, -239)
+nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
+Coords = Vector2(-1, -20)
 
 [node name="DoorMain1" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1202, -239)
-nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
-Coords = Vector2(25, -100)
+
+nextScenePath = "res://Scenes/Levels/electrical/electrical_wires.tscn"
+Coords = Vector2(96, -45)
 
 [node name="DoorMain2" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1520, -239)
