@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://mrjdsa0eh06j"]
 
 [ext_resource type="Script" path="res://Scripts/inventory_slot.gd" id="1_tyspt"]
-[ext_resource type="Texture2D" uid="uid://6204j7q4mmh8" path="res://Imports/Free-Protective-Suit-Against-Radiation-and-Things-Pixel-Art-Icons/1 Icons/Icon10_04.png" id="2_x6npo"]
+[ext_resource type="Texture2D" uid="uid://ljsn1f2vo1hm" path="res://Imports/cancelbutton.png" id="2_3bv85"]
 [ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="3_omjvk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x0osb"]
@@ -30,7 +30,7 @@ grow_vertical = 2
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("2_x6npo")
+texture = ExtResource("2_3bv85")
 expand_mode = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
