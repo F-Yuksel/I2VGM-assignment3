@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cwwlat0hcj724"]
+[gd_scene load_steps=29 format=4 uid="uid://cwwlat0hcj724"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/buttonlogic.gd" id="1_thuct"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_wyii8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/buttonmaze_utils/control_panel.tscn" id="13_c3evm"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="15_8qnkd"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="16_34dfx"]
+[ext_resource type="PackedScene" uid="uid://bt8ckapk8oxo3" path="res://Scenes/Objects/exitsign.tscn" id="17_j33pt"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xj0af"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -516,7 +517,7 @@ nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
 Coords = Vector2(172, -365)
 
 [node name="DoorToHub" parent="." instance=ExtResource("11_k7e14")]
-position = Vector2(-3494, -621)
+position = Vector2(-3488, -621)
 nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 Coords = Vector2(-1202, -239)
 
@@ -711,6 +712,9 @@ position = Vector2(-2832, -635)
 
 [node name="pointlamp14" parent="Lamps" instance=ExtResource("16_34dfx")]
 position = Vector2(-2768, -635)
+
+[node name="exitsign" parent="." instance=ExtResource("17_j33pt")]
+position = Vector2(-3440, -622)
 
 [editable path="Ladders/Ladder1"]
 [editable path="Ladders/Ladder2"]

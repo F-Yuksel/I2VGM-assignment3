@@ -1,11 +1,14 @@
-[gd_scene load_steps=15 format=4 uid="uid://d3xf80f7hnhw0"]
+[gd_scene load_steps=18 format=4 uid="uid://d3xf80f7hnhw0"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_eijj8"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_5omtn"]
 [ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="2_uyl3h"]
+[ext_resource type="Texture2D" uid="uid://dgycrhtixvwas" path="res://textures/Decor/normalDoor1.png" id="3_kdgp4"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="4_fmq4x"]
 [ext_resource type="Script" path="res://Scripts/generatorController.gd" id="6_5e0a7"]
 [ext_resource type="AudioStream" uid="uid://dd84g3jf7k2u3" path="res://Imports/Music/Generator - Free Sound Effect.mp3" id="6_w6fao"]
+[ext_resource type="PackedScene" uid="uid://b0ohafrvk6cho" path="res://Scenes/Objects/errorscreen.tscn" id="7_x0xux"]
+[ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="8_2vyg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gfulm"]
 texture = ExtResource("1_eijj8")
@@ -165,9 +168,12 @@ position = Vector2(22.6, -46.03)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 Coords = Vector2(150, -75)
 
+[node name="Sprite2D" parent="DoorToHallwayLQ3" index="0"]
+texture = ExtResource("3_kdgp4")
+
 [node name="decor" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAFAP7/AAACAAQAAAAFAP//AAACAAUAAAAGAP7/AAADAAQAAAAGAP//AAADAAUAAAALAP7/AAAAAAIAAAALAP//AAAAAAMAAAAMAP7/AAABAAIAAAAMAP//AAABAAMAAAAIAP//AAAAAAUAAAAJAP//AAABAAUAAAA=")
+tile_map_data = PackedByteArray("AAAFAP7/AAACAAQAAAAFAP//AAACAAUAAAAGAP7/AAADAAQAAAAGAP//AAADAAUAAAALAP7/AAACAAIAAAALAP//AAACAAMAAAAMAP7/AAADAAIAAAAMAP//AAADAAMAAAAIAP//AAAAAAUAAAAJAP//AAABAAUAAAA=")
 tile_set = SubResource("TileSet_1cdcm")
 
 [node name="Generator" type="Area2D" parent="."]
@@ -178,6 +184,7 @@ position = Vector2(377.5, -31.5)
 shape = SubResource("RectangleShape2D_nf6kf")
 
 [node name="Player" parent="." instance=ExtResource("2_5omtn")]
+z_index = 1
 position = Vector2(31, -45)
 
 [node name="camera_zone_1" type="Area2D" parent="."]
@@ -190,3 +197,28 @@ shape = SubResource("RectangleShape2D_by4dd")
 [node name="GeneretorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_w6fao")
 volume_db = 8.414
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.1824, 0.24, 0.24, 1)
+
+[node name="errorscreen" parent="." instance=ExtResource("7_x0xux")]
+position = Vector2(370, -44)
+scale = Vector2(0.6, 0.54)
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="roomlamp" parent="Lamps" instance=ExtResource("8_2vyg1")]
+position = Vector2(48, -240)
+
+[node name="PointLight2D" parent="Lamps/roomlamp" index="1"]
+texture_scale = 1.11
+
+[node name="roomlamp2" parent="Lamps" instance=ExtResource("8_2vyg1")]
+position = Vector2(336, -240)
+
+[node name="PointLight2D" parent="Lamps/roomlamp2" index="1"]
+texture_scale = 1.11
+
+[editable path="DoorToHallwayLQ3"]
+[editable path="Lamps/roomlamp"]
+[editable path="Lamps/roomlamp2"]

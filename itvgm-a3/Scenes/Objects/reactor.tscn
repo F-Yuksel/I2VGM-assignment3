@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx51bbpnanfs2"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/reactor.gd" id="1_qaj7w"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="2_66g34"]
+[ext_resource type="Texture2D" uid="uid://vx7e60gwcjx1" path="res://textures/Decor/Reactor.png" id="2_tdpmj"]
+
+[node name="Reactor" type="Node2D"]
+script = ExtResource("1_qaj7w")
+
+[node name="reactoroff" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_tdpmj")
+region_enabled = true
+region_rect = Rect2(0, 0, 28, 32)
+
+[node name="reactoron" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_tdpmj")
+region_enabled = true
+region_rect = Rect2(0, 32, 28, 32)
+
+[node name="PointLight2D" type="PointLight2D" parent="reactoron"]
+color = Color(0, 1, 1, 1)
+energy = 0.12
+texture = ExtResource("2_66g34")
