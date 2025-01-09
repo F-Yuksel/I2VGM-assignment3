@@ -21,6 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Label.text = codeEntered
 	if Input.is_action_just_pressed("exit"):
 		_on_button_pressed_esc()
 	
