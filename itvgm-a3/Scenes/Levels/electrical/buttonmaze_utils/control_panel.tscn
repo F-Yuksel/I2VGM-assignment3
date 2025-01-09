@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn7paqt3ollnd"]
+[gd_scene load_steps=5 format=3 uid="uid://cn7paqt3ollnd"]
 
 [ext_resource type="Texture2D" uid="uid://lv2v1krlrxu8" path="res://Imports/buttonmaze_utils/controlpanel.png" id="1_dcdyl"]
 [ext_resource type="Script" path="res://Scripts/electrical/control_panel.gd" id="1_mqb54"]
+[ext_resource type="AudioStream" uid="uid://sq7xrhwl0xj0" path="res://Imports/Music/SFX/PowerOn.mp3" id="3_rlmdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44rl7"]
 size = Vector2(256, 128)
@@ -16,6 +17,11 @@ texture = ExtResource("1_dcdyl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_44rl7")
 debug_color = Color(0.84168, 0.00110181, 0.919345, 0.42)
+
+[node name="Activation" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rlmdn")
+volume_db = -12.0
+pitch_scale = 1.6
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

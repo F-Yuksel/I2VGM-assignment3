@@ -1,6 +1,7 @@
 extends Area2D
 
 var interactable = false
+@onready var activationSFX: AudioStreamPlayer = $Activation
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _process(_delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("Interact"):
 		Global.elecbuttons_solved = true
 		Global.electrical_allsolved = true
+		activationSFX.play()
 		interactable = false
 		$"../buttonlogic".openall()
 		$"../Player/CanvasLayer/Interact".visible = false

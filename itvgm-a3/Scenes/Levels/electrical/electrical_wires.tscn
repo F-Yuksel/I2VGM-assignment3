@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=4 uid="uid://d01iwhqic776s"]
+[gd_scene load_steps=17 format=4 uid="uid://d01iwhqic776s"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/elecwires_manager.gd" id="1_km8jy"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_261i8"]
 [ext_resource type="PackedScene" uid="uid://bymk7vsp42tkg" path="res://Scenes/ladder.tscn" id="4_2d0qi"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="4_etb6b"]
 [ext_resource type="PackedScene" uid="uid://3di81jfd6h7r" path="res://Scenes/Levels/reactor/interact.tscn" id="5_d32dn"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
+[ext_resource type="PackedScene" uid="uid://kjnvb7cl4xos" path="res://Scenes/Levels/electrical/wirespanel.tscn" id="7_owcfb"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="7_y8omo"]
+[ext_resource type="AudioStream" uid="uid://sq7xrhwl0xj0" path="res://Imports/Music/SFX/PowerOn.mp3" id="8_nogus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koxs5"]
 resource_local_to_scene = true
@@ -190,5 +191,10 @@ z_index = -1
 position = Vector2(672, -45)
 nextScenePath = "res://Scenes/Levels/electrical/electrical_breakers.tscn"
 Coords = Vector2(172, -45)
+
+[node name="PowerOnSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nogus")
+volume_db = -18.0
+pitch_scale = 0.7
 
 [editable path="Ladders/Ladder"]
