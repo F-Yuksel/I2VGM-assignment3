@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bimfl7htky20c"]
+[gd_scene load_steps=12 format=3 uid="uid://bimfl7htky20c"]
 
 [ext_resource type="Texture2D" uid="uid://4xwdxvfusrx4" path="res://Imports/screen.png" id="1_owg42"]
 [ext_resource type="Script" path="res://Scripts/intro_manager.gd" id="2_k8noo"]
+[ext_resource type="AudioStream" uid="uid://b2b1q0260wds7" path="res://Imports/Music/SFX/keyboard_typing.mp3" id="3_5jya2"]
 
 [sub_resource type="Animation" id="Animation_gyqds"]
 length = 0.001
@@ -127,7 +128,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ssjeu"]
 resource_name = "show1"
-length = 2.5
+length = 2.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -154,10 +155,27 @@ tracks/1/keys = {
 "method": &"start_textdelay"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IntroManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_typing"
+}, {
+"args": [],
+"method": &"stop_typing"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_j0nll"]
 resource_name = "show2"
-length = 4.5
+length = 4.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -184,10 +202,27 @@ tracks/1/keys = {
 "method": &"start_textdelay"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IntroManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_typing"
+}, {
+"args": [],
+"method": &"stop_typing"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_7u7p0"]
 resource_name = "show3"
-length = 4.5
+length = 4.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -214,10 +249,27 @@ tracks/1/keys = {
 "method": &"start_textdelay"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IntroManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_typing"
+}, {
+"args": [],
+"method": &"stop_typing"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_p3r0u"]
 resource_name = "show4"
-length = 2.0
+length = 2.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -242,6 +294,23 @@ tracks/1/keys = {
 "values": [{
 "args": [],
 "method": &"start_textdelay"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IntroManager")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_typing"
+}, {
+"args": [],
+"method": &"stop_typing"
 }]
 }
 
@@ -377,5 +446,9 @@ metadata/_edit_lock_ = true
 [node name="TextDelay" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
+
+[node name="Typing_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5jya2")
+parameters/looping = true
 
 [connection signal="timeout" from="TextDelay" to="IntroManager" method="_on_text_delay_timeout"]
