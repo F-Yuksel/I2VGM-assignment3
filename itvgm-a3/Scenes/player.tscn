@@ -324,7 +324,7 @@ animation = &"walk"
 position = Vector2(0, -8)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_2nrsa")
-animation = &"idle"
+animation = &"walk"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.49

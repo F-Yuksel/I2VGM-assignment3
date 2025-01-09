@@ -1,5 +1,6 @@
 extends Node
 
+@export var item : String
 @export var item_name : String
 @export var is_log : bool
 @export var icon : Texture

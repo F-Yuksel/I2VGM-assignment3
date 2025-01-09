@@ -30,3 +30,10 @@ func check_item(item_node: Node):
 			print(find_child(item_node.name))
 			item_node.queue_free()  # Remove from the scene and free memory
 			return true
+			
+func check_item_name(item_node: String):
+	for child in get_children():
+		print(child.name)
+		if child.name.begins_with(item_node):
+			print(find_child(item_node))
+			return true

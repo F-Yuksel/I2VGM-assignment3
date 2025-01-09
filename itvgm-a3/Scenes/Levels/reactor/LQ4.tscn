@@ -195,6 +195,7 @@ shape = SubResource("RectangleShape2D_lin2f")
 
 [node name="VaultNote" type="Node" parent="ItemPickup"]
 script = ExtResource("7_dio1s")
+item = "VaultNote"
 item_name = "Vault Note"
 icon = ExtResource("7_p435w")
 info_text = "An empty file. Maybe something is written on it?"

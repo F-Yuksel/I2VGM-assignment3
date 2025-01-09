@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bvtv8el04pkbd"]
+[gd_scene load_steps=48 format=4 uid="uid://bvtv8el04pkbd"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_q2eao"]
@@ -16,11 +16,9 @@
 [ext_resource type="Script" path="res://Scripts/item.gd" id="13_aqrxq"]
 [ext_resource type="Texture2D" uid="uid://bim3neh5cnsax" path="res://textures/L_shape_wire_off.png" id="14_brrx8"]
 [ext_resource type="Texture2D" uid="uid://yf8g5gllhet8" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/Individual_PNGs/decor_4.png" id="14_u6rmg"]
-[ext_resource type="Texture2D" uid="uid://xt5oe5pucn7k" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile055.png" id="15_0jnu2"]
-[ext_resource type="Texture2D" uid="uid://sqftes2tsb8g" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile065.png" id="16_7k6qo"]
-[ext_resource type="Texture2D" uid="uid://bc4aarhaclxpk" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile054.png" id="17_5gg0p"]
+[ext_resource type="Texture2D" uid="uid://oxns50iksciu" path="res://textures/Decor/smallDoorClosed.png" id="15_r737b"]
+[ext_resource type="Texture2D" uid="uid://cppwhxl05qhwj" path="res://textures/Decor/smallDoorOpen.png" id="16_64gcs"]
 [ext_resource type="Script" path="res://Scripts/laser_door.gd" id="17_kdi4q"]
-[ext_resource type="Texture2D" uid="uid://cywvo5tb50t52" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile064.png" id="18_w3dgv"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="20_p5ayh"]
 [ext_resource type="Script" path="res://Scripts/panel.gd" id="23_7iraw"]
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="24_taywp"]
@@ -562,25 +560,16 @@ position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_6e0at")
 metadata/_edit_lock_ = true
 
-[node name="On1" type="Sprite2D" parent="Door1"]
-texture = ExtResource("15_0jnu2")
+[node name="Closed" type="Sprite2D" parent="Door1"]
+position = Vector2(0, 16)
+texture = ExtResource("15_r737b")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
 
-[node name="On2" type="Sprite2D" parent="Door1"]
-texture = ExtResource("16_7k6qo")
-metadata/_edit_lock_ = true
-
-[node name="Off1" type="Sprite2D" parent="Door1"]
+[node name="Open" type="Sprite2D" parent="Door1"]
 visible = false
-texture = ExtResource("17_5gg0p")
+position = Vector2(0, 16)
+texture = ExtResource("16_64gcs")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
-
-[node name="Off2" type="Sprite2D" parent="Door1"]
-visible = false
-texture = ExtResource("18_w3dgv")
-metadata/_edit_lock_ = true
 
 [node name="Door2" type="StaticBody2D" parent="."]
 position = Vector2(1520, -16)
@@ -592,25 +581,16 @@ position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_6e0at")
 metadata/_edit_lock_ = true
 
-[node name="On1" type="Sprite2D" parent="Door2"]
-texture = ExtResource("15_0jnu2")
+[node name="Closed" type="Sprite2D" parent="Door2"]
+position = Vector2(0, 16)
+texture = ExtResource("15_r737b")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
 
-[node name="On2" type="Sprite2D" parent="Door2"]
-texture = ExtResource("16_7k6qo")
-metadata/_edit_lock_ = true
-
-[node name="Off1" type="Sprite2D" parent="Door2"]
+[node name="Open" type="Sprite2D" parent="Door2"]
 visible = false
-texture = ExtResource("17_5gg0p")
+position = Vector2(0, 16)
+texture = ExtResource("16_64gcs")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
-
-[node name="Off2" type="Sprite2D" parent="Door2"]
-visible = false
-texture = ExtResource("18_w3dgv")
-metadata/_edit_lock_ = true
 
 [node name="Door3" type="StaticBody2D" parent="."]
 position = Vector2(2320, -16)
@@ -622,25 +602,16 @@ shape = SubResource("RectangleShape2D_6e0at")
 disabled = true
 metadata/_edit_lock_ = true
 
-[node name="On1" type="Sprite2D" parent="Door3"]
-visible = false
-texture = ExtResource("15_0jnu2")
+[node name="Closed" type="Sprite2D" parent="Door3"]
+position = Vector2(0, 16)
+texture = ExtResource("15_r737b")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
 
-[node name="On2" type="Sprite2D" parent="Door3"]
+[node name="Open" type="Sprite2D" parent="Door3"]
 visible = false
-texture = ExtResource("16_7k6qo")
-metadata/_edit_lock_ = true
-
-[node name="Off1" type="Sprite2D" parent="Door3"]
-texture = ExtResource("17_5gg0p")
+position = Vector2(0, 16)
+texture = ExtResource("16_64gcs")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
-
-[node name="Off2" type="Sprite2D" parent="Door3"]
-texture = ExtResource("18_w3dgv")
-metadata/_edit_lock_ = true
 
 [node name="Door4" type="StaticBody2D" parent="."]
 position = Vector2(2352, -16)
@@ -652,25 +623,16 @@ shape = SubResource("RectangleShape2D_6e0at")
 disabled = true
 metadata/_edit_lock_ = true
 
-[node name="On1" type="Sprite2D" parent="Door4"]
-visible = false
-texture = ExtResource("15_0jnu2")
+[node name="Closed" type="Sprite2D" parent="Door4"]
+position = Vector2(0, 16)
+texture = ExtResource("15_r737b")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
 
-[node name="On2" type="Sprite2D" parent="Door4"]
+[node name="Open" type="Sprite2D" parent="Door4"]
 visible = false
-texture = ExtResource("16_7k6qo")
-metadata/_edit_lock_ = true
-
-[node name="Off1" type="Sprite2D" parent="Door4"]
-texture = ExtResource("17_5gg0p")
+position = Vector2(0, 16)
+texture = ExtResource("16_64gcs")
 offset = Vector2(0, -32)
-metadata/_edit_lock_ = true
-
-[node name="Off2" type="Sprite2D" parent="Door4"]
-texture = ExtResource("18_w3dgv")
-metadata/_edit_lock_ = true
 
 [node name="Battery" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(3163, 89)
@@ -885,7 +847,7 @@ position = Vector2(1040, -624)
 position = Vector2(1968, -624)
 
 [node name="roomlamp3" parent="LampObjects" instance=ExtResource("30_e5wev")]
-position = Vector2(2800, -624)
+position = Vector2(2801, -611)
 
 [connection signal="body_entered" from="Lever" to="Lever" method="_on_body_entered"]
 [connection signal="body_exited" from="Lever" to="Lever" method="_on_body_exited"]

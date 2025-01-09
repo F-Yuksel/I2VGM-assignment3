@@ -18,6 +18,7 @@ texture = ExtResource("1_tn75e")
 texture_scale = 0.2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="fixed"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 8.0
 offset_right = 44.0

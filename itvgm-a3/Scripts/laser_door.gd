@@ -12,13 +12,9 @@ func _on_lever_power(is_on : bool) -> void:
 		power_lines -= 1
 	if power_lines > 0:
 		$CollisionShape2D.disabled = true
-		$On1.visible = false
-		$On2.visible = false
-		$Off1.visible = true
-		$Off2.visible = true
+		$Closed.visible = false
+		$Open.visible = true
 	else:
 		$CollisionShape2D.disabled = false
-		$On1.visible = true
-		$On2.visible = true
-		$Off1.visible = false
-		$Off2.visible = false
+		$Closed.visible = true
+		$Open.visible = false
