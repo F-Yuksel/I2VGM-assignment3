@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdhdfcrom4d6v"]
+[gd_scene load_steps=8 format=3 uid="uid://bdhdfcrom4d6v"]
 
 [ext_resource type="Script" path="res://Scripts/menuscreen.gd" id="1_tfpkm"]
-[ext_resource type="Texture2D" uid="uid://bimrcwcqv3qyp" path="res://Imports/start_screen_temp.jpg" id="2_suc3n"]
+[ext_resource type="Texture2D" uid="uid://bctffx7lnajfg" path="res://Imports/Purple_Nebula_06-1024x1024.png" id="2_jboai"]
 [ext_resource type="AudioStream" uid="uid://cjjm7ks2uwdnu" path="res://Imports/Music/SFX/MenuButtonPress.mp3" id="3_5ab33"]
+[ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="3_nn7of"]
+
+[sub_resource type="Animation" id="Animation_kf5rp"]
+resource_name = "color"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.954693, 0.136571, 0, 1), Color(4.57242e-06, 0.623178, 0.34527, 1), Color(0.318857, 0.46626, 1, 1), Color(0.952941, 0.137255, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7dwb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.954693, 0.136571, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2qu5v"]
+_data = {
+"RESET": SubResource("Animation_7dwb4"),
+"color": SubResource("Animation_kf5rp")
+}
 
 [node name="menuscreen" type="Control"]
 layout_mode = 3
@@ -18,28 +57,46 @@ grow_vertical = 2
 script = ExtResource("1_tfpkm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(575.5, 323.75)
-scale = Vector2(1.27889, 1.62219)
-texture = ExtResource("2_suc3n")
+position = Vector2(575.927, 721)
+scale = Vector2(1.12514, 1.42717)
+texture = ExtResource("2_jboai")
 
 [node name="StartButton" type="MenuButton" parent="."]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 334.0
-offset_right = 1076.0
-offset_bottom = 508.0
-theme_override_font_sizes/font_size = 82
-text = "Spelletje spelen"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = 114.0
+offset_right = 266.5
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_nn7of")
+theme_override_font_sizes/font_size = 56
+text = "Start Game"
 flat = false
 icon_alignment = 2
 vertical_icon_alignment = 2
 
 [node name="QuitButton" type="MenuButton" parent="."]
-layout_mode = 0
-offset_left = 518.0
-offset_top = 552.0
-offset_right = 647.0
-offset_bottom = 634.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = 245.0
+offset_right = 62.5
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
@@ -47,8 +104,9 @@ text = "Quit"
 layout_mode = 0
 offset_left = 944.0
 offset_top = 14.0
-offset_right = 1118.0
-offset_bottom = 115.0
+offset_right = 1136.0
+offset_bottom = 88.0
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 32
 text = "Credits"
 
@@ -57,6 +115,32 @@ stream = ExtResource("3_5ab33")
 
 [node name="InputDelay" type="Timer" parent="."]
 wait_time = 0.4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -499.5
+offset_top = -36.0
+offset_right = 499.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.954693, 0.136571, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_nn7of")
+theme_override_font_sizes/font_size = 72
+text = "Echoes of Space"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2qu5v")
+}
+autoplay = "color"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_menu_button_2_pressed"]

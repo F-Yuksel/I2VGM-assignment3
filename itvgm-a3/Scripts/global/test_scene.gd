@@ -56,6 +56,9 @@ func _ready() -> void:
 		$Lamps/Reactor/Normal.visible = false
 		$Lamps/Reactor/Solved.visible = true
 		
+		AudioPlayer.play_music_level()
+	else:
+		AudioPlayer.stop_playing()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

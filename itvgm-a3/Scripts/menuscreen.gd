@@ -6,7 +6,9 @@ extends Control
 var next_action = ""
 var busy: bool = false
 
-
+func _ready() -> void:
+	AudioPlayer.play_intromusic()
+	
 func start_game():
 	get_tree().change_scene_to_file("res://Scenes/introduction.tscn")
 
@@ -22,7 +24,6 @@ func _on_menu_button_pressed() -> void:
 		
 	busy = true
 	button_press.play()
-	
 	next_action = "start"
 	input_delay.start()
 
