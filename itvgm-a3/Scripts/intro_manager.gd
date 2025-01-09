@@ -15,6 +15,7 @@ var textisshown = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	textanimator.play("onload")
+	AudioPlayer.play_intromusic()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
