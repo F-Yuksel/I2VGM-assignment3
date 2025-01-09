@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdpiag0dwjig7"]
+[gd_scene load_steps=9 format=3 uid="uid://cdpiag0dwjig7"]
 
 [ext_resource type="Texture2D" uid="uid://4xwdxvfusrx4" path="res://Imports/screen.png" id="1_p7utg"]
 [ext_resource type="Texture2D" uid="uid://dtf6jiatr2v5y" path="res://Imports/startButton.png" id="2_sle2y"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/startReactorSequenceButton.gd" id="3_1gh8b"]
 [ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="3_2e4fo"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/quickTimeEvent.gd" id="4_jhekh"]
+[ext_resource type="AudioStream" uid="uid://c0dh47g6v3fg" path="res://Imports/Music/SFX/ScreenTap.mp3" id="6_k1nb7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mnxb"]
 font_size = 14
@@ -105,3 +106,7 @@ script = ExtResource("4_jhekh")
 
 [node name="20" type="Node2D" parent="."]
 script = ExtResource("4_jhekh")
+
+[node name="TapSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k1nb7")
+volume_db = -8.0

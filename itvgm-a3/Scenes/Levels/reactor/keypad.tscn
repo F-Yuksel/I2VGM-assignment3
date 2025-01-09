@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7qxdfv21wywa"]
+[gd_scene load_steps=6 format=3 uid="uid://b7qxdfv21wywa"]
 
 [ext_resource type="Texture2D" uid="uid://csdgfq67jkjx0" path="res://textures/UI/keypadNumber.png" id="1_ykawt"]
 [ext_resource type="Script" path="res://Scripts/vault/keypadController.gd" id="2_eitkg"]
+[ext_resource type="AudioStream" uid="uid://cjx72sayvadu4" path="res://Imports/Music/SFX/VaultButtonPress.mp3" id="3_36f3v"]
 
 [sub_resource type="FontFile" id="FontFile_m1xw3"]
 subpixel_positioning = 0
@@ -12,6 +13,9 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_vw3qj"]
+font_size = 32
 
 [node name="Keypad" type="Node2D"]
 z_index = 8
@@ -111,4 +115,18 @@ offset_right = 94.0
 offset_bottom = 101.0
 flat = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Label" type="Label" parent="Keypad"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -187.204
+offset_top = -135.042
+offset_right = -187.204
+offset_bottom = -103.042
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_vw3qj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_36f3v")
+volume_db = -10.0

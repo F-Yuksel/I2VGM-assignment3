@@ -2,6 +2,7 @@ extends Area2D
 
 @export var flip_h : bool
 @export var flip_v : bool
+@onready var leverflipsfx: AudioStreamPlayer = $"../LeverFlip"
 
 signal power_a
 signal power_b
@@ -21,6 +22,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if in_body and Input.is_action_just_pressed("Interact"):
+		leverflipsfx.play()
 		$Sprite2D.flip_h = not $Sprite2D.flip_h
 		$A_on.visible = not $A_on.visible
 		$A_off.visible = not $A_off.visible
