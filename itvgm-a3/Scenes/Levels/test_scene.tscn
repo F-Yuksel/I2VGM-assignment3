@@ -196,7 +196,7 @@ script = ExtResource("1_12pke")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 light_mask = 2
-scroll_scale = Vector2(1.1, 1.1)
+scroll_scale = Vector2(1.04, 1.04)
 scroll_offset = Vector2(20, 20)
 
 [node name="Background" type="Sprite2D" parent="Parallax2D"]
@@ -205,7 +205,7 @@ visibility_layer = 2
 material = SubResource("CanvasItemMaterial_hfq3q")
 position = Vector2(-270, -383)
 rotation = 0.785398
-scale = Vector2(2.675, 2.675)
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_pgxg4")
 
 [node name="Window" type="TileMapLayer" parent="."]
