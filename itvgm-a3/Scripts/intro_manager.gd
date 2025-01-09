@@ -1,11 +1,16 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
+var last_pitch = 2.0
+var pitch_scale
+
 var currline = 0
 var textisshown = false
 
 @onready var textanimator: AnimationPlayer = $"../TextAnimator"
-@onready var onload: Timer = $"../onload"
 @onready var text_delay: Timer = $"../TextDelay"
+@onready var typing_sound: AudioStreamPlayer = $"../Typing_Sound"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +25,18 @@ func _process(_delta: float) -> void:
 
 func start_textdelay() -> void:
 	text_delay.start()
+
+func start_typing() -> void:
+	# Randomize typing sound pitch
+	pitch_scale = rng.randf_range(1.8, 2.2)
+	while abs(last_pitch - pitch_scale) < 0.1: # Prevents repetitive jump noise
+		pitch_scale = rng.randf_range(1.8, 2.2)
+	typing_sound.pitch_scale = pitch_scale
+	typing_sound.play()
+	last_pitch = pitch_scale # Stores previous value
+	
+func stop_typing() -> void:
+	typing_sound.stop()
 
 func _on_text_delay_timeout() -> void:
 	currline += 1
