@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://chmqmb41qhpsp"]
+[gd_scene load_steps=24 format=4 uid="uid://chmqmb41qhpsp"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_31jns"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_062wk"]
@@ -10,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://bbfelj5x4di0b" path="res://Imports/Music/SoundEffect Gate Open and Close.mp3" id="7_l28kw"]
 [ext_resource type="AudioStream" uid="uid://cu8kj8a30w2gs" path="res://Imports/Music/Zipper sound effects - High Quality.mp3" id="8_r2drm"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="9_b2hy7"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="11_2http"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="12_ejd5s"]
+[ext_resource type="Texture2D" uid="uid://cynm0xa0swdgl" path="res://Imports/note_overworld.png" id="13_2d76d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5x3x"]
 texture = ExtResource("1_31jns")
@@ -147,6 +150,9 @@ sources/0 = SubResource("TileSetAtlasSource_ip6g2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oac4o"]
 size = Vector2(555, 321)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3r5k"]
+size = Vector2(41.3436, 45.4008)
+
 [node name="Kluiskamer" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -219,6 +225,25 @@ position = Vector2(48, -208)
 [node name="PointLight2D" parent="roomlamp" index="1"]
 position = Vector2(1, -5)
 texture_scale = 1.12
+
+[node name="Note1" type="Area2D" parent="." node_paths=PackedStringArray("item")]
+position = Vector2(99, -68)
+script = ExtResource("11_2http")
+item = NodePath("KluisNote")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1"]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_h3r5k")
+
+[node name="KluisNote" type="Node" parent="Note1"]
+script = ExtResource("12_ejd5s")
+item_name = "Vault code"
+is_log = true
+icon = ExtResource("13_2d76d")
+info_text = "Can people please stop writing the code in invisible ink? We have a literal UV lamp on board, it is not secure!"
+
+[node name="Note1" type="Sprite2D" parent="Note1"]
+texture = ExtResource("13_2d76d")
 
 [editable path="DoorToHallwayKK"]
 [editable path="roomlamp"]

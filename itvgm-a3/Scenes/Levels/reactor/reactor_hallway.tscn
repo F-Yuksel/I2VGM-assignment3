@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dy48isccya80f"]
+[gd_scene load_steps=19 format=4 uid="uid://dy48isccya80f"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
@@ -8,7 +8,10 @@
 [ext_resource type="Script" path="res://Scripts/door/door_to_reactor.gd" id="6_ajbvr"]
 [ext_resource type="PackedScene" uid="uid://b4iichfihpq7o" path="res://Scenes/Objects/linelamp.tscn" id="7_q1axm"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="8_psbrt"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="10_2pows"]
 [ext_resource type="PackedScene" uid="uid://cx08843fbpmu6" path="res://Scenes/Objects/reactorsign.tscn" id="10_lfttk"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="11_acrw3"]
+[ext_resource type="Texture2D" uid="uid://cynm0xa0swdgl" path="res://Imports/note_overworld.png" id="12_53uby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gohej"]
 texture = ExtResource("1_8v6ov")
@@ -104,6 +107,9 @@ size = Vector2(187, 432)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4l4u"]
 size = Vector2(2043, 317)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3wtk"]
+size = Vector2(41.3436, 45.4008)
+
 [node name="ReactorHallway" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -160,6 +166,8 @@ texture = ExtResource("3_brxsv")
 position = Vector2(640, -77)
 nextScenePath = "res://Scenes/Levels/reactor/kluiskamer.tscn"
 Coords = Vector2(0, -45)
+Locked = true
+itemNeeded = "RedKey"
 
 [node name="Sprite2D" parent="DoorToKK" index="0"]
 texture = ExtResource("4_ui6bw")
@@ -220,6 +228,26 @@ position = Vector2(160, -100)
 [node name="Node2D" parent="." instance=ExtResource("10_lfttk")]
 position = Vector2(1695, -113)
 scale = Vector2(2, 2)
+
+[node name="Note1" type="Area2D" parent="." node_paths=PackedStringArray("item")]
+position = Vector2(-83, -45)
+script = ExtResource("10_2pows")
+item = NodePath("Note")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1"]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_v3wtk")
+
+[node name="Note" type="Node" parent="Note1"]
+script = ExtResource("11_acrw3")
+item = "RedKeyHint"
+item_name = "Hazmat suit storage"
+is_log = true
+icon = ExtResource("12_53uby")
+info_text = "For the people looking for the Hazmat, I stored it in the vault. You need a Red Key for access, but I believe one of the engineers left one in the electrical button area."
+
+[node name="Note1" type="Sprite2D" parent="Note1"]
+texture = ExtResource("12_53uby")
 
 [editable path="DoorToLQ3"]
 [editable path="DoorToLQ1"]

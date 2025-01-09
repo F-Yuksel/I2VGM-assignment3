@@ -298,11 +298,11 @@ sources/0 = SubResource("TileSetAtlasSource_mpk3x")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e0at"]
 size = Vector2(32, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3lf8"]
-size = Vector2(41.3436, 45.4008)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3b2u"]
 size = Vector2(118, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3lf8"]
+size = Vector2(41.3436, 45.4008)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqcvh"]
 size = Vector2(87.5, 62.5)
@@ -633,25 +633,6 @@ visible = false
 position = Vector2(0, 16)
 texture = ExtResource("16_64gcs")
 offset = Vector2(0, -32)
-
-[node name="Battery" type="Area2D" parent="." node_paths=PackedStringArray("item")]
-position = Vector2(3163, 89)
-scale = Vector2(1.685, 1.685)
-script = ExtResource("20_p5ayh")
-item = NodePath("BatteryItem")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Battery"]
-position = Vector2(-0.5935, -5.93472)
-shape = SubResource("RectangleShape2D_d3lf8")
-
-[node name="BatteryItem" type="Node" parent="Battery"]
-script = ExtResource("13_aqrxq")
-item_name = "Battery"
-icon = ExtResource("6_uu0k8")
-info_text = "Battery which might be useful later on"
-
-[node name="Battery" type="Sprite2D" parent="Battery"]
-texture = ExtResource("6_uu0k8")
 
 [node name="Panel" type="Area2D" parent="."]
 position = Vector2(2640, -496)

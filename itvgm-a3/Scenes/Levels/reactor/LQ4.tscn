@@ -176,9 +176,10 @@ tile_map_data = PackedByteArray("AAAKAP7/AAAAAAAAAAAKAP//AAAAAAEAAAALAP7/AAABAAA
 tile_set = SubResource("TileSet_c8em3")
 
 [node name="DoorToHallwayLQ4" parent="." instance=ExtResource("3_sl505")]
-position = Vector2(29.805, -46.37)
+position = Vector2(30, -45)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 Coords = Vector2(420, -75)
+itemNeeded = "Sjs"
 
 [node name="Sprite2D" parent="DoorToHallwayLQ4" index="0"]
 texture = ExtResource("4_rn21d")

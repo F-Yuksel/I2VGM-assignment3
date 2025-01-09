@@ -8,6 +8,7 @@ var global_inventory = GlobalInventory
 @export var nextScenePath: String
 @export var Coords: Vector2
 @export var Locked: bool
+@export var ElectricityNeeded: bool
 @export var itemNeeded: String
 
 func _ready() -> void:
@@ -31,8 +32,21 @@ func _on_body_exited(body):
 func _process(delta: float) -> void:
 	if playerInside and Input.is_action_just_pressed("Interact"):
 		if Locked:
-			print("Item is ", itemNeeded)
-			if !global_inventory.check_item_name(itemNeeded):
+			if ElectricityNeeded:
+				if !Global.elecwires_solved:
+					$"../Player/CanvasLayer/Notification".text = "Door is locked! Fix the electricity to unlock!"
+					$"../Player/CanvasLayer/Notification".visible = true;
+					$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
+					return
+				else:
+					pass
+				#print("Item is ", itemNeeded)
+			elif !global_inventory.check_item_name(itemNeeded):
+				var Notif = "Door is locked! Use {str} to unlock!"
+				var NotifVar = Notif.format({"str": itemNeeded})
+				$"../Player/CanvasLayer/Notification".text = NotifVar
+				$"../Player/CanvasLayer/Notification".visible = true;
+				$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
 				print("Door is locked.")
 				return
 		if nextScenePath != "":

@@ -170,6 +170,8 @@ Coords = Vector2(96, -45)
 position = Vector2(1036, -239)
 nextScenePath = "res://Scenes/Levels/Comms/comms.tscn"
 Coords = Vector2(-1, -20)
+Locked = true
+ElectricityNeeded = true
 
 [node name="DoorMain1" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(-1202, -239)
@@ -180,6 +182,8 @@ Coords = Vector2(96, -45)
 position = Vector2(-1520, -239)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
 Coords = Vector2(1260, -75)
+Locked = true
+ElectricityNeeded = true
 
 [node name="Label" parent="DoorMain2" index="2"]
 text = "

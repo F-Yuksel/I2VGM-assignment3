@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://xsors4k2rgg7"]
+[gd_scene load_steps=45 format=3 uid="uid://xsors4k2rgg7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_epgbd"]
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="2_ap76o"]
@@ -17,6 +17,43 @@ size = Vector2(32, 32)
 size = Vector2(25, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0y3q"]
+
+[sub_resource type="Animation" id="Animation_eqxrk"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p4i3b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1val"]
+_data = {
+"RESET": SubResource("Animation_p4i3b"),
+"fade_out": SubResource("Animation_eqxrk")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2qlh"]
 atlas = ExtResource("8_uue1y")
@@ -308,7 +345,27 @@ offset_top = 719.0
 offset_right = 980.0
 offset_bottom = 742.0
 grow_horizontal = 2
-text = "The message has been sent! Hopefully someone will help us soon!"
+text = "The message has been sent!"
+horizontal_alignment = 1
+
+[node name="Notification" type="Label" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 576.0
+offset_right = 399.0
+offset_bottom = 599.0
+grow_horizontal = 2
+text = "Bruh"
+horizontal_alignment = 1
+
+[node name="NotificationPlayer" type="AnimationPlayer" parent="CanvasLayer/Notification"]
+libraries = {
+"": SubResource("AnimationLibrary_s1val")
+}
 
 [node name="startReactor" parent="." instance=ExtResource("8_1h7tc")]
 visible = false

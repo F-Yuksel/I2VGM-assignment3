@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://lebcawly7rhb"]
+[gd_scene load_steps=20 format=4 uid="uid://lebcawly7rhb"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ege1p"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_boron"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="5_x5xbb"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="5_y5eaw"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="6_c65hf"]
+[ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="8_me7i4"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="9_3vs3d"]
+[ext_resource type="Texture2D" uid="uid://cu7eao7myspm4" path="res://textures/battery.png" id="10_8mu7d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc3wq"]
 texture = ExtResource("1_ege1p")
@@ -141,6 +144,9 @@ sources/0 = SubResource("TileSetAtlasSource_ksq71")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm0w6"]
 size = Vector2(830, 321)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky436"]
+size = Vector2(41.3436, 45.4008)
+
 [node name="LQ1" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -250,6 +256,24 @@ color = Color(0.530365, 1, 0.425545, 1)
 energy = 0.2
 texture = ExtResource("6_c65hf")
 texture_scale = 0.2
+
+[node name="Battery" type="Area2D" parent="." node_paths=PackedStringArray("item")]
+position = Vector2(561, -58)
+script = ExtResource("8_me7i4")
+item = NodePath("BatteryItem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battery"]
+position = Vector2(-0.5935, -5.93472)
+shape = SubResource("RectangleShape2D_ky436")
+
+[node name="BatteryItem" type="Node" parent="Battery"]
+script = ExtResource("9_3vs3d")
+item_name = "Battery"
+icon = ExtResource("10_8mu7d")
+info_text = "Battery which might be useful later on"
+
+[node name="Battery" type="Sprite2D" parent="Battery"]
+texture = ExtResource("10_8mu7d")
 
 [editable path="DoorToHallwayLQ1"]
 [editable path="Lamps/roomlamp"]
