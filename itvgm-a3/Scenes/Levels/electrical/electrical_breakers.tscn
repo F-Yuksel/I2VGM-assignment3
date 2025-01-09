@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=4 uid="uid://cbkwvwseevtg0"]
+[gd_scene load_steps=28 format=4 uid="uid://cbkwvwseevtg0"]
 
+[ext_resource type="Script" path="res://Scripts/electrical/electrical_breakers.gd" id="1_0csps"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_hgnvn"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="1_vaeh6"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="2_0buk0"]
@@ -142,6 +143,7 @@ size = Vector2(64, 32.125)
 size = Vector2(128, 32)
 
 [node name="ElectricalBreakers" type="Node2D"]
+script = ExtResource("1_0csps")
 
 [node name="Notes" type="Node" parent="."]
 

@@ -26,19 +26,34 @@ func _ready() -> void:
 	green_button.connect("button_pressed", Callable(self, "_on_button_pressed"))
 	
 	# Initiate doors properly
-	play_door_animation(red_door_a, red_state)
-	play_door_animation(red_door_b, !red_state)
-	
-	play_door_animation(blue_door_a, blue_state)
-	play_door_animation(blue_door_b, !blue_state)
-	
-	play_door_animation(green_door_a, green_state)
-	play_door_animation(green_door_b, !green_state)
+	if Global.elecbuttons_solved == false:
+		play_door_animation(red_door_a, red_state)
+		play_door_animation(red_door_b, !red_state)
+		
+		play_door_animation(blue_door_a, blue_state)
+		play_door_animation(blue_door_b, !blue_state)
+		
+		play_door_animation(green_door_a, green_state)
+		play_door_animation(green_door_b, !green_state)
+	else: # Keep all doors open if it is solved
+		openall()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
+func openall() -> void:
+	# Open every door and turn every button 'on'
+	play_door_animation(red_door_a, true)
+	play_door_animation(red_door_b, true)
+		
+	play_door_animation(blue_door_a, true)
+	play_door_animation(blue_door_b, true)
+		
+	play_door_animation(green_door_a, true)
+	play_door_animation(green_door_b, true)
+	
+	
 func _on_button_pressed(color: String) -> void:
 	set_doors(color)
 

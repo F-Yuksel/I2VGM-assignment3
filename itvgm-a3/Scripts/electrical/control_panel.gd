@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 		Global.elecbuttons_solved = true
 		Global.electrical_allsolved = true
 		interactable = false
+		$"../buttonlogic".openall()
 		$"../Player/CanvasLayer/Interact".visible = false
 
 
