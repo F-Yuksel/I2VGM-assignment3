@@ -7,6 +7,8 @@ var circleColor = Color(0.298, 0.659, 0.651, 1)
 var xPos
 var yPos
 
+@onready var tapsfx: AudioStreamPlayer = $"../TapSFX"
+
 func _ready() -> void:
 	xPos = randf_range(100, 1050)
 	yPos = randf_range(100, 550)
@@ -33,6 +35,7 @@ func _input(event):
 			_on_circle_pressed()
 
 func _on_circle_pressed() -> void:
+	tapsfx.play()
 	sequenceRunning = false
 	$"./../StartButton/Button".circleNumber +=1
 	
