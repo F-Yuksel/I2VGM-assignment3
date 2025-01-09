@@ -29,7 +29,7 @@ func start_textdelay() -> void:
 func start_typing() -> void:
 	# Randomize typing sound pitch
 	pitch_scale = rng.randf_range(1.8, 2.2)
-	while abs(last_pitch - pitch_scale) < 0.1: # Prevents repetitive jump noise
+	while abs(last_pitch - pitch_scale) < 0.1: # Prevents repetitive typing noise
 		pitch_scale = rng.randf_range(1.8, 2.2)
 	typing_sound.pitch_scale = pitch_scale
 	typing_sound.play()

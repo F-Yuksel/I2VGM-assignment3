@@ -150,13 +150,13 @@ script = ExtResource("1_0csps")
 [node name="ItemNote1" type="Area2D" parent="Notes" node_paths=PackedStringArray("item")]
 position = Vector2(371, -337)
 script = ExtResource("1_vaeh6")
-item = NodePath("Note")
+item = NodePath("breakerlog3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/ItemNote1"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_tfauc")
 
-[node name="Note" type="Node" parent="Notes/ItemNote1"]
+[node name="breakerlog3" type="Node" parent="Notes/ItemNote1"]
 script = ExtResource("2_0buk0")
 item_name = "Breaker log #3"
 is_log = true
@@ -169,13 +169,13 @@ texture = ExtResource("3_d0byq")
 [node name="ItemNote2" type="Area2D" parent="Notes" node_paths=PackedStringArray("item")]
 position = Vector2(861, -399)
 script = ExtResource("1_vaeh6")
-item = NodePath("Note")
+item = NodePath("breakerlog2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/ItemNote2"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_tfauc")
 
-[node name="Note" type="Node" parent="Notes/ItemNote2"]
+[node name="breakerlog2" type="Node" parent="Notes/ItemNote2"]
 script = ExtResource("2_0buk0")
 item_name = "Breaker log #2"
 is_log = true
@@ -188,13 +188,13 @@ texture = ExtResource("3_d0byq")
 [node name="ItemNote3" type="Area2D" parent="Notes" node_paths=PackedStringArray("item")]
 position = Vector2(1077, -11)
 script = ExtResource("1_vaeh6")
-item = NodePath("Note")
+item = NodePath("breakerlog1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/ItemNote3"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_tfauc")
 
-[node name="Note" type="Node" parent="Notes/ItemNote3"]
+[node name="breakerlog1" type="Node" parent="Notes/ItemNote3"]
 script = ExtResource("2_0buk0")
 item_name = "Breaker log #1"
 is_log = true
@@ -207,13 +207,13 @@ texture = ExtResource("3_d0byq")
 [node name="ItemNote4" type="Area2D" parent="Notes" node_paths=PackedStringArray("item")]
 position = Vector2(1412, -491)
 script = ExtResource("1_vaeh6")
-item = NodePath("Note")
+item = NodePath("breakerlog4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/ItemNote4"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_tfauc")
 
-[node name="Note" type="Node" parent="Notes/ItemNote4"]
+[node name="breakerlog4" type="Node" parent="Notes/ItemNote4"]
 script = ExtResource("2_0buk0")
 item_name = "Breaker log #4"
 is_log = true
