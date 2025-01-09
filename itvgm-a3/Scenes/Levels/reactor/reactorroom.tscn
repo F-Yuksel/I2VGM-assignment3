@@ -212,7 +212,13 @@ stream = ExtResource("6_olj0u")
 stream = ExtResource("7_5nnok")
 
 [node name="Reactor" parent="." instance=ExtResource("8_j72p7")]
-position = Vector2(787, -64)
+position = Vector2(787, -96)
+scale = Vector2(2, 2)
+
+[node name="PointLight2D" parent="Reactor/reactoron" index="0"]
+color = Color(0.644948, 1, 0.995553, 1)
+energy = 1.14
+texture_scale = 5.13
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1824, 0.24, 0.24, 1)
@@ -265,6 +271,7 @@ energy = 0.2
 texture = ExtResource("10_xb4xk")
 texture_scale = 0.2
 
+[editable path="Reactor"]
 [editable path="Lamps/roomlamp"]
 [editable path="Lamps/roomlamp2"]
 [editable path="Lamps/roomlamp3"]
