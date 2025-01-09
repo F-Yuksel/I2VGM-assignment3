@@ -1,39 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://qxdssw3wem0m"]
+[gd_scene load_steps=4 format=3 uid="uid://qxdssw3wem0m"]
 
 [ext_resource type="Script" path="res://Scripts/game_end_screen.gd" id="1_do3uo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_g64t2"]
-font_size = 38
+[ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="2_llwxn"]
+[ext_resource type="Texture2D" uid="uid://dotsuqgabipu4" path="res://Imports/Purple_Nebula_08-1024x1024.png" id="3_fplqd"]
 
 [node name="GameEndScreen" type="Node2D"]
 script = ExtResource("1_do3uo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 647.0
-color = Color(0.0848996, 0.226427, 0.238248, 1)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 233.0
-offset_top = 179.0
-offset_right = 889.0
-offset_bottom = 232.0
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = 256.0
+offset_right = 774.0
+offset_bottom = 280.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
 text = "Thank you for playing!"
-label_settings = SubResource("LabelSettings_g64t2")
 
 [node name="QuitButton" type="Button" parent="."]
 offset_left = 439.0
-offset_top = 388.0
+offset_top = 467.0
 offset_right = 688.0
-offset_bottom = 456.0
+offset_bottom = 535.0
+theme_override_constants/outline_size = 4
 text = "Quit game"
 
 [node name="RestartButton" type="Button" parent="."]
 offset_left = 435.0
-offset_top = 271.0
+offset_top = 350.0
 offset_right = 693.0
-offset_bottom = 340.0
+offset_bottom = 419.0
+theme_override_constants/outline_size = 4
 text = "Restart game"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 146.0
+offset_right = 1135.0
+offset_bottom = 217.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_llwxn")
+theme_override_font_sizes/font_size = 32
+text = "            You've repaired the ship!
+You can finally continue your journey!"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(578, 410)
+scale = Vector2(1.12891, 1.12891)
+texture = ExtResource("3_fplqd")
+metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="QuitButton" to="." method="_on_quit_button_button_down"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
