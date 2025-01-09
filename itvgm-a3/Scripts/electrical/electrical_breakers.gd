@@ -1,12 +1,13 @@
-extends Node
+extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.elecwires_solved == false:
-		$"../DoorToBreakers".locked = true
+	if Global.elecbreakers_solved == false:
+		$DoorToButtonMaze.locked = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.elecwires_solved and $"../DoorToBreakers".locked == true:
-		$"../DoorToBreakers".locked = false
+	if Global.elecbreakers_solved and $"DoorToButtonMaze".locked == true:
+		$"DoorToButtonMaze".locked = false

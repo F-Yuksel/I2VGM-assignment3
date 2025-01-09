@@ -2,6 +2,7 @@ extends Node2D
 
 var playerName: String = "Player"
 var playerInside: bool = false
+var locked: bool = false
 
 @export var nextScenePath: String
 @export var Coords: Vector2
@@ -26,6 +27,9 @@ func _on_body_exited(body):
 
 func _process(delta: float) -> void:
 	if playerInside and Input.is_action_just_pressed("Interact"):
+		if locked:
+			print("Door is locked.")
+			return
 		if nextScenePath != "":
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished

@@ -273,6 +273,7 @@ shape = SubResource("RectangleShape2D_y0y3q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.6, 1.6)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 9.0
 
@@ -292,6 +293,22 @@ position = Vector2(511, 668)
 [node name="noPower" parent="CanvasLayer" instance=ExtResource("5_ybo7d")]
 visible = false
 position = Vector2(461, 667)
+
+[node name="TextBox" type="Node2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(0, -176)
+
+[node name="Label" type="Label" parent="CanvasLayer/TextBox"]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 182.0
+offset_top = 719.0
+offset_right = 980.0
+offset_bottom = 742.0
+grow_horizontal = 2
+text = "The message has been sent! Hopefully someone will help us soon!"
 
 [node name="startReactor" parent="." instance=ExtResource("8_1h7tc")]
 visible = false

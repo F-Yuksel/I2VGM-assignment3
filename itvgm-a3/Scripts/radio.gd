@@ -8,15 +8,14 @@ var playerName: String = "Player"
 func _process(delta: float) -> void:
 	if has_power and in_body and Input.is_action_just_pressed("Interact"):
 		$CollisionShape2D.disabled = true
-		$"../Player/Interact".visible = false
-		$"../Player/TextBox".visible = true
+		$"../Player/CanvasLayer/Interact".visible = false
+		$"../Player/CanvasLayer/TextBox".visible = true
 		await get_tree().create_timer(3.0).timeout
-		$"../Player/TextBox".visible = false
-
+		$"../Player/CanvasLayer/TextBox".visible = false
 
 func _on_body_entered(body: Node2D):
 	if body.name == playerName and has_power:
-		var interact_screen = body.get_node("Interact")
+		var interact_screen = body.get_node("CanvasLayer/Interact")
 		print(interact_screen)
 		in_body = true
 		interact_screen.visible = true
@@ -24,7 +23,7 @@ func _on_body_entered(body: Node2D):
 func _on_body_exited(body: Node2D):
 	if body.name == playerName:
 		print("Where u going cuz")
-		var interact_screen = body.get_node("Interact")
+		var interact_screen = body.get_node("CanvasLayer/Interact")
 		in_body = false
 		interact_screen.visible = false
 
