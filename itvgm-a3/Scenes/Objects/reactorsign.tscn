@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx08843fbpmu6"]
+
+[ext_resource type="Texture2D" uid="uid://duepyplvq3agu" path="res://textures/Decor/reactorsign.png" id="1_e4hhq"]
+[ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="2_mli4l"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e4hhq")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+color = Color(0.52372, 1, 0.996343, 1)
+texture = ExtResource("2_mli4l")
+texture_scale = 0.54

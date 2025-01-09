@@ -3,9 +3,12 @@ extends Node2D
 var playerName: String = "Player"
 var playerInside: bool = false
 var locked: bool = false
+var global_inventory = GlobalInventory
 
 @export var nextScenePath: String
 @export var Coords: Vector2
+@export var Locked: bool
+@export var itemNeeded: String
 
 func _ready() -> void:
 	$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
@@ -27,9 +30,11 @@ func _on_body_exited(body):
 
 func _process(delta: float) -> void:
 	if playerInside and Input.is_action_just_pressed("Interact"):
-		if locked:
-			print("Door is locked.")
-			return
+		if Locked:
+			print("Item is ", itemNeeded)
+			if !global_inventory.check_item_name(itemNeeded):
+				print("Door is locked.")
+				return
 		if nextScenePath != "":
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished
