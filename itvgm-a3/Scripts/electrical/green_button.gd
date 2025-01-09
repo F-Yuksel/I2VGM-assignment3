@@ -3,6 +3,7 @@ extends Area2D
 signal button_pressed(color: String)
 
 @export var button_color: String = "green"
+@onready var pressSFX: AudioStreamPlayer = $Press
 
 var interactable = false
 var is_on = false
@@ -17,6 +18,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if interactable and Input.is_action_just_pressed("Interact") and Global.elecbuttons_solved == false:
 		emit_signal("button_pressed", button_color)
+		pressSFX.play()
 		is_on = !is_on
 		if is_on:
 			animated_sprite.play("on")

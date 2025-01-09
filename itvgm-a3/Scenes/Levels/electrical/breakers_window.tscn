@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r6cpniq0tblf"]
+[gd_scene load_steps=13 format=3 uid="uid://r6cpniq0tblf"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/breakerlogic.gd" id="1_weh0l"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_6bj28"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7f6h5ut18ebm" path="res://Imports/breaker_on.png" id="4_bmrrw"]
 [ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="5_3qb53"]
 [ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="6_l6ep4"]
+[ext_resource type="AudioStream" uid="uid://bkvtm7xat6wu8" path="res://Imports/Music/SFX/BreakerFlip.mp3" id="8_4b7kl"]
 
 [sub_resource type="GDScript" id="GDScript_h4lce"]
 script/source = "extends Control
@@ -237,6 +238,10 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("6_l6ep4")
 theme_override_font_sizes/font_size = 32
 text = "Press [ESC] to close the menu"
+
+[node name="Flip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4b7kl")
+volume_db = -10.0
 
 [connection signal="toggled" from="Buttons/Button1" to="breakerlogic" method="_on_button_1_toggled"]
 [connection signal="toggled" from="Buttons/Button2" to="breakerlogic" method="_on_button_2_toggled"]

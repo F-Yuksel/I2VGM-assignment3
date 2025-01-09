@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://vj8f673ddrlf"]
+[gd_scene load_steps=15 format=3 uid="uid://vj8f673ddrlf"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/wires_window.gd" id="1_lpofa"]
 [ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="1_tucvf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/purple_area.gd" id="6_dhyw3"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="7_yyilu"]
 [ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="8_7kxre"]
+[ext_resource type="AudioStream" uid="uid://dbht2uiya6q0p" path="res://Imports/Music/SFX/wire.mp3" id="10_sbjkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aowk6"]
 size = Vector2(146, 64)
@@ -331,3 +332,7 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/font = ExtResource("8_7kxre")
 theme_override_font_sizes/font_size = 32
 text = "Press [ESC] to close the menu"
+
+[node name="Wire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sbjkl")
+volume_db = -15.0

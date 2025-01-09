@@ -8,12 +8,8 @@ var walk_pitch_scale
 var jump_last_pitch = 1.0
 var jump_pitch_scale
 
-var land_last_pitch = 0.7
-var land_pitch_scale
-
 @onready var footsteps: AudioStreamPlayer = $Sounds/Footsteps
 @onready var jump: AudioStreamPlayer = $Sounds/Jump
-@onready var land: AudioStreamPlayer = $Sounds/Land
 
 @export var speed : float = 300.0
 @export var jump_velocity : float = -400.0
@@ -25,7 +21,6 @@ var jumps : int = 1
 var max_jumps : int = 2
 var gravity_multiplier : float = 1.5
 
-var inair = false
 var on_ladder = false
 
 @onready var inventory = $CanvasLayer/Inventory  # Direct reference to the Inventory
@@ -49,19 +44,9 @@ func _physics_process(delta: float) -> void:
 		sprite = $AnimatedSprite2D
 	# Disable movement while in a menu
 	if ableToMove:	
-		if is_on_floor() and inair:
-			land_pitch_scale = rng.randf_range(0.5, 0.9)
-			while abs(land_last_pitch - land_pitch_scale) < 0.1: # Prevents repetitive jumping noise
-				land_pitch_scale = rng.randf_range(0.5, 0.9)
-			land.pitch_scale = land_pitch_scale
-			land.play()
-			land_last_pitch = land_pitch_scale # Stores previous value
-			inair = false
-		
 		# Add the gravity.
 		if not is_on_floor() and not on_ladder:
 			sprite.play("fall")
-			inair = true
 			velocity += gravity_multiplier * get_gravity() * delta
 		else:
 			jumps = max_jumps

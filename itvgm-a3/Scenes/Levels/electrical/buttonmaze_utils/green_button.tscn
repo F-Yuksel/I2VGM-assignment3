@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceficsoqdxtxa"]
+[gd_scene load_steps=8 format=3 uid="uid://ceficsoqdxtxa"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/green_button.gd" id="1_qnuvd"]
 [ext_resource type="Texture2D" uid="uid://dlcyp5nc66vib" path="res://Imports/buttonmaze_utils/green_button.png" id="2_t2olw"]
+[ext_resource type="AudioStream" uid="uid://ckq8r03kua3kn" path="res://Imports/Music/SFX/ButtonPress.mp3" id="3_i4ari"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij33d"]
 size = Vector2(32, 32)
@@ -46,6 +47,10 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_gb6jg")
 animation = &"off"
 autoplay = "off"
+
+[node name="Press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i4ari")
+volume_db = -25.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

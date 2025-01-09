@@ -15,6 +15,8 @@ var seq_tracker = 0
 @onready var button_4_anim: AnimatedSprite2D = $"../Animations/button4_anim"
 @onready var button_5_anim: AnimatedSprite2D = $"../Animations/button5_anim"
 
+@onready var flip: AudioStreamPlayer = $"../Flip"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -68,6 +70,8 @@ func reset_buttons():
 	button_5_anim.play("off")
 	button_5.set_pressed(false)
 	
+	if seq_tracker != 0:
+		flip.play()
 	# Reset the sequence tracker
 	seq_tracker = 0
 
@@ -78,6 +82,7 @@ func _on_button_1_toggled(_toggled_on: bool) -> void:
 		button_1.disabled = true
 		button_1_anim.play("on")
 		seq_tracker += 1
+		flip.play()
 	else:
 		reset_buttons()
 
@@ -88,6 +93,7 @@ func _on_button_2_toggled(_toggled_on: bool) -> void:
 		# Disable button
 		button_2.disabled = true
 		button_2_anim.play("on")
+		flip.play()
 		print("Solved!")
 		Global.elecbreakers_solved = true
 	else:
@@ -100,6 +106,7 @@ func _on_button_3_toggled(_toggled_on: bool) -> void:
 		# Disable button
 		button_3.disabled = true
 		button_3_anim.play("on")
+		flip.play()
 		seq_tracker += 1
 	else:
 		reset_buttons()
@@ -111,6 +118,7 @@ func _on_button_4_toggled(_toggled_on: bool) -> void:
 		# Disable button
 		button_4.disabled = true
 		button_4_anim.play("on")
+		flip.play()
 		seq_tracker += 1
 	else:
 		reset_buttons()
@@ -122,6 +130,7 @@ func _on_button_5_toggled(_toggled_on: bool) -> void:
 		# Disable button
 		button_5.disabled = true
 		button_5_anim.play("on")
+		flip.play()
 		seq_tracker += 1
 	else:
 		reset_buttons()

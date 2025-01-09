@@ -14,10 +14,10 @@ offset_bottom = 647.0
 color = Color(0.0848996, 0.226427, 0.238248, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 339.0
-offset_top = 2.0
-offset_right = 746.0
-offset_bottom = 55.0
+offset_left = 233.0
+offset_top = 179.0
+offset_right = 889.0
+offset_bottom = 232.0
 text = "Thank you for playing!"
 label_settings = SubResource("LabelSettings_g64t2")
 

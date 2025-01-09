@@ -4,6 +4,7 @@ var elecwires_solved = false
 var elecbreakers_solved = false
 var elecbuttons_solved = false
 var electrical_allsolved = false
+var poweron_played = false
 
 var doorPosition: Vector2 = Vector2.ZERO
 var hasCodePaper: bool = false
@@ -23,5 +24,5 @@ func reset() -> void:
 	elecbreakers_solved = false
 	elecbuttons_solved = false
 	electrical_allsolved = false
+	poweron_played = false
 	reactorOn = false
-	elecbuttons_solved = false

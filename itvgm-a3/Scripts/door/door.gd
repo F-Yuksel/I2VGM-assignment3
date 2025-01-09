@@ -11,6 +11,9 @@ var global_inventory = GlobalInventory
 @export var ElectricityNeeded: bool
 @export var itemNeeded: String
 
+@onready var openSFX: AudioStreamPlayer = $Open
+@onready var lockedSFX: AudioStreamPlayer = $Locked
+
 func _ready() -> void:
 	$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
 	$Area2D.connect("body_exited", Callable(self, "_on_body_exited"))
@@ -44,12 +47,12 @@ func _process(delta: float) -> void:
 			elif !global_inventory.check_item_name(itemNeeded):
 				var Notif = "Door is locked! Use {str} to unlock!"
 				var NotifVar = Notif.format({"str": itemNeeded})
+				lockedSFX.play()
 				$"../Player/CanvasLayer/Notification".text = NotifVar
 				$"../Player/CanvasLayer/Notification".visible = true;
 				$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
-				print("Door is locked.")
-				return
 		if nextScenePath != "":
+			openSFX.play()
 			TransitionScene.transition()
 			await TransitionScene.on_transition_finished
 			print("Switching to scene:", nextScenePath)

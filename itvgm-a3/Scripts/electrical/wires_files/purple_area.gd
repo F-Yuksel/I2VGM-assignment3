@@ -3,6 +3,7 @@ extends Area2D
 var ableToInterract: bool = false;
 var isDragging: bool = false;
 var correct: bool = false
+@onready var wireSFX: AudioStreamPlayer = $"../../../Wire"
 
 func _ready() -> void:
 	$".".connect("mouse_entered", Callable(self, "_on_body_entered"))
@@ -12,21 +13,8 @@ func _ready() -> void:
 		$"../../Red/r-1".visible = true
 		$"../../Green/g-4".visible = true
 		$"../../Blue/b-2".visible = true
-	#$"../p-1".visible = false
-	#$"../p-2".visible = false
-	#$"../p-3".visible = false
-	#$"../p-4".visible = false
 
 func _process(delta: float) -> void:
-	#if not ableToInterract and not correct:
-		#$"../p-4".visible = false
-		#$"../p-3".visible = false
-		#$"../p-2".visible = false
-		#$"../p-1".visible = false
-		#
-	#if $"../p-2".visible:
-		#correct = true
-		
 	if Input.is_action_just_pressed("exit"):
 		Global.doorPosition = Vector2(63, -192)
 		get_tree().change_scene_to_file("res://Scenes/Levels/electrical/electrical_wires.tscn")
@@ -44,21 +32,25 @@ func _process(delta: float) -> void:
 			$"../p-2".visible = false
 			$"../p-3".visible = false
 			$"../p-4".visible = false
+			wireSFX.play()
 		elif mouse_y > 205 && mouse_y <= 328:
 			$"../p-1".visible = false
 			$"../p-2".visible = true
 			$"../p-3".visible = false
 			$"../p-4".visible = false
+			wireSFX.play()
 		elif mouse_y > 328 && mouse_y <= 448:
 			$"../p-1".visible = false
 			$"../p-2".visible = false
 			$"../p-3".visible = true
 			$"../p-4".visible = false
+			wireSFX.play()
 		else:
 			$"../p-1".visible = false
 			$"../p-2".visible = false
 			$"../p-3".visible = false
 			$"../p-4".visible = true
+			wireSFX.play()
 			
 	if finished():
 		Global.elecwires_solved = true
