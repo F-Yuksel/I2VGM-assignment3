@@ -459,6 +459,7 @@ nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 Coords = Vector2(-240, -500)
 
 [node name="Player" parent="." instance=ExtResource("6_08ud1")]
+z_index = 1
 position = Vector2(-2205, 173)
 
 [node name="Interact2" parent="Player" instance=ExtResource("7_dm6b2")]

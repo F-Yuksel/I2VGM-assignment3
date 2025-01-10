@@ -236,7 +236,6 @@ position = Vector2(289.5, -150.5)
 shape = SubResource("RectangleShape2D_6kv6r")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.1824, 0.24, 0.24, 1)
 
 [node name="Lamps" type="Node" parent="."]

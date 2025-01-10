@@ -199,6 +199,7 @@ tile_map_data = PackedByteArray("AAAKAP7/AAAAAAAAAAALAP7/AAABAAAAAAACAP7/AAAAAAU
 tile_set = SubResource("TileSet_efrev")
 
 [node name="Player" parent="." instance=ExtResource("2_062wk")]
+z_index = 1
 position = Vector2(-1, -69)
 
 [node name="camera_zone_1" type="Area2D" parent="."]
