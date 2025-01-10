@@ -164,9 +164,9 @@ position = Vector2(439, -154)
 shape = SubResource("RectangleShape2D_52rxr")
 
 [node name="DoorToHallwayLQ3" parent="." instance=ExtResource("4_fmq4x")]
-position = Vector2(22.6, -46.03)
+position = Vector2(23, -45)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-Coords = Vector2(150, -75)
+Coords = Vector2(150, -49)
 
 [node name="Sprite2D" parent="DoorToHallwayLQ3" index="0"]
 texture = ExtResource("3_kdgp4")

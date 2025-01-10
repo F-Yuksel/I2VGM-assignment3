@@ -169,7 +169,7 @@ shape = SubResource("RectangleShape2D_fv5jo")
 [node name="DoorToLQ3" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(160, -77)
 nextScenePath = "res://Scenes/Levels/reactor/LQ3.tscn"
-Coords = Vector2(25, -45)
+Coords = Vector2(25, -17)
 
 [node name="Sprite2D" parent="DoorToLQ3" index="0"]
 texture = ExtResource("3_brxsv")
@@ -181,7 +181,7 @@ text = "
 [node name="DoorToLQ1" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(864, -77)
 nextScenePath = "res://Scenes/Levels/reactor/LQ1.tscn"
-Coords = Vector2(0, -75)
+Coords = Vector2(0, -18)
 
 [node name="Sprite2D" parent="DoorToLQ1" index="0"]
 texture = ExtResource("3_brxsv")
@@ -193,7 +193,7 @@ text = "
 [node name="DoorToLQ2" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(1056, -77)
 nextScenePath = "res://Scenes/Levels/reactor/LQ2.tscn"
-Coords = Vector2(0, -75)
+Coords = Vector2(0, -17)
 
 [node name="Sprite2D" parent="DoorToLQ2" index="0"]
 texture = ExtResource("3_brxsv")
@@ -201,7 +201,7 @@ texture = ExtResource("3_brxsv")
 [node name="DoorToKK" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(640, -77)
 nextScenePath = "res://Scenes/Levels/reactor/kluiskamer.tscn"
-Coords = Vector2(0, -45)
+Coords = Vector2(0, -17)
 Locked = true
 itemNeeded = "RedKey"
 
@@ -211,7 +211,7 @@ texture = ExtResource("4_ui6bw")
 [node name="DoorToLQ4" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(416, -77)
 nextScenePath = "res://Scenes/Levels/reactor/LQ4.tscn"
-Coords = Vector2(25, -45)
+Coords = Vector2(25, -17)
 
 [node name="Sprite2D" parent="DoorToLQ4" index="0"]
 texture = ExtResource("3_brxsv")
@@ -219,11 +219,11 @@ texture = ExtResource("3_brxsv")
 [node name="DoorToHub2" parent="." instance=ExtResource("3_agopb")]
 position = Vector2(1280, -77)
 nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-Coords = Vector2(-864, -237)
+Coords = Vector2(-864, -200)
 
 [node name="Player" parent="." instance=ExtResource("2_dniw1")]
 z_index = 1
-position = Vector2(-1, -69)
+position = Vector2(755, -49)
 
 [node name="DoorToReactor" type="Area2D" parent="."]
 position = Vector2(-24, -20)

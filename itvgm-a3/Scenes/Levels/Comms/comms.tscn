@@ -328,7 +328,7 @@ tile_set = SubResource("TileSet_s2l8d")
 [node name="DoorToHub3" parent="." instance=ExtResource("2_q2eao")]
 position = Vector2(96, -45)
 nextScenePath = "res://Scenes/Levels/test_scene.tscn"
-Coords = Vector2(384, -236)
+Coords = Vector2(384, -200)
 
 [node name="Generator1" type="Sprite2D" parent="."]
 position = Vector2(654, -527)
@@ -551,7 +551,7 @@ texture_scale = 0.36
 
 [node name="Player" parent="." instance=ExtResource("7_pcerb")]
 z_index = 1
-position = Vector2(3073, -31)
+position = Vector2(97, -17)
 
 [node name="Inventory" parent="Player" instance=ExtResource("24_taywp")]
 visible = false
