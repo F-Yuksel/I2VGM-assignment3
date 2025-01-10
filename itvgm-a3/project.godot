@@ -13,6 +13,7 @@ config_version=5
 config/name="ItVGM A3"
 run/main_scene="res://Scenes/menuscreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://Splash.png"
 config/icon="res://icon.svg"
 
 [autoload]
