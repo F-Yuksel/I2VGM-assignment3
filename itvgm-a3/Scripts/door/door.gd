@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 		if Locked:
 			if ElectricityNeeded:
 				if !Global.elecwires_solved:
+					lockedSFX.play()
 					$"../Player/CanvasLayer/Notification".text = "Door is locked! Fix the electricity to unlock!"
 					$"../Player/CanvasLayer/Notification".visible = true;
 					$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
@@ -47,6 +48,7 @@ func _process(delta: float) -> void:
 				#print("Item is ", itemNeeded)
 			elif BreakersNeeded:
 				if !Global.elecbreakers_solved:
+					lockedSFX.play()
 					$"../Player/CanvasLayer/Notification".text = "Door is locked! Fix the faulty breakers to unlock!"
 					$"../Player/CanvasLayer/Notification".visible = true;
 					$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")

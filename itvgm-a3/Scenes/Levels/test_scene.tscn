@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://baf40q0dccvxc"]
+[gd_scene load_steps=29 format=4 uid="uid://baf40q0dccvxc"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_e0hke"]
 [ext_resource type="Script" path="res://Scripts/global/test_scene.gd" id="1_hll8y"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="12_p8epj"]
 [ext_resource type="Script" path="res://Scenes/Levels/finishGameController.gd" id="13_gryai"]
 [ext_resource type="Texture2D" uid="uid://7ux83vrghhwb" path="res://textures/Decor/mainTerminal.png" id="14_2vpur"]
+[ext_resource type="Texture2D" uid="uid://gk4sa1jo0vfu" path="res://Imports/controlscheme.png" id="18_2v8uo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -198,6 +199,9 @@ size = Vector2(31, 351)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ew6m"]
 size = Vector2(189, 48)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ah4kg"]
+blend_mode = 1
 
 [node name="Test Scene" type="Node2D"]
 script = ExtResource("1_hll8y")
@@ -497,6 +501,7 @@ modulate = Color(0.52549, 0, 0, 1)
 color = Color(0.1824, 0.24, 0.24, 1)
 
 [node name="computer" type="Area2D" parent="."]
+position = Vector2(16, 0)
 script = ExtResource("13_gryai")
 
 [node name="Sprite2D" type="Sprite2D" parent="computer"]
@@ -507,6 +512,40 @@ texture = ExtResource("14_2vpur")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="computer"]
 position = Vector2(-254.5, -88)
 shape = SubResource("RectangleShape2D_7ew6m")
+
+[node name="control_display" type="Node2D" parent="."]
+
+[node name="Controls" type="Sprite2D" parent="control_display"]
+material = SubResource("CanvasItemMaterial_ah4kg")
+position = Vector2(-300.25, -223.25)
+scale = Vector2(2.25781, 2.25781)
+texture = ExtResource("18_2v8uo")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Label" type="Label" parent="control_display"]
+material = SubResource("CanvasItemMaterial_ah4kg")
+offset_left = -253.0
+offset_top = -290.0
+offset_right = -133.0
+offset_bottom = -160.0
+theme_override_colors/font_color = Color(0.372549, 0.717647, 0.717647, 0.686275)
+theme_override_font_sizes/font_size = 16
+text = "Jump
+
+Move
+
+Inventory
+
+Interact"
+
+[node name="BG" type="ColorRect" parent="control_display"]
+material = SubResource("CanvasItemMaterial_ah4kg")
+offset_left = -345.0
+offset_top = -297.0
+offset_right = -120.0
+offset_bottom = -153.0
+color = Color(0.705882, 0.929412, 0.92549, 0.490196)
 
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]

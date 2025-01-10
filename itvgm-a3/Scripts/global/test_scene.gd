@@ -47,6 +47,8 @@ func _ready() -> void:
 		$Lamps/OtherLamps/emergencyLamp5.visible = false
 		$Lamps/OtherLamps/emergencyLamp6.visible = false
 		
+		$control_display.visible = false
+		
 		$Lamps/roomlamp.visible = true
 	if Global.elecbreakers_solved:
 		$Lamps/Electrical/Normal.visible = true
