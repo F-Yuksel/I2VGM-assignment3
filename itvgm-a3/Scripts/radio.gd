@@ -26,6 +26,9 @@ func _on_body_entered(body: Node2D):
 		print(interact_screen)
 		in_body = true
 		interact_screen.visible = true
+		
+	if body.name == playerName and !has_power:
+		$"../Player/CanvasLayer/powerRequired".visible = true
 
 func _on_body_exited(body: Node2D):
 	if body.name == playerName:
@@ -33,6 +36,7 @@ func _on_body_exited(body: Node2D):
 		var interact_screen = body.get_node("CanvasLayer/Interact")
 		in_body = false
 		interact_screen.visible = false
+		$"../Player/CanvasLayer/powerRequired".visible = false
 
 func _on_lever_power(is_on) -> void:
 	has_power = is_on
