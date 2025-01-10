@@ -729,7 +729,7 @@ texture_scale = 0.2
 position = Vector2(-3440, -622)
 
 [node name="Redkey" type="Area2D" parent="." node_paths=PackedStringArray("item")]
-position = Vector2(-406, -715)
+position = Vector2(402, -16)
 script = ExtResource("19_x1err")
 item = NodePath("RedKey")
 
