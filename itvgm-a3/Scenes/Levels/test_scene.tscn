@@ -12,11 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="9_xijif"]
 [ext_resource type="Texture2D" uid="uid://dae5haa13nium" path="res://Imports/lamps/linelampOff.png" id="11_q45oy"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="12_p8epj"]
-[ext_resource type="PackedScene" uid="uid://04ilmt6onbl1" path="res://Scenes/Misc/controls_display.tscn" id="13_4a3ml"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xk045"]
-blend_mode = 4
-light_mode = 1
+[ext_resource type="Script" path="res://Scenes/Levels/finishGameController.gd" id="13_gryai"]
+[ext_resource type="PackedScene" uid="uid://04ilmt6onbl1" path="res://Scenes/Misc/controls_display.tscn" id="14_imov0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -196,16 +193,14 @@ size = Vector2(1448.5, 672)
 resource_local_to_scene = true
 size = Vector2(31, 351)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sc5cd"]
-blend_mode = 1
-light_mode = 1
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlgal"]
+size = Vector2(43, 38)
 
 [node name="Test Scene" type="Node2D"]
 script = ExtResource("1_hll8y")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 light_mask = 2
-material = SubResource("CanvasItemMaterial_xk045")
 scroll_scale = Vector2(1.04, 1.04)
 scroll_offset = Vector2(20, 20)
 
@@ -483,26 +478,30 @@ modulate = Color(0.52549, 0, 0, 1)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1824, 0.24, 0.24, 1)
 
-[node name="controls_display" parent="." instance=ExtResource("13_4a3ml")]
-position = Vector2(-80, -64)
+[node name="computer" type="Area2D" parent="."]
+script = ExtResource("13_gryai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="computer"]
+position = Vector2(-273.5, -83)
+shape = SubResource("RectangleShape2D_wlgal")
+
+[node name="controls_display" parent="." instance=ExtResource("14_imov0")]
+position = Vector2(-81, -64)
 
 [node name="Controls" parent="controls_display" index="1"]
-material = SubResource("CanvasItemMaterial_sc5cd")
-position = Vector2(-215.25, -174.25)
+position = Vector2(-226.75, -165.25)
 
 [node name="Label" parent="controls_display" index="3"]
-material = SubResource("CanvasItemMaterial_sc5cd")
-offset_left = -168.0
-offset_top = -241.0
-offset_right = -48.0
-offset_bottom = -111.0
+offset_left = -179.5
+offset_top = -232.0
+offset_right = -59.5001
+offset_bottom = -102.0
 
 [node name="BG" parent="controls_display" index="4"]
-material = SubResource("CanvasItemMaterial_sc5cd")
-offset_left = -259.0
-offset_top = -247.0
-offset_right = -34.0
-offset_bottom = -103.0
+offset_left = -271.5
+offset_top = -239.0
+offset_right = -46.5001
+offset_bottom = -95.0
 
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]

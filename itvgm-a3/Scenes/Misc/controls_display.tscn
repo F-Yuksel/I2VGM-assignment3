@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://04ilmt6onbl1"]
+[gd_scene load_steps=6 format=3 uid="uid://04ilmt6onbl1"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_qtosj"]
 [ext_resource type="Script" path="res://Scripts/controls_display.gd" id="1_wnibl"]
 [ext_resource type="Texture2D" uid="uid://gk4sa1jo0vfu" path="res://Imports/controlscheme.png" id="2_qqsyb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ah4kg"]
+blend_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0g0o"]
 size = Vector2(41, 33)
@@ -17,6 +20,7 @@ region_enabled = true
 region_rect = Rect2(161, 227, 30, 29)
 
 [node name="Controls" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_ah4kg")
 position = Vector2(-36.25, -141.25)
 scale = Vector2(2.25781, 2.25781)
 texture = ExtResource("2_qqsyb")
@@ -28,6 +32,7 @@ position = Vector2(-0.5, -16.5)
 shape = SubResource("RectangleShape2D_d0g0o")
 
 [node name="Label" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_ah4kg")
 offset_left = 11.0
 offset_top = -208.0
 offset_right = 131.0
@@ -43,6 +48,7 @@ Inventory
 Interact"
 
 [node name="BG" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_ah4kg")
 offset_left = -81.0
 offset_top = -215.0
 offset_right = 144.0

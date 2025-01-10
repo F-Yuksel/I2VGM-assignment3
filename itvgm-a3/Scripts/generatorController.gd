@@ -13,6 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if ableToInterract and Input.is_action_just_pressed("Interact"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/reactor/wires_window_amogus.tscn")	
+		
 func _on_body_entered(body):
 	if body.name == playerName and !Global.generatorOn:
 		$"../Player/CanvasLayer/Interact".visible = true
