@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://baf40q0dccvxc"]
+[gd_scene load_steps=24 format=4 uid="uid://baf40q0dccvxc"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_e0hke"]
 [ext_resource type="Script" path="res://Scripts/global/test_scene.gd" id="1_hll8y"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dae5haa13nium" path="res://Imports/lamps/linelampOff.png" id="11_q45oy"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="12_p8epj"]
 [ext_resource type="Script" path="res://Scenes/Levels/finishGameController.gd" id="13_gryai"]
+[ext_resource type="PackedScene" uid="uid://04ilmt6onbl1" path="res://Scenes/Misc/controls_display.tscn" id="14_imov0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -484,6 +485,24 @@ script = ExtResource("13_gryai")
 position = Vector2(-273.5, -83)
 shape = SubResource("RectangleShape2D_wlgal")
 
+[node name="controls_display" parent="." instance=ExtResource("14_imov0")]
+position = Vector2(-81, -64)
+
+[node name="Controls" parent="controls_display" index="1"]
+position = Vector2(-226.75, -165.25)
+
+[node name="Label" parent="controls_display" index="3"]
+offset_left = -179.5
+offset_top = -232.0
+offset_right = -59.5001
+offset_bottom = -102.0
+
+[node name="BG" parent="controls_display" index="4"]
+offset_left = -271.5
+offset_top = -239.0
+offset_right = -46.5001
+offset_bottom = -95.0
+
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]
 [editable path="Ladder"]
@@ -501,3 +520,4 @@ shape = SubResource("RectangleShape2D_wlgal")
 [editable path="Lamps/OtherLamps/emergencyLamp4"]
 [editable path="Lamps/OtherLamps/emergencyLamp5"]
 [editable path="Lamps/OtherLamps/emergencyLamp6"]
+[editable path="controls_display"]
