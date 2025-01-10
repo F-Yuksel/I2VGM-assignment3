@@ -29,8 +29,10 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if "Player" in body.name:
 		interactable = true	
+		$"../../Player/CanvasLayer/Interact".visible = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if "Player" in body.name:
 		interactable = false
+		$"../../Player/CanvasLayer/Interact".visible = false

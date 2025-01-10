@@ -706,25 +706,6 @@ position = Vector2(-2640, 496)
 tile_map_data = PackedByteArray("AABSAPH/AAAFAAAAAABSAPL/AAAFAAAAAABSAPP/AAAFAAAAAABSAPT/AAADAAAAAABTAPT/AAABAAAAAABUAPT/AAADAAAAADBUAPX/AAADAAAAAABVAPX/AAABAAAAAABWAPX/AAABAAAAAABXAPX/AAABAAAAAABYAPX/AAABAAAAAABZAPX/AAABAAAAAABaAPX/AAABAAAAAABbAPX/AAADAAAAADBbAPb/AAADAAAAAABcAPb/AAADAAAAADBcAPf/AAAFAAAAAABcAPj/AAAFAAAAAABcAPn/AAAFAAAAAABcAPr/AAAFAAAAAABcAPv/AAADAAAAAABdAPv/AAABAAAAAABeAPv/AAADAAAAADBeAPz/AAAFAAAAAABeAP3/AAAFAAAAAAA=")
 tile_set = ExtResource("9_j5eu0")
 
-[node name="Note1" type="Area2D" parent="." node_paths=PackedStringArray("item")]
-position = Vector2(862, -11)
-script = ExtResource("20_p5ayh")
-item = NodePath("CommsNote1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Note1"]
-position = Vector2(1, -8)
-shape = SubResource("RectangleShape2D_d3lf8")
-
-[node name="CommsNote1" type="Node" parent="Note1"]
-script = ExtResource("13_aqrxq")
-item_name = "Comms Log"
-is_log = true
-icon = ExtResource("26_oe213")
-info_text = "It seems the emergency lock has activated all the doors. If I can restore power to the doors they should open. "
-
-[node name="Note1" type="Sprite2D" parent="Note1"]
-texture = ExtResource("26_oe213")
-
 [node name="ItemPickup" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(1810, 88)
 script = ExtResource("20_p5ayh")
@@ -739,7 +720,7 @@ script = ExtResource("13_aqrxq")
 item_name = "Lever Log"
 is_log = true
 icon = ExtResource("26_oe213")
-info_text = "This lever seems to only work when its track has power..."
+info_text = "This lever seems to only work when its track has power. I hate this job."
 
 [node name="Note" type="Sprite2D" parent="ItemPickup"]
 texture = ExtResource("26_oe213")
@@ -758,13 +739,14 @@ script = ExtResource("13_aqrxq")
 item_name = "Power Log"
 is_log = true
 icon = ExtResource("26_oe213")
-info_text = "This power source seems to be missing its battery, perhaps we can find one nearby..."
+info_text = "For people looking for the battery, I took it to one of the rooms near Reactor to charge it. Sorry.
+"
 
 [node name="Note3" type="Sprite2D" parent="Note3"]
 texture = ExtResource("26_oe213")
 
 [node name="Note4" type="Area2D" parent="." node_paths=PackedStringArray("item")]
-position = Vector2(3113, -7)
+position = Vector2(2979, -11)
 script = ExtResource("20_p5ayh")
 item = NodePath("CommsNote4")
 
@@ -777,7 +759,7 @@ script = ExtResource("13_aqrxq")
 item_name = "Comm Device Log"
 is_log = true
 icon = ExtResource("26_oe213")
-info_text = "Here is the communications device, when powered it can be used to send messages."
+info_text = "I locked the door and took the power away from this computer. I'm done with you guys searching for coordinates to the nearest DcMonalds."
 
 [node name="Note4" type="Sprite2D" parent="Note4"]
 texture = ExtResource("26_oe213")

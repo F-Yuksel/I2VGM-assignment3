@@ -207,7 +207,7 @@ script = ExtResource("2_0buk0")
 item_name = "Breaker log #3"
 is_log = true
 icon = ExtResource("3_d0byq")
-info_text = "The sequence is all mixed up, though 1 did still come before 2."
+info_text = "The breaker sequence is all mixed up, though I'm sure 1 did still come before 2."
 
 [node name="Note1" type="Sprite2D" parent="Notes/ItemNote1"]
 texture = ExtResource("3_d0byq")
@@ -420,6 +420,18 @@ position = Vector2(560, -187)
 
 [node name="pointlamp5" parent="Lamp" instance=ExtResource("12_jek0y")]
 position = Vector2(688, -187)
+
+[node name="pointlamp6" parent="Lamp" instance=ExtResource("12_jek0y")]
+position = Vector2(1456, -59)
+
+[node name="pointlamp7" parent="Lamp" instance=ExtResource("12_jek0y")]
+position = Vector2(1488, -59)
+
+[node name="pointlamp8" parent="Lamp" instance=ExtResource("12_jek0y")]
+position = Vector2(1296, -59)
+
+[node name="pointlamp9" parent="Lamp" instance=ExtResource("12_jek0y")]
+position = Vector2(1328, -59)
 
 [node name="camera_zone_1" type="Area2D" parent="."]
 visible = false
