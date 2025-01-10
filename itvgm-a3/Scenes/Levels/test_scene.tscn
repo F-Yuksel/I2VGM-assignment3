@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://baf40q0dccvxc"]
+[gd_scene load_steps=24 format=4 uid="uid://baf40q0dccvxc"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_e0hke"]
 [ext_resource type="Script" path="res://Scripts/global/test_scene.gd" id="1_hll8y"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="9_xijif"]
 [ext_resource type="Texture2D" uid="uid://dae5haa13nium" path="res://Imports/lamps/linelampOff.png" id="11_q45oy"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="12_p8epj"]
+[ext_resource type="PackedScene" uid="uid://04ilmt6onbl1" path="res://Scenes/Misc/controls_display.tscn" id="13_4a3ml"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xk045"]
+blend_mode = 4
+light_mode = 1
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -191,11 +196,16 @@ size = Vector2(1448.5, 672)
 resource_local_to_scene = true
 size = Vector2(31, 351)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sc5cd"]
+blend_mode = 1
+light_mode = 1
+
 [node name="Test Scene" type="Node2D"]
 script = ExtResource("1_hll8y")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 light_mask = 2
+material = SubResource("CanvasItemMaterial_xk045")
 scroll_scale = Vector2(1.04, 1.04)
 scroll_offset = Vector2(20, 20)
 
@@ -473,6 +483,27 @@ modulate = Color(0.52549, 0, 0, 1)
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1824, 0.24, 0.24, 1)
 
+[node name="controls_display" parent="." instance=ExtResource("13_4a3ml")]
+position = Vector2(-80, -64)
+
+[node name="Controls" parent="controls_display" index="1"]
+material = SubResource("CanvasItemMaterial_sc5cd")
+position = Vector2(-215.25, -174.25)
+
+[node name="Label" parent="controls_display" index="3"]
+material = SubResource("CanvasItemMaterial_sc5cd")
+offset_left = -168.0
+offset_top = -241.0
+offset_right = -48.0
+offset_bottom = -111.0
+
+[node name="BG" parent="controls_display" index="4"]
+material = SubResource("CanvasItemMaterial_sc5cd")
+offset_left = -259.0
+offset_top = -247.0
+offset_right = -34.0
+offset_bottom = -103.0
+
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]
 [editable path="Ladder"]
@@ -490,3 +521,4 @@ color = Color(0.1824, 0.24, 0.24, 1)
 [editable path="Lamps/OtherLamps/emergencyLamp4"]
 [editable path="Lamps/OtherLamps/emergencyLamp5"]
 [editable path="Lamps/OtherLamps/emergencyLamp6"]
+[editable path="controls_display"]
