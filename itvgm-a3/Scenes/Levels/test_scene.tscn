@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/finishGameController.gd" id="13_gryai"]
 [ext_resource type="Texture2D" uid="uid://7ux83vrghhwb" path="res://textures/Decor/mainTerminal.png" id="14_2vpur"]
 [ext_resource type="Texture2D" uid="uid://gk4sa1jo0vfu" path="res://Imports/controlscheme.png" id="18_2v8uo"]
+[ext_resource type="PackedScene" path="res://Scenes/Misc/controls_display.tscn" id="14_imov0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -231,7 +232,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_pjsjn")]
 z_index = 4
-position = Vector2(-238, -81)
+position = Vector2(-82.345, -81)
 
 [node name="DoorMain3" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(384, -236)
