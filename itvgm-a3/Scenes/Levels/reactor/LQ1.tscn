@@ -268,9 +268,9 @@ shape = SubResource("RectangleShape2D_ky436")
 
 [node name="BatteryItem" type="Node" parent="Battery"]
 script = ExtResource("9_3vs3d")
-item_name = "Battery"
+item_name = "Generator Battery"
 icon = ExtResource("10_8mu7d")
-info_text = "A Battery. Might be used to power something..."
+info_text = "Generator Battery, used to power generators."
 
 [node name="Battery" type="Sprite2D" parent="Battery"]
 texture = ExtResource("10_8mu7d")

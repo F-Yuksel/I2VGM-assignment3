@@ -362,7 +362,7 @@ offset_top = 719.0
 offset_right = 980.0
 offset_bottom = 742.0
 grow_horizontal = 2
-text = "The message has been sent!"
+text = "Destination coordinates have been received!"
 horizontal_alignment = 1
 
 [node name="Notification" type="Label" parent="CanvasLayer"]

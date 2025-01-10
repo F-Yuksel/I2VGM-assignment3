@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 # this should reach the actual value after the signals in from ready of the levers
-# door 4 has to be 1 because the second off line does not use the lever script
 @export var power_lines = 0
 
 
