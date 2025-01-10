@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://dy48isccya80f"]
 
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="1_8v6ov"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_dniw1"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="3_agopb"]
 [ext_resource type="Texture2D" uid="uid://dgycrhtixvwas" path="res://textures/Decor/normalDoor1.png" id="3_brxsv"]

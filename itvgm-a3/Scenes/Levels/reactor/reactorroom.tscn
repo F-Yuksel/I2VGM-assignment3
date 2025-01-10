@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://ddhbujk5src8h"]
 
-[ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="1_6ws62"]
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_167u5"]
+[ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Tilesets/Tileset/Decor/full decor tiles.png" id="1_6ws62"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="1_167u5"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
 [ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
 [ext_resource type="AudioStream" uid="uid://bijyu2vklofwg" path="res://Imports/Music/Alarm sound effect.mp3" id="6_olj0u"]

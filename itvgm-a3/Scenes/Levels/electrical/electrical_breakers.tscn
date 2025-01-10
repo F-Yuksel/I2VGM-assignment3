@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://cbkwvwseevtg0"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/electrical_breakers.gd" id="1_0csps"]
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_hgnvn"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="1_hgnvn"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/item_pickup.gd" id="1_vaeh6"]
 [ext_resource type="Script" path="res://Scripts/item.gd" id="2_0buk0"]
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_rvlkk"]

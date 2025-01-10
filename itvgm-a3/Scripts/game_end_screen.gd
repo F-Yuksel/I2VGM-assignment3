@@ -20,4 +20,4 @@ func _on_restart_button_pressed() -> void:
 	Global.reset()
 	AudioPlayer.stop_playing()
 	AudioPlayer.play_intromusic()
-	get_tree().change_scene_to_file("res://Scenes/Levels/test_scene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Misc/credits.tscn")

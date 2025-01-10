@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dfi0rgh3tioyj"]
 
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_mm2bg"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="2_mm2bg"]
 [ext_resource type="Script" path="res://Scripts/wireRedController.gd" id="3_ri2ga"]
 [ext_resource type="Script" path="res://Scripts/wireGreenController.gd" id="4_uxyh2"]
 [ext_resource type="Script" path="res://Scripts/wireBlueController.gd" id="5_8y8rs"]
-[ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="6_bu1un"]
+[ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Tilesets/Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="6_bu1un"]
 [ext_resource type="Script" path="res://Scripts/wirePurpleController.gd" id="6_lcbw5"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="7_7upsx"]
 

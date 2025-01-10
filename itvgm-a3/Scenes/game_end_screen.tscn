@@ -38,7 +38,7 @@ offset_top = 350.0
 offset_right = 693.0
 offset_bottom = 419.0
 theme_override_constants/outline_size = 4
-text = "Restart game"
+text = "Credits"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 13.0

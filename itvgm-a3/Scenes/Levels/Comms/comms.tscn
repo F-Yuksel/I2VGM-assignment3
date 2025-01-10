@@ -1,7 +1,7 @@
 [gd_scene load_steps=51 format=4 uid="uid://bvtv8el04pkbd"]
 
 [ext_resource type="AudioStream" uid="uid://owknkl1ghbko" path="res://Imports/Music/SFX/LeverFlip.mp3" id="1_illj0"]
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="1_ypifs"]
 [ext_resource type="PackedScene" uid="uid://dute4v511dbtp" path="res://Scenes/Levels/reactor/door.tscn" id="2_q2eao"]
 [ext_resource type="Texture2D" uid="uid://bhjfk88y6ww4t" path="res://Imports/panel_sprite.png" id="3_uk4il"]
 [ext_resource type="Texture2D" uid="uid://x23ap58mpgkr" path="res://Imports/panel_backside.png" id="4_2edge"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cp3m57nw2v7ih" path="res://Scenes/inventory.tscn" id="24_taywp"]
 [ext_resource type="Texture2D" uid="uid://cynm0xa0swdgl" path="res://Imports/note_overworld.png" id="26_oe213"]
 [ext_resource type="Script" path="res://Scripts/radio.gd" id="26_sbgxv"]
-[ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/full decor tiles.png" id="26_vs5wj"]
+[ext_resource type="Texture2D" uid="uid://dj7mvn2iccjja" path="res://Imports/Tilesets/Tileset/Decor/full decor tiles.png" id="26_vs5wj"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="27_oe12g"]
 [ext_resource type="PackedScene" uid="uid://b4iichfihpq7o" path="res://Scenes/Objects/linelamp.tscn" id="28_cgykb"]
 [ext_resource type="Texture2D" uid="uid://c60ckkv1q4iji" path="res://textures/UI/bluekey.png" id="29_km6ju"]

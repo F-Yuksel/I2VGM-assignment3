@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://vj8f673ddrlf"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/wires_window.gd" id="1_lpofa"]
-[ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="1_tucvf"]
-[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="2_c0g6p"]
+[ext_resource type="Texture2D" uid="uid://cbcsjl7lda02j" path="res://Imports/Tilesets/Tileset/Tileset/Individual_PNGs/background_wires/level_tileset.png" id="1_tucvf"]
+[ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Tilesets/Tileset/Tileset/level_tileset.png" id="2_c0g6p"]
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/red_area.gd" id="3_vb6q2"]
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/green_area.gd" id="4_qwoo0"]
 [ext_resource type="Script" path="res://Scripts/electrical/wires_files/blue_area.gd" id="5_y3f2e"]
