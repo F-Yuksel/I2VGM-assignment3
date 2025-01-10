@@ -231,7 +231,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_pjsjn")]
 z_index = 4
-position = Vector2(-239, -496)
+position = Vector2(-241, -87)
 
 [node name="DoorMain3" parent="." instance=ExtResource("2_3ji17")]
 position = Vector2(384, -236)
