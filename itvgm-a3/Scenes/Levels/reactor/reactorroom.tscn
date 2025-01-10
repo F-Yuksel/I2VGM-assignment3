@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://xsors4k2rgg7" path="res://Scenes/player.tscn" id="2_d4bd4"]
 [ext_resource type="Script" path="res://Scripts/door/door_to_hallway.gd" id="4_tx1fb"]
 [ext_resource type="AudioStream" uid="uid://bijyu2vklofwg" path="res://Imports/Music/Alarm sound effect.mp3" id="6_olj0u"]
-[ext_resource type="AudioStream" uid="uid://ba2j48hm8fef2" path="res://Imports/Music/Machine Power Up Sound Effect 2  No Copyright.mp3" id="7_5nnok"]
 [ext_resource type="Script" path="res://Scenes/Levels/reactor/reactorController.gd" id="7_gep6c"]
+[ext_resource type="AudioStream" uid="uid://sq7xrhwl0xj0" path="res://Imports/Music/SFX/PowerOn.mp3" id="7_ls0qu"]
 [ext_resource type="PackedScene" uid="uid://dx51bbpnanfs2" path="res://Scenes/Objects/reactor.tscn" id="8_j72p7"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="9_swp3f"]
 [ext_resource type="Texture2D" uid="uid://ceyhwhgjk3nm8" path="res://textures/light.png" id="10_xb4xk"]
@@ -212,7 +212,8 @@ stream = ExtResource("6_olj0u")
 volume_db = -20.0
 
 [node name="reactorStart" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_5nnok")
+stream = ExtResource("7_ls0qu")
+volume_db = -15.0
 
 [node name="Reactor" parent="." instance=ExtResource("8_j72p7")]
 position = Vector2(787, -96)
