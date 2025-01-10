@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://baf40q0dccvxc"]
+[gd_scene load_steps=23 format=4 uid="uid://baf40q0dccvxc"]
 
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_e0hke"]
 [ext_resource type="Script" path="res://Scripts/global/test_scene.gd" id="1_hll8y"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="9_xijif"]
 [ext_resource type="Texture2D" uid="uid://dae5haa13nium" path="res://Imports/lamps/linelampOff.png" id="11_q45oy"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="12_p8epj"]
+[ext_resource type="Script" path="res://Scenes/Levels/finishGameController.gd" id="13_gryai"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hfq3q"]
 light_mode = 1
@@ -190,6 +191,9 @@ size = Vector2(1448.5, 672)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsjh0"]
 resource_local_to_scene = true
 size = Vector2(31, 351)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlgal"]
+size = Vector2(43, 38)
 
 [node name="Test Scene" type="Node2D"]
 script = ExtResource("1_hll8y")
@@ -472,6 +476,13 @@ modulate = Color(0.52549, 0, 0, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1824, 0.24, 0.24, 1)
+
+[node name="computer" type="Area2D" parent="."]
+script = ExtResource("13_gryai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="computer"]
+position = Vector2(-273.5, -83)
+shape = SubResource("RectangleShape2D_wlgal")
 
 [editable path="DoorMain1"]
 [editable path="DoorMain2"]

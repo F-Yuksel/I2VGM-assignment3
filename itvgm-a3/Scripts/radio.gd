@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 		$"../Player/CanvasLayer/TextBox".visible = true
 		await get_tree().create_timer(3.0).timeout
 		$"../Player/CanvasLayer/TextBox".visible = false
+		Global.messageSent = true
 	if has_power:
 		$comscreen/error.visible = false
 	else:

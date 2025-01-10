@@ -57,6 +57,10 @@ func _ready() -> void:
 	if Global.reactorOn:
 		$Lamps/Reactor/Normal.visible = false
 		$Lamps/Reactor/Solved.visible = true
+	if Global.messageSent:
+		$Lamps/Comms/Normal.visible = false
+		$Lamps/Comms/Solved.visible = true
+		$Lamps/Comms/Off.visible = false
 	
 
 
