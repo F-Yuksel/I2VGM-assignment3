@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	else:
 		$comscreen/error.visible = true
 	
-	if Global.coordsGet:
+	if Global.messageSent:
 		$comscreen/fixed.visible = true
 func _on_body_entered(body: Node2D):
 	if body.name == playerName and has_power:

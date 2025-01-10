@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bvtv8el04pkbd"]
+[gd_scene load_steps=51 format=4 uid="uid://bvtv8el04pkbd"]
 
 [ext_resource type="AudioStream" uid="uid://owknkl1ghbko" path="res://Imports/Music/SFX/LeverFlip.mp3" id="1_illj0"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_ypifs"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://c60ckkv1q4iji" path="res://textures/UI/bluekey.png" id="29_km6ju"]
 [ext_resource type="PackedScene" uid="uid://borguferyib5w" path="res://Scenes/Objects/pointlamp.tscn" id="29_y46d3"]
 [ext_resource type="PackedScene" uid="uid://b5rdx0au57dlw" path="res://Scenes/Objects/roomlamp.tscn" id="30_e5wev"]
-[ext_resource type="PackedScene" uid="uid://bh2bbyu68mt75" path="res://Scenes/Objects/comscreen.tscn" id="31_kyqex"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_85s27"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -552,7 +551,7 @@ texture_scale = 0.36
 
 [node name="Player" parent="." instance=ExtResource("7_pcerb")]
 z_index = 1
-position = Vector2(-1, -31)
+position = Vector2(3073, -31)
 
 [node name="Inventory" parent="Player" instance=ExtResource("24_taywp")]
 visible = false
@@ -690,13 +689,13 @@ tile_set = ExtResource("9_j5eu0")
 [node name="Note1" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(862, -11)
 script = ExtResource("20_p5ayh")
-item = NodePath("Note")
+item = NodePath("CommsNote1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note1"]
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_d3lf8")
 
-[node name="Note" type="Node" parent="Note1"]
+[node name="CommsNote1" type="Node" parent="Note1"]
 script = ExtResource("13_aqrxq")
 item_name = "Comms Log"
 is_log = true
@@ -709,13 +708,13 @@ texture = ExtResource("26_oe213")
 [node name="ItemPickup" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(1810, 88)
 script = ExtResource("20_p5ayh")
-item = NodePath("Note2")
+item = NodePath("CommsNote3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemPickup"]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_d3lf8")
 
-[node name="Note2" type="Node" parent="ItemPickup"]
+[node name="CommsNote3" type="Node" parent="ItemPickup"]
 script = ExtResource("13_aqrxq")
 item_name = "Lever Log"
 is_log = true
@@ -728,13 +727,13 @@ texture = ExtResource("26_oe213")
 [node name="Note3" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(2850, -459)
 script = ExtResource("20_p5ayh")
-item = NodePath("Item")
+item = NodePath("CommsNote2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note3"]
 position = Vector2(1, -15)
 shape = SubResource("RectangleShape2D_d3lf8")
 
-[node name="Item" type="Node" parent="Note3"]
+[node name="CommsNote2" type="Node" parent="Note3"]
 script = ExtResource("13_aqrxq")
 item_name = "Power Log"
 is_log = true
@@ -747,13 +746,13 @@ texture = ExtResource("26_oe213")
 [node name="Note4" type="Area2D" parent="." node_paths=PackedStringArray("item")]
 position = Vector2(3113, -7)
 script = ExtResource("20_p5ayh")
-item = NodePath("Item")
+item = NodePath("CommsNote4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note4"]
 position = Vector2(-4.88944e-09, -12)
 shape = SubResource("RectangleShape2D_d3lf8")
 
-[node name="Item" type="Node" parent="Note4"]
+[node name="CommsNote4" type="Node" parent="Note4"]
 script = ExtResource("13_aqrxq")
 item_name = "Comm Device Log"
 is_log = true
@@ -778,9 +777,36 @@ region_rect = Rect2(32, 32, 32, 32)
 position = Vector2(-2.25, 5.25)
 shape = SubResource("RectangleShape2D_dqcvh")
 
-[node name="comscreen" parent="Radio" instance=ExtResource("31_kyqex")]
+[node name="comscreen" type="Node2D" parent="Radio"]
 position = Vector2(-14, -5)
 scale = Vector2(0.55, 0.536)
+
+[node name="fixed" type="ColorRect" parent="Radio/comscreen"]
+visible = false
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(0.465079, 0.668698, 5.77569e-07, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Radio/comscreen/fixed"]
+position = Vector2(17, 13)
+color = Color(0.476565, 0.953542, 0, 1)
+texture = ExtResource("27_oe12g")
+texture_scale = 0.2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Radio/comscreen/fixed"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 48.0
+scale = Vector2(0.843306, 1.16456)
+theme_override_font_sizes/normal_font_size = 8
+text = "online"
+
+[node name="error" type="ColorRect" parent="Radio/comscreen"]
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(0, 0, 0, 1)
 
 [node name="camera_zone_1" type="Area2D" parent="."]
 
@@ -888,5 +914,4 @@ texture = ExtResource("29_km6ju")
 [connection signal="body_entered" from="Radio" to="Radio" method="_on_body_entered"]
 [connection signal="body_exited" from="Radio" to="Radio" method="_on_body_exited"]
 
-[editable path="Radio/comscreen"]
 [editable path="LampObjects/Linelamp"]

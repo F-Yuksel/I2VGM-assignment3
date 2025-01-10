@@ -459,7 +459,7 @@ nextScenePath = "res://Scenes/Levels/test_scene.tscn"
 Coords = Vector2(-240, -525)
 
 [node name="Player" parent="." instance=ExtResource("6_08ud1")]
-position = Vector2(-2208, 174)
+position = Vector2(-2963, -617)
 
 [node name="Interact2" parent="Player" instance=ExtResource("7_dm6b2")]
 visible = false
@@ -468,6 +468,53 @@ position = Vector2(3, 75)
 [node name="control_panel" parent="." instance=ExtResource("13_c3evm")]
 z_index = -1
 position = Vector2(-3168, -640)
+
+[node name="errorscreen" type="Node2D" parent="control_panel"]
+position = Vector2(-81, -56)
+scale = Vector2(4.04, 2.68)
+
+[node name="fixed" type="ColorRect" parent="control_panel/errorscreen"]
+visible = false
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(0.465079, 0.668698, 5.77569e-07, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="control_panel/errorscreen/fixed"]
+position = Vector2(17, 13)
+color = Color(0.476565, 0.953542, 0, 1)
+texture = ExtResource("17_luqax")
+texture_scale = 0.4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="control_panel/errorscreen/fixed"]
+layout_mode = 0
+offset_left = 6.43567
+offset_top = 8.58209
+offset_right = 46.4357
+offset_bottom = 48.5821
+scale = Vector2(0.843306, 1.16456)
+theme_override_font_sizes/normal_font_size = 8
+text = "fixed"
+
+[node name="error" type="ColorRect" parent="control_panel/errorscreen"]
+offset_right = 40.0
+offset_bottom = 26.0
+color = Color(1, 0.260006, 0.200835, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="control_panel/errorscreen/error"]
+layout_mode = 0
+offset_left = 6.43567
+offset_top = 9.32836
+offset_right = 46.4357
+offset_bottom = 49.3284
+scale = Vector2(0.843306, 1.16456)
+theme_override_font_sizes/normal_font_size = 8
+text = "error"
+
+[node name="PointLight2D" type="PointLight2D" parent="control_panel/errorscreen/error"]
+position = Vector2(17, 13)
+color = Color(1, 0.174173, 0.127215, 1)
+texture = ExtResource("17_luqax")
+texture_scale = 0.4
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.1824, 0.24, 0.24, 1)

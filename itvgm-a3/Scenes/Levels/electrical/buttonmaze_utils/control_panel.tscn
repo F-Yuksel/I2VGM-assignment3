@@ -1,18 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://cn7paqt3ollnd"]
 
-[ext_resource type="Texture2D" uid="uid://lv2v1krlrxu8" path="res://Imports/buttonmaze_utils/controlpanel.png" id="1_dcdyl"]
 [ext_resource type="Script" path="res://Scripts/electrical/control_panel.gd" id="1_mqb54"]
+[ext_resource type="Texture2D" uid="uid://d16gs8gmacidd" path="res://textures/Decor/controlPanel.png" id="2_crvmm"]
 [ext_resource type="AudioStream" uid="uid://sq7xrhwl0xj0" path="res://Imports/Music/SFX/PowerOn.mp3" id="3_rlmdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44rl7"]
-size = Vector2(256, 128)
+size = Vector2(184, 128)
 
 [node name="control_panel" type="Area2D"]
 script = ExtResource("1_mqb54")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_dcdyl")
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_crvmm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_44rl7")

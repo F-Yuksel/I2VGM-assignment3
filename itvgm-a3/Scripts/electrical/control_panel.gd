@@ -17,6 +17,8 @@ func _process(_delta: float) -> void:
 		interactable = false
 		$"../buttonlogic".openall()
 		$"../Player/CanvasLayer/Interact".visible = false
+		$"errorscreen/error".visible = false
+		$"errorscreen/fixed".visible = true
 
 
 func _on_body_entered(body: Node2D) -> void:

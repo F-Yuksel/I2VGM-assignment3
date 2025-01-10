@@ -3,17 +3,19 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Lamps/Electrical/Normal.visible = false
+	$Lamps/Electrical/Solved.visible = false
+	$Lamps/Electrical/Emergency.visible = true
+	$Lamps/Reactor/Normal.visible = false
+	$Lamps/Reactor/Solved.visible = false
+	$Lamps/Reactor/Off.visible = true
+	$Lamps/Comms/Normal.visible = false
+	$Lamps/Comms/Solved.visible = false
+	$Lamps/Comms/Off.visible = true
+	$Lamps/roomlamp.visible = false
+	
 	if !Global.elecwires_solved:
-		$Lamps/Electrical/Normal.visible = false
-		$Lamps/Electrical/Solved.visible = false
-		$Lamps/Electrical/Emergency.visible = true
-		$Lamps/Reactor/Normal.visible = false
-		$Lamps/Reactor/Solved.visible = false
-		$Lamps/Reactor/Off.visible = true
-		$Lamps/Comms/Normal.visible = false
-		$Lamps/Comms/Solved.visible = false
-		$Lamps/Comms/Off.visible = true
-		$Lamps/roomlamp.visible = false
+		
 		
 		$Lamps/OtherLamps/pointlamp.visible = false 
 		$Lamps/OtherLamps/pointlamp2.visible = false  
@@ -31,13 +33,6 @@ func _ready() -> void:
 		#AudioPlayer.stop_playing()
 		
 	if Global.elecwires_solved:
-		$Lamps/Electrical/Normal.visible = true
-		$Lamps/Electrical/Emergency.visible = false
-		$Lamps/Reactor/Normal.visible = true
-		$Lamps/Reactor/Off.visible = false
-		$Lamps/Comms/Normal.visible = true
-		$Lamps/Comms/Off.visible = false
-		
 		$Lamps/OtherLamps/pointlamp.visible = true 
 		$Lamps/OtherLamps/pointlamp2.visible = true  
 		$Lamps/OtherLamps/pointlamp3.visible = true 
@@ -51,6 +46,15 @@ func _ready() -> void:
 		$Lamps/OtherLamps/emergencyLamp4.visible = false
 		$Lamps/OtherLamps/emergencyLamp5.visible = false
 		$Lamps/OtherLamps/emergencyLamp6.visible = false
+		
+		$Lamps/roomlamp.visible = true
+	if Global.elecbreakers_solved:
+		$Lamps/Electrical/Normal.visible = true
+		$Lamps/Electrical/Emergency.visible = false
+		$Lamps/Reactor/Normal.visible = true
+		$Lamps/Reactor/Off.visible = false
+		$Lamps/Comms/Normal.visible = true
+		$Lamps/Comms/Off.visible = false
 	if Global.electrical_allsolved:
 		$Lamps/Electrical/Normal.visible = false
 		$Lamps/Electrical/Solved.visible = true

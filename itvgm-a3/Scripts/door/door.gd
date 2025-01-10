@@ -9,6 +9,7 @@ var global_inventory = GlobalInventory
 @export var Coords: Vector2
 @export var Locked: bool
 @export var ElectricityNeeded: bool
+@export var BreakersNeeded: bool
 @export var itemNeeded: String
 
 @onready var openSFX: AudioStreamPlayer = $Open
@@ -44,6 +45,14 @@ func _process(delta: float) -> void:
 				else:
 					pass
 				#print("Item is ", itemNeeded)
+			elif BreakersNeeded:
+				if !Global.elecbreakers_solved:
+					$"../Player/CanvasLayer/Notification".text = "Door is locked! Fix the faulty breakers to unlock!"
+					$"../Player/CanvasLayer/Notification".visible = true;
+					$"../Player/CanvasLayer/Notification/NotificationPlayer".play("fade_out")
+					return
+				else:
+					pass
 			elif !global_inventory.check_item_name(itemNeeded):
 				var Notif = "Door is locked! Use {str} to unlock!"
 				var NotifVar = Notif.format({"str": itemNeeded})

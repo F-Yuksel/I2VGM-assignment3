@@ -11,7 +11,7 @@ func _ready() -> void:
 		ableToFinish = true
 
 func _process(delta: float) -> void:
-	if ableToInterract and Input.is_action_just_pressed("Interact"):
+	if ableToInterract and Input.is_action_just_pressed("Interact") and ableToFinish:
 		TransitionScene.transition_slow()
 		await TransitionScene.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/game_end_screen.tscn")
