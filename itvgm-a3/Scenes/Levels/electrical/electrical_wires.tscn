@@ -243,6 +243,7 @@ shape = SubResource("RectangleShape2D_2jnv8")
 debug_color = Color(0, 0.635294, 0.415686, 0.419608)
 
 [node name="Player" parent="." instance=ExtResource("4_etb6b")]
+z_index = 1
 position = Vector2(30, -16)
 metadata/_edit_lock_ = true
 

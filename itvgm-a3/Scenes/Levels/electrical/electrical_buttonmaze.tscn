@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cwwlat0hcj724"]
+[gd_scene load_steps=35 format=4 uid="uid://cwwlat0hcj724"]
 
 [ext_resource type="Script" path="res://Scripts/electrical/buttonlogic.gd" id="1_thuct"]
 [ext_resource type="Texture2D" uid="uid://ddbfekpeprw36" path="res://Imports/Foozle_2DT0001_Science_Fiction_Lab_TilesetDecorTraps/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_wyii8"]
@@ -308,6 +308,9 @@ size = Vector2(28, 289)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1uuni"]
 size = Vector2(41.3436, 45.4008)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_topwm"]
+size = Vector2(4504, 1351.5)
 
 [node name="ElectricalBUTTONS" type="Node2D"]
 
@@ -747,6 +750,12 @@ info_text = "Red Key card. Could be used to open certain doors."
 
 [node name="Note1" type="Sprite2D" parent="Redkey"]
 texture = ExtResource("21_xyxnw")
+
+[node name="camera_zone_1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camera_zone_1"]
+position = Vector2(-1502, -346.75)
+shape = SubResource("RectangleShape2D_topwm")
 
 [editable path="Ladders/Ladder1"]
 [editable path="Ladders/Ladder2"]
