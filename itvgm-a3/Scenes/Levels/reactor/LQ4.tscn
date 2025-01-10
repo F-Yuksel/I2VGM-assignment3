@@ -178,7 +178,7 @@ tile_set = SubResource("TileSet_c8em3")
 [node name="DoorToHallwayLQ4" parent="." instance=ExtResource("3_sl505")]
 position = Vector2(30, -45)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-Coords = Vector2(420, -75)
+Coords = Vector2(420, -49)
 itemNeeded = "Sjs"
 
 [node name="Sprite2D" parent="DoorToHallwayLQ4" index="0"]

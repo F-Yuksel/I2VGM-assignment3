@@ -180,7 +180,7 @@ shape = SubResource("RectangleShape2D_eolui")
 [node name="DoorToHallwayLQ2" parent="." instance=ExtResource("2_s4q1w")]
 position = Vector2(1, -77)
 nextScenePath = "res://Scenes/Levels/reactor/reactor_hallway.tscn"
-Coords = Vector2(1050, -75)
+Coords = Vector2(1050, -49)
 
 [node name="Sprite2D" parent="DoorToHallwayLQ2" index="0"]
 texture = ExtResource("3_qxs51")
