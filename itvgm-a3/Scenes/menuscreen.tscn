@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdhdfcrom4d6v"]
+[gd_scene load_steps=9 format=3 uid="uid://bdhdfcrom4d6v"]
 
 [ext_resource type="Script" path="res://Scripts/menuscreen.gd" id="1_tfpkm"]
 [ext_resource type="Texture2D" uid="uid://bctffx7lnajfg" path="res://Imports/Purple_Nebula_06-1024x1024.png" id="2_jboai"]
 [ext_resource type="AudioStream" uid="uid://cjjm7ks2uwdnu" path="res://Imports/Music/SFX/MenuButtonPress.mp3" id="3_5ab33"]
 [ext_resource type="FontFile" uid="uid://c2b6fpv0enkov" path="res://Imports/Fonts/PixelOperator8-Bold.ttf" id="3_nn7of"]
+[ext_resource type="FontFile" uid="uid://boqu6shvyhbr1" path="res://Imports/Fonts/PixelOperator8.ttf" id="4_rbefw"]
 
 [sub_resource type="Animation" id="Animation_7dwb4"]
 length = 0.001
@@ -97,6 +98,7 @@ offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_rbefw")
 theme_override_font_sizes/font_size = 32
 text = "Quit"
 
